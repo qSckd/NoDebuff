@@ -1,7 +1,7 @@
 main: me.zatrex.practice.Moon
-name: Practice
-version: '${project.version}-${git.commit.id.abbrev}' # ${git.commit.id.abbrev}
-author: Zyra Development
+name: Moon
+version: '1.0-NoDebuff' # ${git.commit.id.abbrev}
+author: NoDebuff Development
 depend:
   - WorldEdit
 softdepend:

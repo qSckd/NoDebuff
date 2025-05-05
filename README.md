@@ -41,7 +41,6 @@ You are **NOT** allowed to:
 - Don't claim this plugin as yours
 - Don't redestribute this plugin
 - Don't resell this without perm
-- Don't send it to iusemeteor
 - Don't send it to anyone
 - Don't leak it
 
