@@ -1,0 +1,80 @@
+GENERAL: 
+  # This is where players will teleport on join and after a match
+  SPAWN-LOCATION: "world:0.0:70.0:0.0:0.45256472:-0.7543715"
+  # What theme we should give to the new players?
+MATCH:
+  # Remove empty potion bottles
+  REMOVE_POTION_BOTTLE: false
+  # Should we show the player respawn title?
+  RESPAWN-TITLE: true
+  # Should we broadcast player respawn message?
+  BROADCAST-RESPAWN: true
+  # All Titles can be edited!
+  TITLE:
+    STARTED:
+      ENABLED: true
+      TEXT: "&aMatch Started"
+      SUB_TEXT: ""
+      FADE_IN: 1
+      STAY: 20
+      FADE_OUT: 5
+    COUNTDOWN:
+      ENABLED: true
+      TEXT: "&7Starting in &c<seconds>"
+      SUB_TEXT: ""
+      FADE_IN: 1
+      STAY: 20
+      FADE_OUT: 5
+    WINNER:
+      ENABLED: true
+      TEXT: "&aVICTORY!"
+      SUB_TEXT: "&fGood Game!"
+      FADE_IN: 1
+      STAY: 20
+      FADE_OUT: 5
+    LOSER:
+      ENABLED: true
+      TEXT: "&cDEFEAT!"
+      SUB_TEXT: "&fBetter Luck next time!"
+      FADE_IN: 1
+      STAY: 20
+      FADE_OUT: 5
+    BED_DESTROYED:
+      ENABLED: true
+      TEXT: "&cBED DESTROYED"
+      SUB_TEXT: "&fYou won't be able to respawn!"
+      # FADE_IN:5
+      FADE_IN: 1
+      STAY: 20
+      FADE_OUT: 5
+    RESPAWN_COUNTDOWN:
+      ENABLED: true
+      TEXT: "&c<seconds>"
+      SUB_TEXT: ""
+      FADE_IN: 1
+      STAY: 20
+      FADE_OUT: 0
+    RESPAWNING:
+      ENABLED: true
+      TEXT: "&Respawning..."
+      SUB_TEXT: ""
+      FADE_IN: 1
+      STAY: 20
+      FADE_OUT: 0
+  # Should we enable bow boost in match?
+  BOW-BOOST:
+    ENABLED: true
+    MINIMIZE-DAMAGE: false
+    KNOCKBACK-VELOCITY:
+      X: 1.2
+      Y: 1.0
+      Z: 1.2
+RANKED:
+  # The minimum amount of won matches required by a player to join Ranked Queue
+  # Set this to 0, if you don't want any limit
+  REQUIRED-WINS: 10
+  # Ranked Sumo rounds amount (TODO) Requested by mqaaz
+  SUMO-ROUNDS: 1
+
+# Will be used for bugs reports.
+COMMIT-ID: "${git.commit.id.abbrev}"

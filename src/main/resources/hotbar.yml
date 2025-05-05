@@ -1,0 +1,106 @@
+HOTBAR_ITEMS:
+  QUEUE_JOIN_UNRANKED:
+    MATERIAL: "IRON_SWORD"
+    DURABILITY: 0
+    NAME: "&bPlay Unranked &7(Right-Click)"
+    LORE: []
+  QUEUE_JOIN_RANKED:
+    MATERIAL: "DIAMOND_SWORD"
+    DURABILITY: 0
+    NAME: "&bPlay Ranked &7(Right-Click)"
+    LORE: []
+  QUEUE_LEAVE:
+    MATERIAL: "INK_SACK"
+    DURABILITY: 1
+    NAME: "&c&lLeave Queue &7(Right-Click)"
+    LORE: []
+  PARTY_EVENTS:
+    MATERIAL: "DIAMOND_SWORD"
+    DURABILITY: 0
+    NAME: "&bParty Events &7(Right-Click)"
+    LORE: []
+  PARTY_CREATE:
+    MATERIAL: "NAME_TAG"
+    DURABILITY: 0
+    NAME: "&bCreate Party &7(Right-Click)"
+    LORE: []
+  PROFILE_SETTINGS:
+    MATERIAL: ANVIL
+    DURABILITY: 0
+    NAME: "&bProfile Menu &7(Right-Click)"
+    LORE: []
+  PARTY_MANAGE:
+    MATERIAL: "ANVIL"
+    DURABILITY: 0
+    NAME: "&bManage Party &7(Right-Click)"
+    LORE: []
+  PARTY_DISBAND:
+    MATERIAL: "INK_SACK"
+    DURABILITY: 1
+    NAME: "&c&lDisband Party &7(Right-Click)"
+    LORE: []
+  PARTY_LEAVE:
+    MATERIAL: "INK_SACK"
+    DURABILITY: 1
+    NAME: "&b&lLeave Party &7(Right-Click)"
+    LORE: []
+  PARTY_INFORMATION:
+    MATERIAL: "SKULL_ITEM"
+    DURABILITY: 3
+    NAME: "&bParty Information &7(Right-Click)"
+    LORE: []
+  OTHER_PARTIES:
+    MATERIAL: "CHEST"
+    DURABILITY: 0
+    NAME: "&bOther Parties &7(Right-Click)"
+    LORE: []
+  KIT_EDITOR:
+    MATERIAL: "BOOK"
+    DURABILITY: 0
+    NAME: "&bKit Editor &7(Right-Click)"
+    LORE: []
+  SPECTATE_MENU:
+    MATERIAL: "COMPASS"
+    DURABILITY: 0
+    NAME: "&bSpectate Menu &7(Right-Click)"
+    LORE: []
+  SPECTATE_STOP:
+    MATERIAL: "INK_SACK"
+    DURABILITY: 1
+    NAME: "&c&lStop Spectating"
+    LORE: []
+  VIEW_INVENTORY:
+    MATERIAL: "BOOK"
+    DURABILITY: 0
+    NAME: "&bView Inventory &7(Right-Click)" # Slot 3
+    LORE: []
+  EVENT_JOIN:
+    MATERIAL: "NETHER_STAR"
+    DURABILITY: 0
+    NAME: "&bJoin Event &7(Right-Click)"
+    LORE: []
+  EVENT_LEAVE:
+    MATERIAL: "NETHER_STAR"
+    DURABILITY: 0
+    NAME: "&c&lLeave Event &7(Right-Click)"
+    LORE: []
+  MAP_SELECTION:
+    MATERIAL: "MAP"
+    DURABILITY: 0
+    NAME: "&b%MAP%"
+    LORE: []
+  REMATCH_REQUEST:
+    MATERIAL: "PAPER"
+    DURABILITY: 0
+    NAME: "&bRequest Rematch &7(Right-Click)"
+    LORE: []
+  REMATCH_ACCEPT:
+    MATERIAL: "DIAMOND"
+    DURABILITY: 0
+    NAME: "&aAccept Rematch &7(Right-Click)"
+    LORE: []
+  KIT_SELECTION:
+    MATERIAL: "BOOK"
+    DURABILITY: 0
+    NAME: "&b%KIT%"
+    LORE: []

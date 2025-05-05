@@ -1,0 +1,171 @@
+JOIN_MESSAGES:
+  - "&b&lMoon Practice &7[Praxi]"
+  - " &fSeason started: &bN/A"
+  - " &fSeason ends: &bN/A"
+  - ""
+  - "&b&lUseful Commands:"
+  - " &f/duel: &7[Duel another player]"
+  - " &f/host: &7[Host an event]"
+  - " &f/settings: &7[Modify your settings]"
+RANKED:
+  ERROR-MESSAGE: '&cYou need to win at least {wins} wins to queue Ranked!'
+  UNBANNED: 
+LEADERBOARDS:
+  UPDATE-MESSAGE: "&aUpdated leaderboards!"
+FOLLOW:
+  FOLLOW_START: '&fStarted following &b{0}.'
+  FOLLOW_END: '&fStopped following &b{0}.'
+  FOLLOWED_LEFT: '&b{0} &fleft.'
+KIT_EDITOR:
+  START_RENAMING: "&fNow renaming &b{0}&f... Enter the new name now. &7&o(Chat colors work)" # Chat Colors supported
+  RENAMED: "&fYou have renamed your &b{0} &fkit to &b{1}&f."
+  NAME_TOO_LONG: "&cYour kit name cannot be more than 16 characters long."
+PARTY:
+  HELP:
+    - "&7&m------------------------------------------------"
+    - "&b&lParty Help"
+    - ""
+    - "&b/party create &7- &fCreate a party"
+    - "&b/party disband &7- &fDisband your party"
+    - "&b/party leave &7- &fLeave your party"
+    - "&b/party join <name> &7- &fJoin a party"
+    - "&b/party leader <name> &7- &fChange Party Leader"
+    - "&b/party manage &7- &fManage Party Settings"
+    - "&b/party kick <player> &7- &fKick a member"
+    - "&b/party open &7- &fMake your party open"
+    - "&b/party close &7- &fMake your party closed"
+    - "&b/party chat <msg> &7- &fSend a chat message"
+    - "&7&m------------------------------------------------"
+  CREATE: "&aYou have created a party."
+  DISBAND: "&cYour party has been disbanded."
+  INVITE:
+    - "&b&l{1} &fhas sent you an invite to their party."
+    - "%CLICKABLE%&aClick here &for type &b/party join {0} &fto accept."
+  INVITE_HOVER: "&aClick here to accept."
+  INVITE_BROADCAST: "&b&l{0} &fhas been invited to your party."
+  JOIN: "{0} &fhas joined your party."
+  LEAVE: "{0} &fhas {1} your party."
+  PRIVACY_CHANGE: "&fYour party privacy has been set to &b{0}&f."
+  CHAT_PREFIX: "&b&l[Party] &r"
+  PUBLIC: "&b{0}&f is hosting a public party"
+EVENT:
+  HELP:
+    - "&7&m------------------------------------------------"
+    - "&b&lEvent Help"
+    - ""
+    - "&b/events &7- &fShow events that can be hosted"
+    - "&b/event host <type> &7- &fHost an event by name"
+    - "&b/event info &7- &fShows active event information"
+    - "&b/event join &7- &fJoin the event"
+    - "&b/event leave &7- &fLeave the event"
+    - "&7&m------------------------------------------------"
+  JOIN_BROADCAST:
+    - "&7███████"
+    - "&7██&4███&7██"
+    - "&7██&4█&7████  &b&l[{0} Event]"
+    - "&7██&4███&7██  &b&l{1} &fis hosting an event!"
+    - "&7██&4█&7████  &r&a&lClick to join!"
+    - "&7██&4███&7██"
+    - "&7███████"
+  JOIN_HOVER: "&r&aClick to join,"
+  PLAYER_JOIN: "&7[&a&lEvent&7] &r{0} &ehas joined the event. &7&o({1}/{2})"
+  PLAYER_LEAVE: "&7[&a&lEvent&7] &r{0} &ehas left the event. &7&o({1}/{2})"
+  PLAYER_VOTE: "&7[&a&lEvent&7] &r{0} &ehas voted for the &a{1} &emap. &7&o({2} votes)"
+  ROUND_START: "&7[&a&lEvent&7] &a{1} &evs &a{2}"
+  ROUND_START_TIMER: "&7[&a&lEvent&7] &aRound {0} &ewill start in &a{1} {2}&e."
+  ROUND_ELIMINATION: "&7[&a&lEvent&7] &a{0} &e{1} eliminated."
+  ROUND_OPPONENT: "&7[&a&lEvent&7] &eYour Opponent{0}: &a{1}"
+  STARTED:
+    - "&7[&a&lEvent&7] &a{0} &ehas started. &7&o({1}/{2})"
+  FINISHED:
+    - "&7███████"
+    - "&7██&4███&7██"
+    - "&7██&4█&7████  &b&l[{0} Event]"
+    - "&7██&4███&7██  &r{1} won the event!"
+    - "&7██&4█&7████  &r&b&lGood game!"
+    - "&7██&4███&7██"
+    - "&7███████"
+TOURNAMENT:
+  HELP: # Default help command for players
+    USER:
+      - "&7&m------------------------------------------------"
+      - "&b&lTournament Commands"
+      - ""
+      - "&b/tournament host &7<kit> <team size> - &fHost Tournament"
+      - "&b/tournament join - &fJoin tournament"
+      - "&b/tournament leave - &fLeave tournament"
+      - "&b/tournament info - &fShow tournament info"
+      - "&7&m------------------------------------------------"
+    ADMIN: # Help Command for admins permission: shadow.admin.tournament
+      - "&7&m------------------------------------------------"
+      - "&b&lTournament Commands"
+      - ""
+      - "&b/tournament host &7<kit> <team size> - &fHost Tournament"
+      - "&b/tournament join - &fJoin tournament"
+      - "&b/tournament leave - &fLeave tournament"
+      - "&b/tournament info - &fShow tournament info"
+      - "&b/tournament forcestart &7- &fForce start the tournament"
+      - "&b/tournament cancel &7- &fCancel the Tournament"
+      - "&7&m------------------------------------------------"
+DUEL:
+  SENT: "&fYou sent a &b{0} &fduel request to &b{1} &fon arena &b{2}&f."
+  SENT_PARTY: "&fYour party sent a &b{0} &fduel request to &b{1}&f''s party &7(&b{2}&7) &fon arena &b{3}&f."
+  RECEIVED:
+    - "&b{1} &fsent you a &b{0} &fduel request on arena &b{2}&f."
+    - "%CLICKABLE%"
+  RECEIVED_PARTY:
+    - "&a{1}''s party &6(&a{2}&6) &6sent your party a &a{0} &6duel request on arena &a{3}&6."
+    - "%CLICKABLE%"
+  RECEIVED_HOVER: "&aClick to accept this duel request."
+  RECEIVED_CLICKABLE: "&aClick here &for type &b&l/duel accept {0} &fto accept."
+QUEUE:
+  JOIN_UNRANKED: "&fYou have been added to the {1}Unranked {0} &fqueue."
+  LEAVE_UNRANKED: "&fYou have been removed from {1}Unranked {0} &fqueue."
+  JOIN_RANKED: "&fYou have been added to the {2}Ranked {0} &fqueue. &7&o[{1} ELO]"
+  LEAVE_RANKED: "&fYou have been removed from {1}Ranked {0} &fqueue."
+  RANGE_INCREMENT: "&fSearching in ELO range &b[{1} -> {2}]&f..."
+MATCH:
+  GIVE_KIT: "&fGiving you the {1}{0} &fkit."
+  ENDERPEARL_COOLDOWN: "&cYou may not use your &c&lEnderpearl &cfor another &c&l{0} second{1}&c."
+  ENDERPEARL_COOLDOWN_EXPIRED: "&aYour enderpearl cooldown has now expired."
+  START_SPECTATING: "&fYou are spectating &b{0}{1} &fvs &b{2}{3}"
+  START_SPECTATING_RANKED: "&eYou are spectating {0}{1} &7({2}) &evs {3}{4} &7({5})"
+  NOW_SPECTATING: "&b&l{0} &fis now spectating."
+  NO_LONGER_SPECTATING: "&b&l{0} &fis no longer spectating."
+  PLAYING-ARENA: "&fYou are playing on arena {theme}&l{arena}&f."
+  START_TIMER: "&fThe match starts in &b&l{0} &fsecond{1}..."
+  RESPAWN_TIMER: '&fRespawning in {theme}{countdown}&f...'
+  RESPAWNED: '&aRespawned!'
+  BED_BROKEN: '{0} Bed &fwas broken by {1}'
+  STARTED: "&aFight!"
+  END_DETAILS:
+    - "&7&m------------------------------------------------"
+    - "&b&lMatch Results &f- &7(click to view)"
+    - "%INVENTORIES%"
+    - "%ELO_CHANGES%"
+    - "&7&m------------------------------------------------"
+  END_WINNER_INVENTORY: "&fWinner{0}: "
+  END_LOSER_INVENTORY: "&fLoser{0}: "
+  CLICK_TO_VIEW_NAME: "&b{0}"
+  CLICK_TO_VIEW_HOVER: "&fClick to view &b{0}&f''s inventory."
+  ELO_CHANGES:
+    - "&bELO Changes: &a{0} +{1} ({2}) &c{3} +{4} ({5})"
+  PLAYER_KILLED: "{0} &fwas slain by {1}&f."
+  PLAYER_DIED: "{1} &fcommitted suicide."
+  ROUNDS_TO_WIN: ""
+REMATCH:
+  SENT_REQUEST:
+    - "&fYou have sent &b&l{0} &fa rematch on arena &b{1}&f."
+  RECEIVED_REQUEST:
+    - "&b&l{0} &fhas sent you a rematch on arena &b&l{1}&f."
+    - "&aClick here &for type &b&l/rematch &fto accept the request."
+  RECEIVED_REQUEST_HOVER: "&aClick to accept."
+ARROW_DAMAGE_INDICATOR: "&c&l{1} &fis now at &c{2}&4{3}&f."
+VIEWING_INVENTORY: "&fYou are viewing &b&l{0}&f''s inventory..."
+COMMANDS:
+  SUDO:
+    MESSAGE: "&fYou have successfully forced &b{target} &fto say &b{message_cmd}"
+  RENAME:
+    RENAMED: "&aYou renamed the item in your hand."
+    ERROR: "&cThere is no item in your hand."
+    NOT-VALID: "&cPlease insert a valid name."

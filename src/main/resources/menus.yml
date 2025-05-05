@@ -1,0 +1,189 @@
+# PROFILE MENU
+PROFILE-SETTINGS:
+  TITLE: "&8Profile Menu"
+  SIZE: 27
+
+# SETTINGS MENU
+SETTINGS:
+  TITLE: "&8Settings"
+  SETTING-NAME: "&b<settings>"
+  SIZE: 27
+
+# QUEUE MENU
+QUEUE:
+  SIZE: 45
+
+# Stats & Leaderboard Menus
+STATS:
+  TITLE: "&8{player}'s Statistics"
+  SIZE: 45
+
+# ARENA SELECT MMENU
+ARENA-SELECT-MENU:
+  TITLE: "&8Select Arena"
+
+# DUEL MENUS
+DUEL:
+  SELECT-KIT-MENU:
+     TITLE: "&8Select a kit"
+  SELECT-ARENA-MENU:
+     TITLE: "&8Select an arena"
+
+# MATCH MENUS
+MATCH:
+  DETAILS-MENU:
+     TITLE: "&8Match Inventory"
+     HUNGER-BUTTON:
+        NAME: "&fHunger: &b{hunger}/20"
+     HEALTH-BUTTON:
+        NAME: "&fHealth: &b{health}/10 &4❤"
+     EFFECTS-BUTTON:
+        NAME: "&bPotion Effects"
+        LORE: "&f{potion_name} &b{duration}"
+     POTIONS-BUTTON:
+        NAME: "&bPotions"
+        LORE: "&b{player} &fhad &b{potions} &fpotion &b{potions_left} &fleft."
+     STATS-BUTTON: # TODO
+        NAME: "&bMatch Stats"
+        LORE:
+         - "&7• &fHits: &b{total_hits}"
+         - "&7• &fLongest Combo: &b{longest_combo}"
+         - ""
+         - "&bPotions: "
+         - "&7• &fPotions Thrown: &b{potions_thrown}"
+         - "&7• &fPotions Missed: &b{potions_missed}"
+         - "&7• &fPotion Accuracy: &b{potion_accuracy}"
+     SWITCH-INVENTORY-BUTTON:
+        NAME: "&b&lOpponent's Inventory."
+        LORE: "&fSwitch to &a{player} &f's inventory"
+
+# DIVISIONS MENU
+PROFILE_DIVISIONS:
+  TITLE: "&8Divisions"
+  SIZE: 54
+  BUTTONS:
+    XP:
+      LOCKED:
+        NAME: "&r{division_display_name}"
+        LORE:
+          - "&f Experience Required: &b{player_experience}/{division_experience}"
+          - "&f Current Progress: &r{division_bar}"
+      UNLOCKED:
+        NAME: "&r{division_display_name} &7(UNLOCKED)"
+        LORE:
+          - "&f Experience Required: &b{player_experience}/{division_experience}"
+          - "&f Current Progress: &r{division_bar}"
+      EQUIPPED:
+        NAME: "&r{division_display_name} &7(CURRENT)"
+        LORE:
+          - "&f Experience Required: &b{player_experience}/{division_experience}"
+          - "&f Current Progress: &r{division_bar}"
+    ELO:
+      LOCKED:
+        NAME: "&r{division_display_name}"
+        LORE:
+          - "&f ELO Required: &b{division_min_elo}"
+          - "&f Current Progress: &r{division_bar}"
+      UNLOCKED:
+        NAME: "&r{division_display_name} &7(UNLOCKED)"
+        LORE:
+          - "&f ELO Required: &b{division_min_elo}"
+          - "&f Current Progress: &b0/0 &r{division_bar} &7(100%)"
+      EQUIPPED:
+        NAME: "&r{division_display_name} &7(CURRENT)"
+        LORE:
+          - "&f ELO Required: &b{division_min_elo}"
+          - "&f Current Progress: &b0/0 &r{division_bar} &7(100%)"
+
+# KITEDITOR MENU
+KIT-EDITOR:
+  TITLE: "&8Select a Kit"
+  KIT-NAME: "{theme}{kit}"
+  SIZE: 36
+  LORE:
+    - ""
+    - " &aClick to edit this kit."
+  MANAGEMENT:
+    TITLE: "&8Viewing {kit} kits"
+    KIT-NAME: "{theme}{kit}"
+    BUTTONS:
+      CREATE-BUTTON: "&aCreate an Inventory"
+      LOAD-BUTTON:
+        NAME: "&aLoad/Edit"
+        LORE: # Placeholders ({kit_name}, {kit_heals}, {kit_debuffs}, {kit_foods}, {theme}).
+          - ""
+          - "{theme} ┃ &fName: {theme}{kit_name}"
+          - "{theme} ┃ &fHeals: {theme}{kit_heals}"
+          - "{theme} ┃ &fDebuffs: {theme}{kit_debuffs}"
+          - ""
+          - "&aClick to edit."
+      DELETE-BUTTON: "&cDelete"
+  EDITOR:
+    TITLE: "&8Editing {kit}"
+    BUTTONS:
+      SAVE-BUTTON: "&bSave"
+      RENAME-BUTTON: "&bRename an Inventory"
+      CANCEL-BUTTON: "&bCancel"
+      DELETE-BUTTON: "&bDelete"
+      CLEAR-BUTTON: "&bClear Inventory"
+      LOAD-DEFAULT-BUTTON: "&bLoad Default Kit"
+
+# EVENTS HOST MENU (TODO)
+EVENTS:
+  TITLE: "&8Select an event"
+  SIZE: 27
+  EVENT-NAME: "&b{event}"
+  EVENT-LORE: # TODO
+    - "{event_description}"
+  CANT-HOST: 
+    - "&cYou cannot host this event."
+    - "&cPurchase a rank upgrade on our store."
+  CAN-HOST: "&aClick to host event!"
+
+# REPLAY MENU
+REPLAY-MENU:
+  TITLE: "&8Replay Menu"
+  SIZE: 27
+  NAME: "&b&lMatch Replay"
+  ITEM: "PAPER"
+  LORE:
+   - "&7Replay your"
+   - "&7last match."
+   - ""
+   - "&aClick to replay"
+
+# MATCHES SPECTATE MENU
+MATCH-SPECTATE-MENU:
+  TITLE: "&8Spectate Menu"
+  SIZE: 27
+  NAME: "{theme}&l{playerA} &r&fvs {theme}&l{playerB}"
+  LORE:
+    - "{theme}&l{type}"
+    - ""
+    - "&fKit: {theme}{kit}"
+    - "&fArena: {theme}{arena}"
+    - "&fDuration: {theme}{duration}"
+    - "&fSpectators: {theme}{spectators}"
+    - ""
+    - "  &aClick to spectate "
+# PARTY MENUS
+PARTY:
+ OTHERS:
+    TITLE: "&8Other Parties"
+    SIZE: 27
+ SELECT-EVENT:
+    TITLE: "&8Select an event"
+    SIZE: 27
+ SELECT-KIT:
+    TITLE: "&8Select a kit"
+    SIZE: 45
+ MANAGE:
+    TITLE: "&8Party Settings"
+# MANAGE MENUS
+MANAGE:
+  ARENA:
+    TITLE: "&8Arena Management"
+    SIZE: 45
+  DUPLICATE:
+    TITLE: "&8Duplicates Management"
+    SIZE: 45

@@ -1,0 +1,14 @@
+# TODO: Recode leaderboards
+MAIN:
+  LOCATION: 'null'
+  LINES:
+    - '&b&lPvP Network'
+    - '&r'
+    - '&fWelcome to Practice Season &b1&r&f!'
+    - '&fSeason &b1 &r&lstarted in &cNA/NA&r&f.'
+
+LEADERBOARDS:
+  ELO:
+    LOCATION: 'null'
+  WINS:
+    LOCATION: 'null'

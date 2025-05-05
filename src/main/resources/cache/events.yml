@@ -1,0 +1,18 @@
+EVENTS:
+  SUMO:
+    LOBBY_LOCATION: "null"
+    ALLOWED_MAPS: []
+  SPLEEF:
+    LOBBY_LOCATION: "null"
+    ALLOWED_MAPS: []
+  BRACKETS:
+    LOBBY_LOCATION: "null"
+    ALLOWED_MAPS: []
+  GULAG:
+    LOBBY_LOCATION: "null"
+    ALLOWED_MAPS: []
+EVENT_MAPS: {}
+HOST_SLOTS:
+  1:
+    PERMISSION: "shadow.ranks.gold"
+    SLOTS: 64
