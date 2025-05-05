@@ -1,4 +1,4 @@
-# Moon
+# NoDebuff Practice Core - Moon
 The most feature-rich and optimized Practice Core
 
 > [!IMPORTANT]
@@ -46,4 +46,4 @@ You are **NOT** allowed to:
 - Don't leak it
 
 # Additional Info
-- Dont become iusemeteor and skid this thing and claim as your own 🙏
+- The real owner of the core is Zatrex, im just forking it for the NoDebuff Network.
