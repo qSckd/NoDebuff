@@ -115,8 +115,9 @@ public abstract class Menu {
 		return (int) (Math.ceil((highest + 1) / 9D) * 9D);
 	}
 
+	@Override
 	public int getSize() {
-		return -1;
+		return Moon.get().getMenusConfig().getInteger("MANAGE.ARENA.SIZE");
 	}
 
 	public int getSlot(int x, int y) {
