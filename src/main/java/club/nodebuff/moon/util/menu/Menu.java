@@ -19,8 +19,7 @@ public abstract class Menu {
 
 	public static Map<String, Menu> currentlyOpenedMenus = new HashMap<>();
 
-	// Renombrado a "plugin" y corregido el acceso
-	protected final Moon plugin = Moon.getInstance();
+	protected final Moon plugin = Moon.get(); // corregido
 
 	private Map<Integer, Button> buttons = new HashMap<>();
 	private boolean autoUpdate = false;
@@ -79,7 +78,6 @@ public abstract class Menu {
 		}
 
 		inventory.setContents(new ItemStack[inventory.getSize()]);
-
 		currentlyOpenedMenus.put(player.getName(), this);
 
 		for (Map.Entry<Integer, Button> buttonEntry : this.buttons.entrySet()) {
@@ -129,9 +127,7 @@ public abstract class Menu {
 
 	public abstract Map<Integer, Button> getButtons(Player player);
 
-	public void onOpen(Player player) {
-	}
+	public void onOpen(Player player) {}
 
-	public void onClose(Player player) {
-	}
+	public void onClose(Player player) {}
 }
