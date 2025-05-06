@@ -19,7 +19,7 @@ public abstract class Menu {
 
 	public static Map<String, Menu> currentlyOpenedMenus = new HashMap<>();
 
-	private final Moon plugin = Moon.get();
+	protected final Moon plugin = Moon.get();
 
 	private Map<Integer, Button> buttons = new HashMap<>();
 	private boolean autoUpdate = false;
@@ -115,7 +115,7 @@ public abstract class Menu {
 		return (int) (Math.ceil((highest + 1) / 9D) * 9D);
 	}
 
-	@Override
+	// Eliminé la anotación @Override ya que no se debe sobrescribir un método
 	public int getSize() {
 		return Moon.get().getMenusConfig().getInteger("MANAGE.ARENA.SIZE");
 	}
