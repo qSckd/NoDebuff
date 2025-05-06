@@ -28,11 +28,11 @@ public class ScoreboardAdapter implements BoardAdapter {
     @Override
     public String getTitle(Player player) {
 
-        if (Moon.get().isReplay()) {
+        if (Moon.get() != null && Moon.get().isReplay()) {
             if (PlayerUtil.inReplay(player)) {
                 return getFormattedReplayTitle(player);
             }
-		}
+        }
         return getFormattedTitle(player);
     }
 
@@ -40,11 +40,7 @@ public class ScoreboardAdapter implements BoardAdapter {
     public List<String> getScoreboard(Player player, Board board, Set<BoardCooldown> cooldowns) {
         Profile profile = Profile.getByUuid(player.getUniqueId());
 
-        if (!profile.getOptions().showScoreboard()) {
-			return null;
-		}
-
-        if (profile == null) {
+        if (profile == null || !profile.getOptions().showScoreboard()) {
             return null;
         }
 
@@ -58,30 +54,42 @@ public class ScoreboardAdapter implements BoardAdapter {
             case QUEUEING:
                 return getQueueingLines(player, profile);
             default:
-				return getLobbyLines(player, profile);
+                return getLobbyLines(player, profile);
         }
     }
 
     private String getFormattedTitle(Player player) {
-        String animatedTitle = getAnimatedText();
-        return ReplaceUtil.format(Collections.singletonList(animatedTitle), player).get(0);
+        if (Moon.get() != null) {
+            String animatedTitle = getAnimatedText();
+            return ReplaceUtil.format(Collections.singletonList(animatedTitle), player).get(0);
+        }
+        return "Default Title";  // Fallback title if Moon is null
     }
 
     private String getFormattedReplayTitle(Player player) {
-        String animatedReplayTitle = getAnimatedReplayText();
-        return ReplaceUtil.format(Collections.singletonList(animatedReplayTitle), player).get(0);
+        if (Moon.get() != null) {
+            String animatedReplayTitle = getAnimatedReplayText();
+            return ReplaceUtil.format(Collections.singletonList(animatedReplayTitle), player).get(0);
+        }
+        return "Replay Title";  // Fallback replay title if Moon is null
     }
 
     private String getAnimatedText() {
-        int index = (int) ((System.currentTimeMillis() / Moon.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL")) 
-                % Moon.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").size());
-        return Moon.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").get(index);
+        if (Moon.get() != null && Moon.get().getScoreboardConfig() != null) {
+            int index = (int) ((System.currentTimeMillis() / Moon.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL"))
+                    % Moon.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").size());
+            return Moon.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").get(index);
+        }
+        return "Default Animated Text";  // Fallback if Moon or config is null
     }
 
     private String getAnimatedReplayText() {
-        int index = (int) ((System.currentTimeMillis() / Moon.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL")) 
-                % Moon.get().getScoreboardConfig().getStringList("TITLE.REPLAY").size());
-        return Moon.get().getScoreboardConfig().getStringList("TITLE.REPLAY").get(index);
+        if (Moon.get() != null && Moon.get().getScoreboardConfig() != null) {
+            int index = (int) ((System.currentTimeMillis() / Moon.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL"))
+                    % Moon.get().getScoreboardConfig().getStringList("TITLE.REPLAY").size());
+            return Moon.get().getScoreboardConfig().getStringList("TITLE.REPLAY").get(index);
+        }
+        return "Default Replay Text";  // Fallback if Moon or config is null
     }
 
     private List<String> getLobbyLines(Player player, Profile profile) {
@@ -89,7 +97,7 @@ public class ScoreboardAdapter implements BoardAdapter {
             return getFormattedLines(player, "IN-PARTY.LOBBY");
         }
 
-        if (Moon.get().isReplay() && PlayerUtil.inReplay(player)) {
+        if (Moon.get() != null && Moon.get().isReplay() && PlayerUtil.inReplay(player)) {
             return getFormattedLines(player, "MATCH.REPLAY");
         }
 
@@ -123,7 +131,7 @@ public class ScoreboardAdapter implements BoardAdapter {
 
     private List<String> getQueueingLines(Player player, Profile profile) {
         QueueProfile queueProfile = profile.getQueueProfile();
-        String path = queueProfile.getQueue().isRanked() ? "QUEUE.RANKED" : "QUEUE.UNRANKED";
+        String path = queueProfile != null && queueProfile.getQueue() != null && queueProfile.getQueue().isRanked() ? "QUEUE.RANKED" : "QUEUE.UNRANKED";
         return getFormattedLines(player, path);
     }
 
@@ -140,7 +148,7 @@ public class ScoreboardAdapter implements BoardAdapter {
                 return getFormattedLines(player, "MATCH.TEAMS.IN-MATCH-BOXING");
             } else if (match.getKit().getGameRules().isBridge()) {
                 return getFormattedLines(player, "MATCH.TEAMS.IN-MATCH-BRIDGE");
-		    } else {
+            } else {
                 return getFormattedLines(player, "IN-PARTY.IN-SPLIT-MATCH");
             }
         }
@@ -154,8 +162,6 @@ public class ScoreboardAdapter implements BoardAdapter {
 
     private List<String> getMatchStateLines(Player player, Match match) {
         switch (match.getState()) {
-            /*case STARTING_ROUND:
-                return getFormattedLines(player, "MATCH.STARTING");*/
             case STARTING_ROUND:
                 return getPlayingRoundLines(player, match);
             case PLAYING_ROUND:
@@ -176,7 +182,7 @@ public class ScoreboardAdapter implements BoardAdapter {
             path = "MATCH.IN-MATCH-ONEHIT";
         } else if (match.getKit().getGameRules().isBedfight()) {
             path = "MATCH.IN-MATCH-BEDFIGHT";
-		} else if (match.getKit().getGameRules().isEggwars()) {
+        } else if (match.getKit().getGameRules().isEggwars()) {
             path = "MATCH.IN-MATCH-EGGWARS";
         } else if (match.getKit().getGameRules().isBridge()) {
             path = "MATCH.IN-MATCH-BRIDGE";
@@ -192,12 +198,14 @@ public class ScoreboardAdapter implements BoardAdapter {
     }
 
     private List<String> getFormattedLines(Player player, String path) {
-        List<String> lines = new ArrayList<>(Moon.get().getScoreboardConfig().getStringList(path));
-        return ReplaceUtil.format(lines, player);
+        if (Moon.get() != null && Moon.get().getScoreboardConfig() != null) {
+            List<String> lines = new ArrayList<>(Moon.get().getScoreboardConfig().getStringList(path));
+            return ReplaceUtil.format(lines, player);
+        }
+        return Collections.emptyList();  // Return empty list if Moon or config is null
     }
 
     @Override
-	public void onScoreboardCreate(Player p0, Scoreboard p1) {
-
-	}
+    public void onScoreboardCreate(Player p0, Scoreboard p1) {
+    }
 }
