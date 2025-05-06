@@ -74,14 +74,16 @@ public abstract class Menu {
 		}
 
 		if (inventory == null) {
-			inventory = Bukkit.createInventory(player, size, title);
+			inventory = Bukkit.createInventory(player, Math.max(size, 9), title); // Verificacion bien bellaka pa ver q pedo
 		}
 
 		inventory.setContents(new ItemStack[inventory.getSize()]);
 		currentlyOpenedMenus.put(player.getName(), this);
 
 		for (Map.Entry<Integer, Button> buttonEntry : this.buttons.entrySet()) {
-			inventory.setItem(buttonEntry.getKey(), createItemStack(player, buttonEntry.getValue()));
+			if (buttonEntry.getKey() < inventory.getSize()) {
+				inventory.setItem(buttonEntry.getKey(), createItemStack(player, buttonEntry.getValue()));
+			}
 		}
 
 		if (this.isPlaceholder()) {
@@ -115,9 +117,8 @@ public abstract class Menu {
 		return (int) (Math.ceil((highest + 1) / 9D) * 9D);
 	}
 
-	// Eliminé la anotación @Override ya que no se debe sobrescribir un método
 	public int getSize() {
-		return Moon.get().getMenusConfig().getInteger("MANAGE.ARENA.SIZE");
+		return Moon.get().getMenusConfig().getInteger("MANAGE.ARENA.SIZE"); // Configuración personalizada
 	}
 
 	public int getSlot(int x, int y) {
