@@ -28,7 +28,7 @@ public class ScoreboardAdapter implements BoardAdapter {
     @Override
     public String getTitle(Player player) {
 
-        if (Moon.get() != null && Moon.get().isReplay()) {
+        if (Moon.get().isReplay()) {
             if (PlayerUtil.inReplay(player)) {
                 return getFormattedReplayTitle(player);
             }
@@ -40,7 +40,11 @@ public class ScoreboardAdapter implements BoardAdapter {
     public List<String> getScoreboard(Player player, Board board, Set<BoardCooldown> cooldowns) {
         Profile profile = Profile.getByUuid(player.getUniqueId());
 
-        if (profile == null || !profile.getOptions().showScoreboard()) {
+        if (!profile.getOptions().showScoreboard()) {
+            return null;
+        }
+
+        if (profile == null) {
             return null;
         }
 
@@ -59,37 +63,25 @@ public class ScoreboardAdapter implements BoardAdapter {
     }
 
     private String getFormattedTitle(Player player) {
-        if (Moon.get() != null) {
-            String animatedTitle = getAnimatedText();
-            return ReplaceUtil.format(Collections.singletonList(animatedTitle), player).get(0);
-        }
-        return "Default Title";  // Fallback title if Moon is null
+        String animatedTitle = getAnimatedText();
+        return ReplaceUtil.format(Collections.singletonList(animatedTitle), player).get(0);
     }
 
     private String getFormattedReplayTitle(Player player) {
-        if (Moon.get() != null) {
-            String animatedReplayTitle = getAnimatedReplayText();
-            return ReplaceUtil.format(Collections.singletonList(animatedReplayTitle), player).get(0);
-        }
-        return "Replay Title";  // Fallback replay title if Moon is null
+        String animatedReplayTitle = getAnimatedReplayText();
+        return ReplaceUtil.format(Collections.singletonList(animatedReplayTitle), player).get(0);
     }
 
     private String getAnimatedText() {
-        if (Moon.get() != null && Moon.get().getScoreboardConfig() != null) {
-            int index = (int) ((System.currentTimeMillis() / Moon.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL"))
-                    % Moon.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").size());
-            return Moon.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").get(index);
-        }
-        return "Default Animated Text";  // Fallback if Moon or config is null
+        int index = (int) ((System.currentTimeMillis() / Moon.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL"))
+                % Moon.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").size());
+        return Moon.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").get(index);
     }
 
     private String getAnimatedReplayText() {
-        if (Moon.get() != null && Moon.get().getScoreboardConfig() != null) {
-            int index = (int) ((System.currentTimeMillis() / Moon.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL"))
-                    % Moon.get().getScoreboardConfig().getStringList("TITLE.REPLAY").size());
-            return Moon.get().getScoreboardConfig().getStringList("TITLE.REPLAY").get(index);
-        }
-        return "Default Replay Text";  // Fallback if Moon or config is null
+        int index = (int) ((System.currentTimeMillis() / Moon.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL"))
+                % Moon.get().getScoreboardConfig().getStringList("TITLE.REPLAY").size());
+        return Moon.get().getScoreboardConfig().getStringList("TITLE.REPLAY").get(index);
     }
 
     private List<String> getLobbyLines(Player player, Profile profile) {
@@ -97,7 +89,7 @@ public class ScoreboardAdapter implements BoardAdapter {
             return getFormattedLines(player, "IN-PARTY.LOBBY");
         }
 
-        if (Moon.get() != null && Moon.get().isReplay() && PlayerUtil.inReplay(player)) {
+        if (Moon.get().isReplay() && PlayerUtil.inReplay(player)) {
             return getFormattedLines(player, "MATCH.REPLAY");
         }
 
@@ -131,7 +123,7 @@ public class ScoreboardAdapter implements BoardAdapter {
 
     private List<String> getQueueingLines(Player player, Profile profile) {
         QueueProfile queueProfile = profile.getQueueProfile();
-        String path = queueProfile != null && queueProfile.getQueue() != null && queueProfile.getQueue().isRanked() ? "QUEUE.RANKED" : "QUEUE.UNRANKED";
+        String path = queueProfile.getQueue().isRanked() ? "QUEUE.RANKED" : "QUEUE.UNRANKED";
         return getFormattedLines(player, path);
     }
 
@@ -198,11 +190,15 @@ public class ScoreboardAdapter implements BoardAdapter {
     }
 
     private List<String> getFormattedLines(Player player, String path) {
-        if (Moon.get() != null && Moon.get().getScoreboardConfig() != null) {
-            List<String> lines = new ArrayList<>(Moon.get().getScoreboardConfig().getStringList(path));
-            return ReplaceUtil.format(lines, player);
+        List<String> lines = Moon.get().getScoreboardConfig().getStringList(path);
+
+        // Check if the list is null and provide a default value
+        if (lines == null) {
+            lines = new ArrayList<>(); // Provide an empty list if the value is null
+            Moon.get().getLogger().warning("La configuración para " + path + " es nula, se usará una lista vacía.");
         }
-        return Collections.emptyList();  // Return empty list if Moon or config is null
+
+        return ReplaceUtil.format(lines, player);
     }
 
     @Override
