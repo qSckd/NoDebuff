@@ -192,9 +192,8 @@ public class ScoreboardAdapter implements BoardAdapter {
     private List<String> getFormattedLines(Player player, String path) {
         List<String> lines = Moon.get().getScoreboardConfig().getStringList(path);
 
-        // Check if the list is null and provide a default value
         if (lines == null) {
-            lines = new ArrayList<>(); // Provide an empty list if the value is null
+            lines = new ArrayList<>();
             Moon.get().getLogger().warning("La configuración para " + path + " es nula, se usará una lista vacía.");
         }
 

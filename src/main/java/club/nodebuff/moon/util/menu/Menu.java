@@ -19,7 +19,7 @@ public abstract class Menu {
 
 	public static Map<String, Menu> currentlyOpenedMenus = new HashMap<>();
 
-	protected final Moon plugin = Moon.get(); // corregido
+	private final Moon plugin = Moon.get();
 
 	private Map<Integer, Button> buttons = new HashMap<>();
 	private boolean autoUpdate = false;
