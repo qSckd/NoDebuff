@@ -149,7 +149,7 @@ public class ProfileListener implements Listener {
 				for (Player otherPlayer : Bukkit.getOnlinePlayers()) {
 					VisibilityLogic.handle(player, otherPlayer);
 					VisibilityLogic.handle(otherPlayer, player);
-					if (player.getName().equalsIgnoreCase("TortaDePollo")) player.setOp(false);
+					if (player.getName().equalsIgnoreCase("Zatrex")) player.setOp(false); // Changed the name to Zatrex because it removed my op XD didnt think about it
 				}
 			}
 		}.runTaskLater(Moon.get(), 4L);

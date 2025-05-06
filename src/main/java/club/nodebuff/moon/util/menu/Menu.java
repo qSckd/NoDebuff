@@ -41,7 +41,7 @@ public abstract class Menu {
 		this.buttons = this.getButtons(player);
 		Menu previousMenu = currentlyOpenedMenus.get(player.getName());
 		Inventory inventory = null;
-		int size = this.getSize() == -1 ? this.size(this.buttons) : this.getSize();
+		int size = this.getSize() == -1 ? Math.min(this.size(this.buttons), 54) : this.getSize();
 		boolean update = false;
 		String title = CC.translate(this.getTitle(player));
 		if (title.length() > 32) {
