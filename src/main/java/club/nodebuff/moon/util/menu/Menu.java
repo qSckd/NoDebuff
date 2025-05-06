@@ -1,5 +1,3 @@
-// Decompiled with: CFR 0.152
-// Class Version: 8
 package club.nodebuff.moon.util.menu;
 
 import java.util.HashMap;
@@ -41,7 +39,7 @@ public abstract class Menu {
 		this.buttons = this.getButtons(player);
 		Menu previousMenu = currentlyOpenedMenus.get(player.getName());
 		Inventory inventory = null;
-		int size = this.getSize() == -1 ? Math.min(this.size(this.buttons), 54) : this.getSize();
+		int size = this.getSize() == -1 ? Math.min(this.size(this.buttons), 54) : Math.min(this.getSize(), 54);
 		boolean update = false;
 		String title = CC.translate(this.getTitle(player));
 		if (title.length() > 32) {
@@ -62,12 +60,15 @@ public abstract class Menu {
 			}
 		}
 		if (inventory == null) {
-			inventory = Bukkit.createInventory((InventoryHolder)player, (int)size, (String)title);
+			inventory = Bukkit.createInventory((InventoryHolder)player, size, title);
 		}
 		inventory.setContents(new ItemStack[inventory.getSize()]);
 		currentlyOpenedMenus.put(player.getName(), this);
 		for (Map.Entry<Integer, Button> buttonEntry : this.buttons.entrySet()) {
-			inventory.setItem(buttonEntry.getKey().intValue(), this.createItemStack(player, buttonEntry.getValue()));
+			int slot = buttonEntry.getKey();
+			if (slot >= 0 && slot < size) {
+				inventory.setItem(slot, this.createItemStack(player, buttonEntry.getValue()));
+			}
 		}
 		if (this.isPlaceholder()) {
 			for (int index = 0; index < size; ++index) {
