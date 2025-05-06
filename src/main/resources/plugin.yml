@@ -1,7 +1,7 @@
-main: me.zatrex.practice.Moon
+main: club.nodebuff.moon.Moon
 name: Moon
 version: '1.0-NoDebuff' # ${git.commit.id.abbrev}
-author: NoDebuff Development
+author: Zatrex, TortaDePollo, NoDebuff Development
 depend:
   - WorldEdit
 softdepend:
