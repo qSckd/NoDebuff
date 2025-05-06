@@ -131,7 +131,8 @@ public class MatchListener implements Listener {
 
     @EventHandler
     public void onBlockIgnition(BlockIgniteEvent event) {
-        if (event.getCause() == BlockIgniteEvent.IgniteCause.FIREBALL) {
+        BlockIgniteEvent.IgniteCause cause = event.getCause();
+        if (cause != null && cause == BlockIgniteEvent.IgniteCause.FIREBALL) {
             event.setCancelled(true);
         }
     }
