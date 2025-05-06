@@ -1,6 +1,5 @@
 package club.nodebuff.moon.kit.menu;
 
-import club.nodebuff.moon.Locale;
 import club.nodebuff.moon.Moon;
 import club.nodebuff.moon.kit.Kit;
 import club.nodebuff.moon.kit.KitLoadout;
@@ -12,15 +11,13 @@ import club.nodebuff.moon.util.menu.Button;
 import club.nodebuff.moon.util.menu.Menu;
 import club.nodebuff.moon.util.menu.button.BackButton;
 import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class KitManagementMenu extends Menu {
@@ -51,9 +48,7 @@ public class KitManagementMenu extends Menu {
         Profile profile = Profile.getByUuid(player.getUniqueId());
         KitLoadout[] kitLoadouts = profile.getKitData().get(kit).getLoadouts();
 
-        if (kitLoadouts == null) {
-            return buttons;
-        }
+        if (kitLoadouts == null) return buttons;
 
         for (int i = 0; i < 4; i++) {
             int pos = 10 + i * 2;
@@ -64,7 +59,6 @@ public class KitManagementMenu extends Menu {
         }
 
         buttons.put(26, new BackButton(new KitEditorSelectKitMenu()));
-
         return buttons;
     }
 
@@ -102,18 +96,15 @@ public class KitManagementMenu extends Menu {
             KitLoadout kitLoadout = new KitLoadout("Kit " + (index + 1));
 
             if (kit.getKitLoadout() != null) {
-                if (kit.getKitLoadout().getArmor() != null) {
+                if (kit.getKitLoadout().getArmor() != null)
                     kitLoadout.setArmor(kit.getKitLoadout().getArmor());
-                }
 
-                if (kit.getKitLoadout().getContents() != null) {
+                if (kit.getKitLoadout().getContents() != null)
                     kitLoadout.setContents(kit.getKitLoadout().getContents());
-                }
             }
 
             profile.getKitData().get(kit).replaceKit(index, kitLoadout);
             profile.getKitEditorData().setSelectedKitLoadout(kitLoadout);
-
             new KitEditorMenu(index).openMenu(player);
         }
     }
@@ -126,14 +117,17 @@ public class KitManagementMenu extends Menu {
 
         @Override
         public ItemStack getButtonItem(Player player) {
-            List<String> lore = new ArrayList<>();
             Profile profile = Profile.getByUuid(player.getUniqueId());
+            String color = "&" + profile.getOptions().theme().getColor().getChar();
+
+            List<String> lore = new ArrayList<>();
             lore.add("");
-            lore.add("&" + profile.getOptions().theme().getColor().getChar() + " ┃ &fName: &" + profile.getOptions().theme().getColor().getChar() + kitLoadout.getCustomName());
-            lore.add("&" + profile.getOptions().theme().getColor().getChar() + " ┃ &fHeals: &" + profile.getOptions().theme().getColor().getChar() + kit.countHeals(kitLoadout));
-            lore.add("&" + profile.getOptions().theme().getColor().getChar() + " ┃ &fDebuffs: &" + profile.getOptions().theme().getColor().getChar() + kit.countDebuffs(kitLoadout));
+            lore.add(color + " ┃ &fName: " + color + kitLoadout.getCustomName());
+            lore.add(color + " ┃ &fHeals: " + color + kit.countHeals(kitLoadout));
+            lore.add(color + " ┃ &fDebuffs: " + color + kit.countDebuffs(kitLoadout));
             lore.add("");
             lore.add("&aClick to edit.");
+
             return new ItemBuilder(Material.ENCHANTED_BOOK)
                     .name(Moon.get().getMenusConfig().getString("KIT-EDITOR.MANAGEMENT.BUTTONS.LOAD-BUTTON.NAME"))
                     .lore(lore)
@@ -144,24 +138,28 @@ public class KitManagementMenu extends Menu {
         public void clicked(Player player, int slot, ClickType clickType, int hotbarSlot) {
             Profile profile = Profile.getByUuid(player.getUniqueId());
 
-            if (profile.getKitEditorData().getSelectedKit() == null) {
+            Kit selectedKit = profile.getKitEditorData().getSelectedKit();
+            if (selectedKit == null) {
                 player.closeInventory();
                 return;
             }
 
-            KitLoadout kit = profile.getKitData().get(profile.getKitEditorData().getSelectedKit()).getLoadout(index);
+            KitLoadout kit = profile.getKitData().get(selectedKit).getLoadout(index);
 
             if (kit == null) {
                 kit = new KitLoadout("Kit " + (index + 1));
-                kit.setArmor(profile.getKitEditorData().getSelectedKit().getKitLoadout().getArmor());
-                kit.setContents(profile.getKitEditorData().getSelectedKit().getKitLoadout().getContents());
-                profile.getKitData().get(profile.getKitEditorData().getSelectedKit()).replaceKit(index, kit);
+                if (selectedKit.getKitLoadout() != null) {
+                    if (selectedKit.getKitLoadout().getArmor() != null)
+                        kit.setArmor(selectedKit.getKitLoadout().getArmor());
+
+                    if (selectedKit.getKitLoadout().getContents() != null)
+                        kit.setContents(selectedKit.getKitLoadout().getContents());
+                }
+                profile.getKitData().get(selectedKit).replaceKit(index, kit);
             }
 
             profile.getKitEditorData().setSelectedKitLoadout(kit);
-
             new KitEditorMenu(index).openMenu(player);
         }
     }
 }
-

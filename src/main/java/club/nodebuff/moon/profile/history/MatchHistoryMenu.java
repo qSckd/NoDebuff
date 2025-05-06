@@ -49,7 +49,6 @@ public class MatchHistoryMenu extends PaginatedMenu {
         return buttons;
     }
 
-
     @RequiredArgsConstructor
     private static class MatchButton extends Button {
 
@@ -59,28 +58,27 @@ public class MatchHistoryMenu extends PaginatedMenu {
 
         @Override
         public ItemStack getButtonItem(Player player) {
-
-            boolean isWinner = player.getName().equals(matchInfo.getWinningParticipant());
+            boolean isWinner = player.getName().equalsIgnoreCase(matchInfo.getWinningParticipant());
             String result = isWinner ? "&a(Won)" : "&c(Lost)";
 
-            return new ItemBuilder(matchInfo.getKit().getDisplayIcon())
+            ItemStack icon = (matchInfo.getKit() != null) ? matchInfo.getKit().getDisplayIcon() : new ItemStack(Material.BOOK);
+
+            return new ItemBuilder(icon)
                     .name("&b" + matchInfo.getWinningParticipant() + " &fvs. &b" + matchInfo.getLosingParticipant() + " " + result)
                     .lore("")
                     .lore(" &7■ &fType: &b" + matchInfo.getType())
                     .lore(" &7■ &fDate: &b" + matchInfo.getDate())
-                    .lore(" &7■ &fKit: &b" + matchInfo.getKit().getName())
+                    .lore(" &7■ &fKit: &b" + (matchInfo.getKit() != null ? matchInfo.getKit().getName() : "Unknown"))
                     .lore("")
                     .lore(" &aClick to watch replay!")
                     .build();
-
         }
 
         @Override
         public void clicked(Player player, ClickType clickType) {
-            if (!Moon.get().isReplay()) {
-                return;
-            }
-            player.chat("/replay play " + profile.getUuid().toString() + "-" + matchInfo.getUuid());
+            if (!Moon.get().isReplay()) return;
+            String replayId = profile.getUuid().toString() + "-" + matchInfo.getUuid();
+            player.performCommand("replay play " + replayId);
         }
     }
 }

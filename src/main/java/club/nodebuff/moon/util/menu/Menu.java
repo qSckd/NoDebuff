@@ -19,7 +19,9 @@ public abstract class Menu {
 
 	public static Map<String, Menu> currentlyOpenedMenus = new HashMap<>();
 
-	@Getter protected Moon Moon = Moon.get();
+	// Renombrado a "plugin" y corregido el acceso
+	protected final Moon plugin = Moon.getInstance();
+
 	private Map<Integer, Button> buttons = new HashMap<>();
 	private boolean autoUpdate = false;
 	private boolean updateAfterClick = true;
@@ -132,5 +134,4 @@ public abstract class Menu {
 
 	public void onClose(Player player) {
 	}
-
 }

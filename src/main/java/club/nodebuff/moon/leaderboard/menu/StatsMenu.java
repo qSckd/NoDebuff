@@ -16,20 +16,18 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import java.beans.ConstructorProperties;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* Author: Zatrex
-   Project: Shadow
-   Date: 2024/5/15
- */
-
 public class StatsMenu extends Menu {
 
-    private static OfflinePlayer target;
+    private final OfflinePlayer target;
+
+    public StatsMenu(OfflinePlayer target) {
+        this.target = target;
+    }
 
     @Override
     public String getTitle(Player player) {
@@ -37,8 +35,8 @@ public class StatsMenu extends Menu {
     }
 
     @Override
-    public int getSize(){
-	    return Moon.get().getMenusConfig().getInteger("STATS.SIZE");
+    public int getSize() {
+        return Moon.get().getMenusConfig().getInteger("STATS.SIZE");
     }
 
     @Override
@@ -47,32 +45,32 @@ public class StatsMenu extends Menu {
         for (int i = 0; i < getSize(); i++) {
             buttons.put(i, Constants.BLACK_PANE);
         }
+
         final int[] i = {10};
         Kit.getKits().forEach(kit -> {
             if (!kit.isEnabled()) return;
             while (i[0] == 17 || i[0] == 18 || i[0] == 26 || i[0] == 27 || i[0] == 36 || i[0] == 37) i[0]++;
-            buttons.put(i[0]++, new KitStatsButton(kit));
-            buttons.put(4, new GlobalStatsButton());
+            buttons.put(i[0]++, new KitStatsButton(kit, target));
         });
+
+        buttons.put(4, new GlobalStatsButton(target));
 
         return buttons;
     }
 
-    @ConstructorProperties ({"target"})
-    public StatsMenu(OfflinePlayer target) {
-        this.target = target;
-    }
-
     @AllArgsConstructor
-    private class KitStatsButton extends Button {
+    private static class KitStatsButton extends Button {
 
         private final Kit kit;
+        private final OfflinePlayer target;
 
         @Override
         public ItemStack getButtonItem(Player player) {
             List<String> lore = new ArrayList<>();
             Profile profile = Profile.getByUuid(target.getUniqueId());
+
             String elo = kit.getGameRules().isRanked() ? Integer.toString(profile.getKitData().get(kit).getElo()) : "N/A";
+
             lore.add(CC.MENU_BAR);
             lore.add("&8 • " + "&bELO: &f" + elo);
             lore.add("&8 • " + "&bWins: &f" + profile.getKitData().get(kit).getWon());
@@ -86,11 +84,12 @@ public class StatsMenu extends Menu {
                     .lore(lore)
                     .build();
         }
-
     }
 
     @AllArgsConstructor
     private static class GlobalStatsButton extends Button {
+
+        private final OfflinePlayer target;
 
         @Override
         public ItemStack getButtonItem(Player player) {
@@ -100,24 +99,25 @@ public class StatsMenu extends Menu {
             ProfileDivision eloDivision = Moon.get().getDivisionsManager().getNextDivisionByELO(profile.getExperience());
 
             lore.add(CC.MENU_BAR);
-                    lore.add("&f&lElo: &b" + profile.getGlobalElo());
-					lore.add("&f&lExperience: &b" + profile.getExperience());
-					lore.add("&f&lDivision: &b" + profile.getDivision().getDisplayName());
-                    if (Moon.get().getDivisionsManager().isXPBased()) {
-                        lore.add(" " + ProgressBar.getBar(profile.getExperience(), expDivision.getExperience()));
-                    } else {
-                        lore.add(" " + ProgressBar.getBar(profile.getExperience(), eloDivision.getExperience()));
-                    }
-					lore.add("&f&lWins: &b" + profile.getWins());
-					lore.add("&f&lKills: &b" + profile.getKills());
-					lore.add("&f&lLosses: &b" + profile.getLoses());
-					//lore.add("&f&lDeaths: &b" + profile.getDeaths());
+            lore.add("&f&lElo: &b" + profile.getGlobalElo());
+            lore.add("&f&lExperience: &b" + profile.getExperience());
+            lore.add("&f&lDivision: &b" + profile.getDivision().getDisplayName());
+
+            if (Moon.get().getDivisionsManager().isXPBased()) {
+                lore.add(" " + ProgressBar.getBar(profile.getExperience(), expDivision.getExperience()));
+            } else {
+                lore.add(" " + ProgressBar.getBar(profile.getExperience(), eloDivision.getExperience()));
+            }
+
+            lore.add("&f&lWins: &b" + profile.getWins());
+            lore.add("&f&lKills: &b" + profile.getKills());
+            lore.add("&f&lLosses: &b" + profile.getLoses());
             lore.add(CC.MENU_BAR);
+
             return new ItemBuilder(SkullCreator.itemFromUuid(target.getUniqueId()))
                     .name("&b&l" + target.getName() + " &7&l⏐ &fGlobal Statistics")
                     .lore(lore)
                     .build();
         }
     }
-
 }
