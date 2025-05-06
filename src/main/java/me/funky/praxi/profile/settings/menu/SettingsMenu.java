@@ -1,18 +1,18 @@
-package me.funky.praxi.profile.settings.menu;
+package club.nodebuff.moon.profile.settings.menu;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.Locale;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.coinshop.CoinShopMenu;
-import me.funky.praxi.profile.settings.Settings;
-import me.funky.praxi.profile.visibility.VisibilityLogic;
-import me.funky.praxi.profile.themes.Themes;
-import me.funky.praxi.profile.times.Times;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.Constants;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.coinshop.CoinShopMenu;
+import club.nodebuff.moon.profile.settings.Settings;
+import club.nodebuff.moon.profile.visibility.VisibilityLogic;
+import club.nodebuff.moon.profile.themes.Themes;
+import club.nodebuff.moon.profile.times.Times;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.Constants;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
@@ -25,12 +25,12 @@ import java.util.Map;
 public class SettingsMenu extends Menu {
     @Override
     public String getTitle(Player player) {
-        return Praxi.get().getMenusConfig().getString("SETTINGS.TITLE");
+        return Moon.get().getMenusConfig().getString("SETTINGS.TITLE");
     }
 
     @Override
     public int getSize() {
-        return Praxi.get().getMenusConfig().getInteger("SETTINGS.SIZE");
+        return Moon.get().getMenusConfig().getInteger("SETTINGS.SIZE");
     }
 
     @Override

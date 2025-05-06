@@ -1,19 +1,19 @@
-package me.funky.praxi.profile.meta;
+package club.nodebuff.moon.profile.meta;
 
 import lombok.Getter;
-import me.funky.praxi.Locale;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.match.impl.BasicTeamMatch;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ChatComponentBuilder;
-import me.funky.praxi.util.ChatHelper;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.match.impl.BasicTeamMatch;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ChatComponentBuilder;
+import club.nodebuff.moon.util.ChatHelper;
 import net.md_5.bungee.api.chat.BaseComponent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -99,8 +99,8 @@ public class ProfileRematchData {
     public void accept() {
         this.validate();
 
-        Player sender = Praxi.get().getServer().getPlayer(this.sender);
-        Player target = Praxi.get().getServer().getPlayer(this.target);
+        Player sender = Moon.get().getServer().getPlayer(this.sender);
+        Player target = Moon.get().getServer().getPlayer(this.target);
 
         if (sender == null || target == null || !sender.isOnline() || !target.isOnline()) {
             return;
@@ -185,7 +185,7 @@ public class ProfileRematchData {
                 profile.setRematchData(null);
 
                 if (profile.getState() == ProfileState.LOBBY) {
-                    Praxi.get().getHotbar().giveHotbarItems(player);
+                    Moon.get().getHotbar().giveHotbarItems(player);
                 }
             }
         }

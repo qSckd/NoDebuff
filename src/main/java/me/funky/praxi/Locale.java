@@ -1,8 +1,8 @@
-package me.funky.praxi;
+package club.nodebuff.moon;
 
 import lombok.AllArgsConstructor;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
-import me.funky.praxi.util.ReplaceUtil;
+import club.nodebuff.moon.util.ReplaceUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
@@ -102,24 +102,24 @@ public enum Locale {
 
     public String format(Object... objects) {
         return new MessageFormat(ChatColor.translateAlternateColorCodes('&',
-                Praxi.get().getMainConfig().getString(path))).format(objects);
+                Moon.get().getMainConfig().getString(path))).format(objects);
     }
 
     public String format(Player player, Object... objects) {
         ArrayList<String> list = new ArrayList<>();
         list.add(new MessageFormat(ChatColor.translateAlternateColorCodes('&',
-                Praxi.get().getMainConfig().getString(path))).format(objects));
+                Moon.get().getMainConfig().getString(path))).format(objects));
         return ReplaceUtil.format(list, player).toString().replace("[", "").replace("]", "");
     }
 
     public List<String> formatLines(Player player, Object... objects) {
         List<String> lines = new ArrayList<>();
 
-        if (Praxi.get().getMainConfig().get(path) instanceof String) {
+        if (Moon.get().getMainConfig().get(path) instanceof String) {
             lines.add(new MessageFormat(ChatColor.translateAlternateColorCodes('&',
-                    Praxi.get().getMainConfig().getString(path))).format(objects));
+                    Moon.get().getMainConfig().getString(path))).format(objects));
         } else {
-            for (String string : Praxi.get().getMainConfig().getStringList(path)) {
+            for (String string : Moon.get().getMainConfig().getStringList(path)) {
                 lines.add(new MessageFormat(ChatColor.translateAlternateColorCodes('&', string))
                         .format(objects));
             }
@@ -131,11 +131,11 @@ public enum Locale {
     public List<String> formatLines(Object... objects) {
         List<String> lines = new ArrayList<>();
 
-        if (Praxi.get().getMainConfig().get(path) instanceof String) {
+        if (Moon.get().getMainConfig().get(path) instanceof String) {
             lines.add(new MessageFormat(ChatColor.translateAlternateColorCodes('&',
-                    Praxi.get().getMainConfig().getString(path))).format(objects));
+                    Moon.get().getMainConfig().getString(path))).format(objects));
         } else {
-            for (String string : Praxi.get().getMainConfig().getStringList(path)) {
+            for (String string : Moon.get().getMainConfig().getStringList(path)) {
                 lines.add(new MessageFormat(ChatColor.translateAlternateColorCodes('&', string))
                         .format(objects));
             }

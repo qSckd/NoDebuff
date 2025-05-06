@@ -1,4 +1,4 @@
-package me.funky.praxi.arena.cuboid;
+package club.nodebuff.moon.arena.cuboid;
 
 import lombok.Data;
 import org.bukkit.Bukkit;

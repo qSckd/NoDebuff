@@ -1,24 +1,24 @@
-package me.funky.praxi.event.impl.brackets;
+package club.nodebuff.moon.event.impl.brackets;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.Locale;
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.event.game.EventGameLogic;
-import me.funky.praxi.event.game.EventGameLogicTask;
-import me.funky.praxi.event.game.EventGameState;
-import me.funky.praxi.event.game.map.EventGameMap;
-import me.funky.praxi.event.game.map.vote.EventGameMapVoteData;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.participant.GamePlayer;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.hotbar.HotbarItem;
-import me.funky.praxi.profile.visibility.VisibilityLogic;
-import me.funky.praxi.util.Cooldown;
-import me.funky.praxi.util.BlockUtil;
-import me.funky.praxi.util.PlayerUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.event.game.EventGameLogic;
+import club.nodebuff.moon.event.game.EventGameLogicTask;
+import club.nodebuff.moon.event.game.EventGameState;
+import club.nodebuff.moon.event.game.map.EventGameMap;
+import club.nodebuff.moon.event.game.map.vote.EventGameMapVoteData;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.participant.GamePlayer;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.hotbar.HotbarItem;
+import club.nodebuff.moon.profile.visibility.VisibilityLogic;
+import club.nodebuff.moon.util.Cooldown;
+import club.nodebuff.moon.util.BlockUtil;
+import club.nodebuff.moon.util.PlayerUtil;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -42,7 +42,7 @@ public class BracketsGameLogic implements EventGameLogic {
 	public BracketsGameLogic(EventGame game) {
 		this.game = game;
 		this.logicTask = new EventGameLogicTask(game);
-		this.logicTask.runTaskTimer(Praxi.get(), 0, 20L);
+		this.logicTask.runTaskTimer(Moon.get(), 0, 20L);
 	}
 
 	@Override
@@ -126,7 +126,7 @@ public class BracketsGameLogic implements EventGameLogic {
 					profile.setState(ProfileState.LOBBY);
 
 					Hotbar.giveHotbarItems(player);
-					Praxi.get().getEssentials().teleportToSpawn(player);
+					Moon.get().getEssentials().teleportToSpawn(player);
 					VisibilityLogic.handle(player);
 				}
 			}
@@ -160,7 +160,7 @@ public class BracketsGameLogic implements EventGameLogic {
 
 					Hotbar.giveHotbarItems(player);
 
-					Praxi.get().getEssentials().teleportToSpawn(player);
+					Moon.get().getEssentials().teleportToSpawn(player);
 				}
 			}
 		}
@@ -387,7 +387,7 @@ public class BracketsGameLogic implements EventGameLogic {
 							Hotbar.giveHotbarItems(bukkitPlayer);
 							VisibilityLogic.handle(bukkitPlayer, player);
 
-							Praxi.get().getEssentials().teleportToSpawn(bukkitPlayer);
+							Moon.get().getEssentials().teleportToSpawn(bukkitPlayer);
 						}
 					}
 				}

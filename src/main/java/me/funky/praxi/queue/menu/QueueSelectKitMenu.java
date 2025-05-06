@@ -1,15 +1,15 @@
-package me.funky.praxi.queue.menu;
+package club.nodebuff.moon.queue.menu;
 
 import lombok.AllArgsConstructor;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.queue.Queue;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.Constants;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.queue.Queue;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.Constants;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
 import org.bukkit.entity.Player;
 import org.bukkit.Material;
 import org.bukkit.event.inventory.ClickType;
@@ -37,7 +37,7 @@ public class QueueSelectKitMenu extends Menu {
 
 	@Override
     public int getSize() {
-		return Praxi.get().getMenusConfig().getInteger("QUEUE.SIZE");
+		return Moon.get().getMenusConfig().getInteger("QUEUE.SIZE");
     }
 
 	@Override

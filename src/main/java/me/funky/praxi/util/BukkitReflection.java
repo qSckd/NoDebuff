@@ -1,4 +1,4 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

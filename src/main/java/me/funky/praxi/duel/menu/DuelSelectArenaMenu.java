@@ -1,13 +1,13 @@
-package me.funky.praxi.duel.menu;
+package club.nodebuff.moon.duel.menu;
 
 import lombok.AllArgsConstructor;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.arena.ArenaType;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.arena.ArenaType;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
@@ -22,7 +22,7 @@ public class DuelSelectArenaMenu extends Menu {
 
 	@Override
 	public String getTitle(Player player) {
-		return Praxi.get().getMenusConfig().getString("DUEL.SELECT-ARENA-MENU.TITLE");
+		return Moon.get().getMenusConfig().getString("DUEL.SELECT-ARENA-MENU.TITLE");
 	}
 
 	@Override

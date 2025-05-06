@@ -1,13 +1,13 @@
-package me.funky.praxi.kit;
+package club.nodebuff.moon.kit;
 
-import me.funky.praxi.Locale;
-import me.funky.praxi.kit.menu.KitEditorSelectKitMenu;
-import me.funky.praxi.kit.menu.KitManagementMenu;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.hotbar.HotbarItem;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.kit.menu.KitEditorSelectKitMenu;
+import club.nodebuff.moon.kit.menu.KitManagementMenu;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.hotbar.HotbarItem;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.Sound;

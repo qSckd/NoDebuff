@@ -1,9 +1,9 @@
-package me.funky.praxi.commands.user.general;
+package club.nodebuff.moon.commands.user.general;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.GameMode;
@@ -18,7 +18,7 @@ public class PracticeCommand extends BaseCommand {
 
       player.sendMessage(CC.translate("&7&m---------------------------------"));
       player.sendMessage(CC.translate("&fThis server is running &r&b&lMoon"));
-      player.sendMessage(CC.translate("&bv" + Praxi.get().getDescription().getVersion() + " &r&fMade by&b " +Praxi.get().getDescription().getAuthors().toString().replace("[", "").replace("]", "")));
+      player.sendMessage(CC.translate("&bv" + Moon.get().getDescription().getVersion() + " &r&fMade by&b " +Moon.get().getDescription().getAuthors().toString().replace("[", "").replace("]", "")));
       player.sendMessage(CC.translate("&7&m---------------------------------"));
     }
 
@@ -26,7 +26,7 @@ public class PracticeCommand extends BaseCommand {
     @CommandPermission("moon.admin.reload")
 	public void reload(Player player) {
 
-		Praxi.get().configsLoad();
+		Moon.get().configsLoad();
         player.sendMessage(CC.translate("&aSuccessfully reloaded configs!"));
     }
 

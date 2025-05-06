@@ -1,11 +1,11 @@
-package me.funky.praxi.adapter.lunar;
+package club.nodebuff.moon.adapter.lunar;
 
 import com.lunarclient.apollo.Apollo;
 import com.lunarclient.apollo.module.richpresence.RichPresenceModule;
 import com.lunarclient.apollo.module.richpresence.ServerRichPresence;
 import com.lunarclient.apollo.player.ApolloPlayer;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.profile.Profile;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.profile.Profile;
 import org.bukkit.entity.Player;
 
 import java.util.Optional;

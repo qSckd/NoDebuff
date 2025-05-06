@@ -1,18 +1,18 @@
-package me.funky.praxi.party;
+package club.nodebuff.moon.party;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.Locale;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.duel.DuelRequest;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.visibility.VisibilityLogic;
-import me.funky.praxi.util.ReplaceUtil;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ChatComponentBuilder;
-import me.funky.praxi.util.ChatHelper;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.duel.DuelRequest;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.visibility.VisibilityLogic;
+import club.nodebuff.moon.util.ReplaceUtil;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ChatComponentBuilder;
+import club.nodebuff.moon.util.ChatHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -228,6 +228,6 @@ public class Party {
 			public void run() {
 				Party.getParties().forEach(party -> party.getInvites().removeIf(PartyInvite::hasExpired));
 			}
-		}.runTaskTimerAsynchronously(Praxi.get(), 20L * 2, 20L * 2);
+		}.runTaskTimerAsynchronously(Moon.get(), 20L * 2, 20L * 2);
 	}
 }

@@ -1,4 +1,4 @@
-package me.funky.praxi.party;
+package club.nodebuff.moon.party;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

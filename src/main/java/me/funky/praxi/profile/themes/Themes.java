@@ -1,4 +1,4 @@
-package me.funky.praxi.profile.themes;
+package club.nodebuff.moon.profile.themes;
 
 import lombok.Getter;
 import org.bukkit.ChatColor;

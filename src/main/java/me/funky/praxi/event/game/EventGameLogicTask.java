@@ -1,9 +1,9 @@
-package me.funky.praxi.event.game;
+package club.nodebuff.moon.event.game;
 
-import me.funky.praxi.Locale;
+import club.nodebuff.moon.Locale;
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.util.TimeUtil;
+import club.nodebuff.moon.util.TimeUtil;
 import org.bukkit.Sound;
 import org.bukkit.scheduler.BukkitRunnable;
 

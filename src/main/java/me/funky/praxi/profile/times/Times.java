@@ -1,4 +1,4 @@
-package me.funky.praxi.profile.times;
+package club.nodebuff.moon.profile.times;
 
 import lombok.Getter;
 

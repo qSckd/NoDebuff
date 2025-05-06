@@ -1,4 +1,4 @@
-package me.funky.praxi.util.hologram;
+package club.nodebuff.moon.util.hologram;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;

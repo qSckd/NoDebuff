@@ -1,7 +1,7 @@
-package me.funky.praxi.util.menu.pagination;
+package club.nodebuff.moon.util.menu.pagination;
 
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
 import lombok.AllArgsConstructor;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

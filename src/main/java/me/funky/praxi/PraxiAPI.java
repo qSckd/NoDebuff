@@ -1,13 +1,13 @@
-package me.funky.praxi;
+package club.nodebuff.moon;
 
-import me.funky.praxi.adapter.spigot.SpigotManager;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.kit.Kit;
+import club.nodebuff.moon.adapter.spigot.SpigotManager;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.kit.Kit;
 import org.bukkit.entity.Player;
 
-public class PraxiAPI {
+public class MoonAPI {
 
-    public static PraxiAPI INSTANCE;
+    public static MoonAPI INSTANCE;
 
     public static void setKnockbackProfile(Player player, String profile) {
         SpigotManager.getSpigot().setKnockback(player, profile);

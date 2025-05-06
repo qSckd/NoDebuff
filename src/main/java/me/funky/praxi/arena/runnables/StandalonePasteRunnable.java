@@ -1,11 +1,11 @@
-package me.funky.praxi.arena.runnables;
+package club.nodebuff.moon.arena.runnables;
 
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.arena.impl.StandaloneArena;
-import me.funky.praxi.util.*;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.arena.impl.StandaloneArena;
+import club.nodebuff.moon.util.*;
 
 public class StandalonePasteRunnable extends TaskTicker {
     private final Player player;

@@ -1,11 +1,11 @@
-package me.funky.praxi.event.game.map.impl;
+package club.nodebuff.moon.event.game.map.impl;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.event.game.map.EventGameMap;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.participant.GamePlayer;
-import me.funky.praxi.util.LocationUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.event.game.map.EventGameMap;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.participant.GamePlayer;
+import club.nodebuff.moon.util.LocationUtil;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,13 +55,13 @@ public class SpreadEventGameMap extends EventGameMap {
 	public void save() {
 		super.save();
 
-		FileConfiguration config = Praxi.get().getEventsConfig().getConfiguration();
+		FileConfiguration config = Moon.get().getEventsConfig().getConfiguration();
 		config.set("EVENT_MAPS." + getMapName() + ".TYPE", "SPREAD");
 		config.set("EVENT_MAPS." + getMapName() + ".SPAWN_LOCATIONS", spawnLocations
 				.stream().map(LocationUtil::serialize).collect(Collectors.toList()));
 
 		try {
-			config.save(Praxi.get().getEventsConfig().getFile());
+			config.save(Moon.get().getEventsConfig().getFile());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

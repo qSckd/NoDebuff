@@ -1,9 +1,9 @@
-package me.funky.praxi.leaderboard;
+package club.nodebuff.moon.leaderboard;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.kit.KitLeaderboards;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.kit.KitLeaderboards;
+import club.nodebuff.moon.util.CC;
 import lombok.Getter;
 
 import java.util.*;

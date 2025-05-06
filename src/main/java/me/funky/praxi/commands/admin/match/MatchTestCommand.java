@@ -1,11 +1,11 @@
-package me.funky.praxi.commands.admin.match;
+package club.nodebuff.moon.commands.admin.match;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.Locale;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.participant.GameParticipant;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.participant.GameParticipant;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;

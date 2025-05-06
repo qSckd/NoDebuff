@@ -1,9 +1,9 @@
-package me.funky.praxi.profile.option.trail;
+package club.nodebuff.moon.profile.option.trail;
 
 import com.comphenix.protocol.wrappers.EnumWrappers;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import me.funky.praxi.profile.Profile;
+import club.nodebuff.moon.profile.Profile;
 import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

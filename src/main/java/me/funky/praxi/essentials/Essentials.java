@@ -1,8 +1,8 @@
-package me.funky.praxi.essentials;
+package club.nodebuff.moon.essentials;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.essentials.event.SpawnTeleportEvent;
-import me.funky.praxi.util.LocationUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.essentials.event.SpawnTeleportEvent;
+import club.nodebuff.moon.util.LocationUtil;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
@@ -14,29 +14,29 @@ import java.io.IOException;
 
 public class Essentials {
 
-	private Praxi praxi;
+	private Moon Moon;
 	private Location spawn;
     private Location holo;
     private Location mainholo;
 
-	public Essentials(Praxi praxi) {
-		this.praxi = praxi;
-		this.spawn = LocationUtil.deserialize(praxi.getSettingsConfig().getStringOrDefault("GENERAL.SPAWN-LOCATION", null));
-        this.mainholo = LocationUtil.deserialize(praxi.getHologramConfig().getStringOrDefault("MAIN.LOCATION", null));
-        this.holo = LocationUtil.deserialize(praxi.getHologramConfig().getStringOrDefault("LEADERBOARDS.ELO.LOCATION", null));
+	public Essentials(Moon Moon) {
+		this.Moon = Moon;
+		this.spawn = LocationUtil.deserialize(Moon.getSettingsConfig().getStringOrDefault("GENERAL.SPAWN-LOCATION", null));
+        this.mainholo = LocationUtil.deserialize(Moon.getHologramConfig().getStringOrDefault("MAIN.LOCATION", null));
+        this.holo = LocationUtil.deserialize(Moon.getHologramConfig().getStringOrDefault("LEADERBOARDS.ELO.LOCATION", null));
 	}
 
 	public void setSpawn(Location location) {
 		spawn = location;
 
 		if (spawn == null) {
-			praxi.getSettingsConfig().getConfiguration().set("GENERAL.SPAWN-LOCATION", null);
+			Moon.getSettingsConfig().getConfiguration().set("GENERAL.SPAWN-LOCATION", null);
 		} else {
-			praxi.getSettingsConfig().getConfiguration().set("GENERAL.SPAWN-LOCATION", LocationUtil.serialize(this.spawn));
+			Moon.getSettingsConfig().getConfiguration().set("GENERAL.SPAWN-LOCATION", LocationUtil.serialize(this.spawn));
 		}
 
 		try {
-			praxi.getSettingsConfig().getConfiguration().save(praxi.getSettingsConfig().getFile());
+			Moon.getSettingsConfig().getConfiguration().save(Moon.getSettingsConfig().getFile());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -46,13 +46,13 @@ public class Essentials {
 		mainholo = location;
 
 		if (mainholo == null) {
-			praxi.getHologramConfig().getConfiguration().set("MAIN.LOCATION", null);
+			Moon.getHologramConfig().getConfiguration().set("MAIN.LOCATION", null);
 		} else {
-			praxi.getHologramConfig().getConfiguration().set("MAIN.LOCATION", LocationUtil.serialize(this.mainholo));
+			Moon.getHologramConfig().getConfiguration().set("MAIN.LOCATION", LocationUtil.serialize(this.mainholo));
 		}
 
 		try {
-			praxi.getHologramConfig().getConfiguration().save(praxi.getHologramConfig().getFile());
+			Moon.getHologramConfig().getConfiguration().save(Moon.getHologramConfig().getFile());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -62,20 +62,20 @@ public class Essentials {
 		holo = location;
 
 		if (holo == null) {
-			praxi.getHologramConfig().getConfiguration().set("LEADERBOARDS.ELO.LOCATION", null);
+			Moon.getHologramConfig().getConfiguration().set("LEADERBOARDS.ELO.LOCATION", null);
 		} else {
-			praxi.getHologramConfig().getConfiguration().set("LEADERBOARDS.ELO.LOCATION", LocationUtil.serialize(this.holo));
+			Moon.getHologramConfig().getConfiguration().set("LEADERBOARDS.ELO.LOCATION", LocationUtil.serialize(this.holo));
 		}
 
 		try {
-			praxi.getHologramConfig().getConfiguration().save(praxi.getHologramConfig().getFile());
+			Moon.getHologramConfig().getConfiguration().save(Moon.getHologramConfig().getFile());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void teleportToSpawn(Player player) {
-		Location location = spawn == null ? praxi.getServer().getWorlds().get(0).getSpawnLocation() : spawn;
+		Location location = spawn == null ? Moon.getServer().getWorlds().get(0).getSpawnLocation() : spawn;
 
 		SpawnTeleportEvent event = new SpawnTeleportEvent(player, location);
 		event.call();

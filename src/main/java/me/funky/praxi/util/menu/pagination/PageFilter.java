@@ -1,4 +1,4 @@
-package me.funky.praxi.util.menu.pagination;
+package club.nodebuff.moon.util.menu.pagination;
 
 import java.util.function.Predicate;
 import lombok.Getter;

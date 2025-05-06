@@ -1,13 +1,13 @@
-package me.funky.praxi.queue.command;
+package club.nodebuff.moon.queue.command;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.CommandHelp;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.queue.Queue;
-import me.funky.praxi.queue.menu.QueueSelectKitMenu;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.queue.Queue;
+import club.nodebuff.moon.queue.menu.QueueSelectKitMenu;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;

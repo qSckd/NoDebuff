@@ -1,6 +1,6 @@
-package me.funky.praxi.essentials;
+package club.nodebuff.moon.essentials;
 
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

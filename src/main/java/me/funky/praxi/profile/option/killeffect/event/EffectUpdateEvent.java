@@ -1,7 +1,7 @@
-package me.funky.praxi.profile.option.killeffect.event;
+package club.nodebuff.moon.profile.option.killeffect.event;
 
 import com.google.common.base.Preconditions;
-import me.funky.praxi.profile.option.killeffect.SpecialEffects;
+import club.nodebuff.moon.profile.option.killeffect.SpecialEffects;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;

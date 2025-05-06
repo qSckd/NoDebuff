@@ -1,8 +1,8 @@
-package me.funky.praxi.util.hologram;
+package club.nodebuff.moon.util.hologram;
 
 import java.beans.ConstructorProperties;
 
-import me.funky.praxi.util.TaskUtil;
+import club.nodebuff.moon.util.TaskUtil;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

@@ -1,10 +1,10 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import lombok.experimental.UtilityClass;
 import org.bukkit.entity.Player;
 import org.github.paperspigot.Title;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.config.BasicConfigurationFile;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.config.BasicConfigurationFile;
 
 /* Author: Connorlinfoot
  * Edited by: Zatrex
@@ -12,7 +12,7 @@ import me.funky.praxi.util.config.BasicConfigurationFile;
 @UtilityClass
 public class TitleAPI {
 
-    private final BasicConfigurationFile config = Praxi.get().getSettingsConfig();
+    private final BasicConfigurationFile config = Moon.get().getSettingsConfig();
 
     public void sendMatchStart(Player player) {
         String path = "MATCH.TITLE.STARTED";

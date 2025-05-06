@@ -1,12 +1,12 @@
-package me.funky.praxi.commands.user.settings;
+package club.nodebuff.moon.commands.user.settings;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.Locale;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.profile.settings.menu.SettingsMenu;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.profile.settings.menu.SettingsMenu;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 
 @CommandAlias("settings")

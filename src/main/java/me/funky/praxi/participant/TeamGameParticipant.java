@@ -1,4 +1,4 @@
-package me.funky.praxi.participant;
+package club.nodebuff.moon.participant;
 
 import java.util.ArrayList;
 import java.util.List;

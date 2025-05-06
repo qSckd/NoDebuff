@@ -1,12 +1,12 @@
-package me.funky.praxi.commands.event.vote;
+package club.nodebuff.moon.commands.event.vote;
 
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.event.game.map.EventGameMap;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
-import me.funky.praxi.util.Cooldown;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.event.game.map.EventGameMap;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
+import club.nodebuff.moon.util.Cooldown;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 

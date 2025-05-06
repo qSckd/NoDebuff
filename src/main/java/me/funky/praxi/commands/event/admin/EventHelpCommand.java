@@ -1,16 +1,16 @@
-package me.funky.praxi.commands.event.admin;
+package club.nodebuff.moon.commands.event.admin;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 
 @CommandMeta(label = { "event", "event help" })
 public class EventHelpCommand {
 
 	public void execute(Player player) {
-		for (String line : Praxi.get().getMainConfig().getStringList("EVENT.HELP")) {
+		for (String line : Moon.get().getMainConfig().getStringList("EVENT.HELP")) {
 			player.sendMessage(CC.translate(line));
 		}
 	}

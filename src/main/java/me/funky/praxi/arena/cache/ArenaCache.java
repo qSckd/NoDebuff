@@ -1,4 +1,4 @@
-package me.funky.praxi.arena.cache;
+package club.nodebuff.moon.arena.cache;
 
 import net.minecraft.server.v1_8_R3.ChunkSection;
 

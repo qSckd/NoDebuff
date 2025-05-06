@@ -1,10 +1,10 @@
-package me.funky.praxi.profile.managers;
+package club.nodebuff.moon.profile.managers;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.divisions.ProfileDivision;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.divisions.ProfileDivision;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 
@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DivisionsManager {
 
-    private final Praxi plugin;
+    private final Moon plugin;
 
     private static final List<ProfileDivision> divisions = new ArrayList<>();
     private boolean XPBased;
@@ -36,7 +36,7 @@ public class DivisionsManager {
     public void init() {
         if (!divisions.isEmpty()) divisions.clear();
 
-        ConfigurationSection divisionSection = Praxi.get().getDivisionsConfig().getConfigurationSection("DIVISIONS");
+        ConfigurationSection divisionSection = Moon.get().getDivisionsConfig().getConfigurationSection("DIVISIONS");
         if (divisionSection == null || divisionSection.getKeys(false).isEmpty()) return;
         this.XPBased = divisionSection.getBoolean("XP-BASED");
 

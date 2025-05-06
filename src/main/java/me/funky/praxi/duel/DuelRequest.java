@@ -1,7 +1,7 @@
-package me.funky.praxi.duel;
+package club.nodebuff.moon.duel;
 
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.kit.Kit;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.kit.Kit;
 import java.util.UUID;
 
 import lombok.Getter;

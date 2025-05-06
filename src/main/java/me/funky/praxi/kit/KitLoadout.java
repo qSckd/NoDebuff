@@ -1,4 +1,4 @@
-package me.funky.praxi.kit;
+package club.nodebuff.moon.kit;
 
 import lombok.Data;
 import org.bukkit.inventory.ItemStack;

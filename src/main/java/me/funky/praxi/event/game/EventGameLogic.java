@@ -1,6 +1,6 @@
-package me.funky.praxi.event.game;
+package club.nodebuff.moon.event.game;
 
-import me.funky.praxi.event.game.map.EventGameMap;
+import club.nodebuff.moon.event.game.map.EventGameMap;
 import java.util.List;
 import org.bukkit.entity.Player;
 

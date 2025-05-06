@@ -1,10 +1,10 @@
 
-package me.funky.praxi.profile.option.killmessages;
+package club.nodebuff.moon.profile.option.killmessages;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import me.funky.praxi.Praxi;
+import club.nodebuff.moon.Moon;
 import org.bukkit.ChatColor;
 
 public interface KillMessageCallable {

@@ -1,10 +1,10 @@
-package me.funky.praxi.profile.coinshop.submenu.trails;
+package club.nodebuff.moon.profile.coinshop.submenu.trails;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.profile.option.trail.Trail;
-import me.funky.praxi.util.Constants;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.profile.option.trail.Trail;
+import club.nodebuff.moon.util.Constants;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;

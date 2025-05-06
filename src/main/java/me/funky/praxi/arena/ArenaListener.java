@@ -1,10 +1,10 @@
-package me.funky.praxi.arena;
+package club.nodebuff.moon.arena;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.selection.Selection;
-import me.funky.praxi.match.MatchState;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.selection.Selection;
+import club.nodebuff.moon.match.MatchState;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Difficulty;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -115,7 +115,7 @@ public class ArenaListener implements Listener {
             return;
         }
 
-        for (Match match : Praxi.get().getCache().getMatches()) {
+        for (Match match : Moon.get().getCache().getMatches()) {
             if (match.getArena().equals(foundArena)) {
                 if (match.getState() == MatchState.PLAYING_ROUND) {
                     match.getPlacedBlocks().add(event.getToBlock().getLocation());

@@ -1,10 +1,10 @@
-package me.funky.praxi.divisions.command;
+package club.nodebuff.moon.divisions.command;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.divisions.menu.ProfileDivisionsMenu;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.divisions.menu.ProfileDivisionsMenu;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 

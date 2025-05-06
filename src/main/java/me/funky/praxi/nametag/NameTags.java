@@ -1,6 +1,6 @@
-package me.funky.praxi.nametag;
+package club.nodebuff.moon.nametag;
 
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.util.CC;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

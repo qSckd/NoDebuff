@@ -1,8 +1,8 @@
-package me.funky.praxi.util.menu.pagination;
+package club.nodebuff.moon.util.menu.pagination;
 
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;

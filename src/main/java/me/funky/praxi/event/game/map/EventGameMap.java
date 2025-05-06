@@ -1,10 +1,10 @@
-package me.funky.praxi.event.game.map;
+package club.nodebuff.moon.event.game.map;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.event.game.map.impl.SpreadEventGameMap;
-import me.funky.praxi.event.game.map.impl.TeamEventGameMap;
-import me.funky.praxi.util.LocationUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.event.game.map.impl.SpreadEventGameMap;
+import club.nodebuff.moon.event.game.map.impl.TeamEventGameMap;
+import club.nodebuff.moon.util.LocationUtil;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,23 +36,23 @@ public abstract class EventGameMap {
 	public abstract void teleportFighters(EventGame game);
 
 	public void save() {
-		FileConfiguration config = Praxi.get().getEventsConfig().getConfiguration();
+		FileConfiguration config = Moon.get().getEventsConfig().getConfiguration();
 		config.set("EVENT_MAPS." + mapName, null);
 		config.set("EVENT_MAPS." + mapName + ".SPECTATOR_POINT", LocationUtil.serialize(spectatorPoint));
 
 		try {
-			config.save(Praxi.get().getEventsConfig().getFile());
+			config.save(Moon.get().getEventsConfig().getFile());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void delete() {
-		FileConfiguration config = Praxi.get().getEventsConfig().getConfiguration();
+		FileConfiguration config = Moon.get().getEventsConfig().getConfiguration();
 		config.set("EVENT_MAPS." + mapName, null);
 
 		try {
-			config.save(Praxi.get().getEventsConfig().getFile());
+			config.save(Moon.get().getEventsConfig().getFile());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -81,7 +81,7 @@ public abstract class EventGameMap {
 	}
 
 	public static void init() {
-		FileConfiguration config = Praxi.get().getEventsConfig().getConfiguration();
+		FileConfiguration config = Moon.get().getEventsConfig().getConfiguration();
 
 		for (String key : config.getConfigurationSection("EVENT_MAPS").getKeys(false)) {
 			final String path = "EVENT_MAPS." + key + ".";

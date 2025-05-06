@@ -1,10 +1,10 @@
-package me.funky.praxi.commands.user.match;
+package club.nodebuff.moon.commands.user.match;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.match.MatchSnapshot;
-import me.funky.praxi.match.menu.MatchDetailsMenu;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.match.MatchSnapshot;
+import club.nodebuff.moon.match.menu.MatchDetailsMenu;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 
 import java.util.UUID;

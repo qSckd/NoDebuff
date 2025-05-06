@@ -1,6 +1,6 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
-import me.funky.praxi.Praxi;
+import club.nodebuff.moon.Moon;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
@@ -17,7 +17,7 @@ public class BaseEvent extends Event {
     }
 
     public void call() {
-        Praxi.get().getServer().getPluginManager().callEvent(this);
+        Moon.get().getServer().getPluginManager().callEvent(this);
     }
 
 }

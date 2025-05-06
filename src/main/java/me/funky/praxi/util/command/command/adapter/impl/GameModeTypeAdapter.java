@@ -1,10 +1,10 @@
-package me.funky.praxi.util.command.command.adapter.impl;
+package club.nodebuff.moon.util.command.command.adapter.impl;
 
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.funky.praxi.util.command.command.adapter.CommandTypeAdapter;
+import club.nodebuff.moon.util.command.command.adapter.CommandTypeAdapter;
 import org.bukkit.GameMode;
 import java.util.Map;
 

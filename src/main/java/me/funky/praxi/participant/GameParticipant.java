@@ -1,8 +1,8 @@
-package me.funky.praxi.participant;
+package club.nodebuff.moon.participant;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.util.PlayerUtil;
+import club.nodebuff.moon.util.PlayerUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.Sound;

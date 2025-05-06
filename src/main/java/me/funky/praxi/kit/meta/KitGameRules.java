@@ -1,4 +1,4 @@
-package me.funky.praxi.kit.meta;
+package club.nodebuff.moon.kit.meta;
 
 import lombok.Getter;
 import lombok.Setter;

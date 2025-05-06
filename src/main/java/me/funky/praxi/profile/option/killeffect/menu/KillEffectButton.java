@@ -1,16 +1,16 @@
-package me.funky.praxi.profile.option.killeffect.menu;
+package club.nodebuff.moon.profile.option.killeffect.menu;
 
 import com.google.common.base.Preconditions;
 
 import java.util.List;
 
 import com.google.common.collect.Lists;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.option.killeffect.SpecialEffects;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.option.killeffect.SpecialEffects;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;

@@ -1,6 +1,6 @@
-package me.funky.praxi.util.menu;
+package club.nodebuff.moon.util.menu;
 
-import me.funky.praxi.Praxi;
+import club.nodebuff.moon.Moon;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -60,7 +60,7 @@ public class MenuListener implements Listener {
 				}
 
 				if (event.isCancelled()) {
-					Bukkit.getScheduler().runTaskLater(Praxi.get(), player::updateInventory, 1L);
+					Bukkit.getScheduler().runTaskLater(Moon.get(), player::updateInventory, 1L);
 				}
 			} else {
 				if (event.getCurrentItem() != null) {

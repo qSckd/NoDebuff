@@ -1,9 +1,9 @@
-package me.funky.praxi.commands.user.gamer;
+package club.nodebuff.moon.commands.user.gamer;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 

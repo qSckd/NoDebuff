@@ -1,17 +1,17 @@
-package me.funky.praxi.arena.menu;
+package club.nodebuff.moon.arena.menu;
 
 import lombok.AllArgsConstructor;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.arena.impl.StandaloneArena;
-import me.funky.praxi.arena.runnables.StandalonePasteRunnable;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.arena.ArenaType;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.Constants;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.arena.impl.StandaloneArena;
+import club.nodebuff.moon.arena.runnables.StandalonePasteRunnable;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.arena.ArenaType;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.Constants;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -30,12 +30,12 @@ public class ArenaDuplicateMenu extends Menu {
 
 	@Override
 	public String getTitle(Player player) {
-		return Praxi.get().getMenusConfig().getString("MANAGE.DUPLICATE.TITLE");
+		return Moon.get().getMenusConfig().getString("MANAGE.DUPLICATE.TITLE");
 	}
 
     @Override
     public int getSize() {
-		return Praxi.get().getMenusConfig().getInteger("MANAGE.DUPLICATE.SIZE");
+		return Moon.get().getMenusConfig().getInteger("MANAGE.DUPLICATE.SIZE");
     }
 
 	@Override

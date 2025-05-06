@@ -1,6 +1,6 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
-import me.funky.praxi.Praxi;
+import club.nodebuff.moon.Moon;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -274,7 +274,7 @@ public class InventoryUtil {
     }
 
     public static void removeCrafting(Material material) {
-        Iterator<Recipe> iterator = Praxi.get().getServer().recipeIterator();
+        Iterator<Recipe> iterator = Moon.get().getServer().recipeIterator();
 
         while (iterator.hasNext()) {
             Recipe recipe = iterator.next();

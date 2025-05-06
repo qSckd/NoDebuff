@@ -1,18 +1,18 @@
-package me.funky.praxi.util.command;
+package club.nodebuff.moon.util.command;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.events.PacketEvent;
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
-import me.funky.praxi.util.command.command.CommandOption;
-import me.funky.praxi.util.command.command.adapter.CommandTypeAdapter;
-import me.funky.praxi.util.command.command.adapter.impl.*;
-import me.funky.praxi.util.command.map.CommandData;
-import me.funky.praxi.util.command.map.MethodData;
-import me.funky.praxi.util.command.map.ParameterData;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
+import club.nodebuff.moon.util.command.command.CommandOption;
+import club.nodebuff.moon.util.command.command.adapter.CommandTypeAdapter;
+import club.nodebuff.moon.util.command.command.adapter.impl.*;
+import club.nodebuff.moon.util.command.map.CommandData;
+import club.nodebuff.moon.util.command.map.MethodData;
+import club.nodebuff.moon.util.command.map.ParameterData;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;

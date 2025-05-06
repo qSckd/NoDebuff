@@ -1,9 +1,9 @@
-package me.funky.praxi.commands.event.map;
+package club.nodebuff.moon.commands.event.map;
 
-import me.funky.praxi.event.game.map.EventGameMap;
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.event.game.map.EventGameMap;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 
 @CommandMeta(label = "event map delete", permission = "practice.admin.event")

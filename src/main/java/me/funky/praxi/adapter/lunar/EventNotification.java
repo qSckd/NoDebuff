@@ -1,4 +1,4 @@
-package me.funky.praxi.adapter.lunar;
+package club.nodebuff.moon.adapter.lunar;
 
 import com.lunarclient.apollo.Apollo;
 import com.lunarclient.apollo.module.notification.Notification;

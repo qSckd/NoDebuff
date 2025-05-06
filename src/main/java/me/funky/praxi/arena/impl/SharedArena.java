@@ -1,12 +1,12 @@
-package me.funky.praxi.arena.impl;
+package club.nodebuff.moon.arena.impl;
 
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.arena.ArenaType;
-import me.funky.praxi.util.LocationUtil;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.arena.ArenaType;
+import club.nodebuff.moon.util.LocationUtil;
 import java.io.IOException;
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.Praxi;
+import club.nodebuff.moon.Moon;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -27,7 +27,7 @@ public class SharedArena extends Arena {
 	public void save() {
 		String path = "arenas." + getName();
 
-		FileConfiguration configuration = Praxi.get().getArenasConfig().getConfiguration();
+		FileConfiguration configuration = Moon.get().getArenasConfig().getConfiguration();
 		configuration.set(path, null);
 		configuration.set(path + ".type", getType().name());
 		if (spawnA != null) {
@@ -42,7 +42,7 @@ public class SharedArena extends Arena {
 		configuration.set(path + ".kits", getKits());
 
 		try {
-			configuration.save(Praxi.get().getArenasConfig().getFile());
+			configuration.save(Moon.get().getArenasConfig().getFile());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -52,11 +52,11 @@ public class SharedArena extends Arena {
 	public void delete() {
 		super.delete();
 
-		FileConfiguration configuration = Praxi.get().getArenasConfig().getConfiguration();
+		FileConfiguration configuration = Moon.get().getArenasConfig().getConfiguration();
 		configuration.set("arenas." + getName(), null);
 
 		try {
-			configuration.save(Praxi.get().getArenasConfig().getFile());
+			configuration.save(Moon.get().getArenasConfig().getFile());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

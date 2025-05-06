@@ -1,20 +1,20 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import lombok.experimental.UtilityClass;
 import me.clip.placeholderapi.PlaceholderAPI;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.profile.managers.DivisionsManager;
-import me.funky.praxi.divisions.ProfileDivision;
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.match.impl.BasicFreeForAllMatch;
-import me.funky.praxi.match.impl.BasicTeamMatch;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.queue.QueueProfile;
-import me.funky.praxi.util.ProgressBar;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.profile.managers.DivisionsManager;
+import club.nodebuff.moon.divisions.ProfileDivision;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.match.impl.BasicFreeForAllMatch;
+import club.nodebuff.moon.match.impl.BasicTeamMatch;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.queue.QueueProfile;
+import club.nodebuff.moon.util.ProgressBar;
 import org.bukkit.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -29,15 +29,15 @@ public final class ReplaceUtil {
         List<String> formattedLines = new ArrayList<>();
         Profile profile = Profile.getByUuid(player.getUniqueId());
         QueueProfile queueProfile = profile.getQueueProfile();
-        DivisionsManager divisionManager = Praxi.get().getDivisionsManager();
+        DivisionsManager divisionManager = Moon.get().getDivisionsManager();
         ProfileDivision profileDivision = profile.getDivision();
-        ProfileDivision expDivision = Praxi.get().getDivisionsManager().getNextDivisionByXP(profile.getExperience());
-        ProfileDivision oldDivision = Praxi.get().getDivisionsManager().getDivisionForBarByXP(profile.getExperience());
-        ProfileDivision eloDivision = Praxi.get().getDivisionsManager().getNextDivisionByELO(profile.getGlobalElo());
+        ProfileDivision expDivision = Moon.get().getDivisionsManager().getNextDivisionByXP(profile.getExperience());
+        ProfileDivision oldDivision = Moon.get().getDivisionsManager().getDivisionForBarByXP(profile.getExperience());
+        ProfileDivision eloDivision = Moon.get().getDivisionsManager().getNextDivisionByELO(profile.getGlobalElo());
         for (String line : lines) {
             line = line.replaceAll("<online>", String.valueOf(Bukkit.getServer().getOnlinePlayers().size()));
-            line = line.replaceAll("<in-queue>", String.valueOf(Praxi.get().getCache().getInQueues()));
-            line = line.replaceAll("<in-match>", String.valueOf(Praxi.get().getCache().getMatches().size() * 2));
+            line = line.replaceAll("<in-queue>", String.valueOf(Moon.get().getCache().getInQueues()));
+            line = line.replaceAll("<in-match>", String.valueOf(Moon.get().getCache().getMatches().size() * 2));
             line = line.replaceAll("<player>", player.getName());
             line = line.replaceAll("<ping>", String.valueOf((BukkitReflection.getPing(player))));
             line = line.replaceAll("<selected_kill_effect>", CC.translate(profile.getOptions().killEffect().getName()));
@@ -49,7 +49,7 @@ public final class ReplaceUtil {
             line = line.replaceAll("<player_division>", CC.translate(profile.getDivision().getDisplayName()));
             line = line.replaceAll("<player_level>", CC.translate(profile.getDivision().getXpLevel()));
             line = line.replaceAll("<splitter>", "┃");
-            if (Praxi.get().getDivisionsManager().isXPBased()) {
+            if (Moon.get().getDivisionsManager().isXPBased()) {
                 line = line.replaceAll("<player_bar>", ProgressBar.getBar(profile.getExperience() - oldDivision.getExperience(), expDivision.getExperience() - oldDivision.getExperience()));
             } else {
                 line = line.replaceAll("<player_bar>", ProgressBar.getBar(profile.getGlobalElo(), eloDivision.getMaxElo()));
@@ -169,7 +169,7 @@ public final class ReplaceUtil {
                 }
             }
 
-            if (Praxi.get().isPlaceholder()) {
+            if (Moon.get().isPlaceholder()) {
                 formattedLines.add(PlaceholderAPI.setPlaceholders(player, line));
             } else {
                 formattedLines.add(line);

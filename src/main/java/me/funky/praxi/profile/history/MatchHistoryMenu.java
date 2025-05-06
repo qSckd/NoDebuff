@@ -1,4 +1,4 @@
-package me.funky.praxi.profile.history;
+package club.nodebuff.moon.profile.history;
 
 import lombok.RequiredArgsConstructor;
 import me.jumper251.replay.api.ReplayAPI;
@@ -6,13 +6,13 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.ItemStack;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.match.MatchInfo;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.TimeUtil;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.pagination.PaginatedMenu;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.match.MatchInfo;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.TimeUtil;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.pagination.PaginatedMenu;
 
 import java.util.HashMap;
 import java.util.List;
@@ -77,7 +77,7 @@ public class MatchHistoryMenu extends PaginatedMenu {
 
         @Override
         public void clicked(Player player, ClickType clickType) {
-            if (!Praxi.get().isReplay()) {
+            if (!Moon.get().isReplay()) {
                 return;
             }
             player.chat("/replay play " + profile.getUuid().toString() + "-" + matchInfo.getUuid());

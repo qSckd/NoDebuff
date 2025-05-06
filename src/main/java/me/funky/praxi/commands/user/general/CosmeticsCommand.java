@@ -1,8 +1,8 @@
-package me.funky.praxi.commands.user.general;
+package club.nodebuff.moon.commands.user.general;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.profile.settings.menu.CosmeticsMenu;
+import club.nodebuff.moon.profile.settings.menu.CosmeticsMenu;
 import org.bukkit.entity.Player;
 
 @CommandAlias("cosmetics")

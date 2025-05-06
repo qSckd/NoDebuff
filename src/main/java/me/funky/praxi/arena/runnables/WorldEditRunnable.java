@@ -1,4 +1,4 @@
-package me.funky.praxi.arena.runnables;
+package club.nodebuff.moon.arena.runnables;
 
 import com.boydti.fawe.util.EditSessionBuilder;
 import com.boydti.fawe.util.TaskManager;

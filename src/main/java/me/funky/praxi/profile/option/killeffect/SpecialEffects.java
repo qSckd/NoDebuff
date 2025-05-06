@@ -1,10 +1,10 @@
 
-package me.funky.praxi.profile.option.killeffect;
+package club.nodebuff.moon.profile.option.killeffect;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.LightningUtil;
-import me.funky.praxi.util.TaskUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.LightningUtil;
+import club.nodebuff.moon.util.TaskUtil;
 import lombok.Getter;
 import net.minecraft.server.v1_8_R3.EnumParticle;
 import net.minecraft.server.v1_8_R3.PacketPlayOutWorldParticles;
@@ -105,7 +105,7 @@ public enum SpecialEffects {
                     this.cancel();
                 }
             }
-        }.runTaskTimerAsynchronously(Praxi.get(), 0L, 5L);
+        }.runTaskTimerAsynchronously(Moon.get(), 0L, 5L);
     }, 2000),
     WISDOM("Wisdom", Material.BOOK, "wisdom", (player, watchers) -> {
         Location loc = player.getLocation().clone().add(0.0, 2.8, 0.0);
@@ -146,18 +146,18 @@ public enum SpecialEffects {
                 if (this.t > Math.PI * 3) {
                     PacketPlayOutWorldParticles pop = new PacketPlayOutWorldParticles(EnumParticle.HEART, false, (float)this.loc.getX(), (float)this.loc.getY(), (float)this.loc.getZ(), 0.0f, 0.0f, 0.0f, 1.0f, 0, new int[0]);
                     ((CraftPlayer)watcher).getHandle().playerConnection.sendPacket(pop);
-                    Bukkit.getScheduler().runTaskLater(Praxi.get(), () -> watcher.playSound(this.loc, Sound.NOTE_PLING, 1.0f, 1.6f), 1L);
-                    Bukkit.getScheduler().runTaskLater(Praxi.get(), () -> watcher.playSound(this.loc, Sound.NOTE_PLING, 1.0f, 1.7f), 3L);
-                    Bukkit.getScheduler().runTaskLater(Praxi.get(), () -> watcher.playSound(this.loc, Sound.NOTE_PLING, 1.0f, 1.8f), 5L);
-                    Bukkit.getScheduler().runTaskLater(Praxi.get(), () -> watcher.playSound(this.loc, Sound.NOTE_PLING, 1.0f, 1.9f), 7L);
-                    Bukkit.getScheduler().runTaskLater(Praxi.get(), () -> watcher.playSound(this.loc, Sound.NOTE_PLING, 1.0f, 2.0f), 9L);
+                    Bukkit.getScheduler().runTaskLater(Moon.get(), () -> watcher.playSound(this.loc, Sound.NOTE_PLING, 1.0f, 1.6f), 1L);
+                    Bukkit.getScheduler().runTaskLater(Moon.get(), () -> watcher.playSound(this.loc, Sound.NOTE_PLING, 1.0f, 1.7f), 3L);
+                    Bukkit.getScheduler().runTaskLater(Moon.get(), () -> watcher.playSound(this.loc, Sound.NOTE_PLING, 1.0f, 1.8f), 5L);
+                    Bukkit.getScheduler().runTaskLater(Moon.get(), () -> watcher.playSound(this.loc, Sound.NOTE_PLING, 1.0f, 1.9f), 7L);
+                    Bukkit.getScheduler().runTaskLater(Moon.get(), () -> watcher.playSound(this.loc, Sound.NOTE_PLING, 1.0f, 2.0f), 9L);
                     this.cancel();
                     continue;
                 }
                 this.loc.subtract(x, y, z);
             }
         }
-    }.runTaskTimerAsynchronously(Praxi.get(), 0L, 1L), 2000);
+    }.runTaskTimerAsynchronously(Moon.get(), 0L, 1L), 2000);
 
     private final String name;
     private final Material icon;

@@ -1,6 +1,6 @@
-package me.funky.praxi.adapter.spigot.impl;
+package club.nodebuff.moon.adapter.spigot.impl;
 
-import me.funky.praxi.adapter.spigot.Spigot;
+import club.nodebuff.moon.adapter.spigot.Spigot;
 import org.bukkit.entity.Player;
 
 public class Default implements Spigot {

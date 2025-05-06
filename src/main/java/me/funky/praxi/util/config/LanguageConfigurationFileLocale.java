@@ -1,4 +1,4 @@
-package me.funky.praxi.util.config;
+package club.nodebuff.moon.util.config;
 
 public enum LanguageConfigurationFileLocale {
     ENGLISH("en"),

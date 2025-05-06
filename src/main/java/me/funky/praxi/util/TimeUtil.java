@@ -1,4 +1,4 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import java.sql.Timestamp;
 import java.text.DecimalFormat;

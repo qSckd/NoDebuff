@@ -1,19 +1,19 @@
-package me.funky.praxi.tournament;
+package club.nodebuff.moon.tournament;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.match.impl.BasicTeamMatch;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.party.Party;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.match.impl.BasicTeamMatch;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.party.Party;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -226,7 +226,7 @@ public class Tournament {
                             public void run() {
                                 Tournament.this.start();
                             }
-                        }.runTaskLater(Praxi.get(), 100L);
+                        }.runTaskLater(Moon.get(), 100L);
                     }
                 }
             }

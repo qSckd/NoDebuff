@@ -1,4 +1,4 @@
-package me.funky.praxi.match;
+package club.nodebuff.moon.match;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
@@ -7,27 +7,27 @@ import lombok.Getter;
 import lombok.Setter;
 import me.jumper251.replay.api.ReplayAPI;
 import me.jumper251.replay.filesystem.saving.ReplaySaver;
-import me.funky.praxi.Locale;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.adapter.spigot.SpigotManager;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.match.task.MatchLogicTask;
-import me.funky.praxi.match.task.MatchPearlCooldownTask;
-import me.funky.praxi.match.task.MatchResetTask;
-import me.funky.praxi.match.task.MatchSnapshotCleanupTask;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.participant.GamePlayer;
-import me.funky.praxi.nametag.NameTags;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.meta.ProfileKitData;
-import me.funky.praxi.profile.option.killeffect.SpecialEffects;
-import me.funky.praxi.profile.visibility.VisibilityLogic;
-import me.funky.praxi.queue.Queue;
-import me.funky.praxi.util.*;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.adapter.spigot.SpigotManager;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.match.task.MatchLogicTask;
+import club.nodebuff.moon.match.task.MatchPearlCooldownTask;
+import club.nodebuff.moon.match.task.MatchResetTask;
+import club.nodebuff.moon.match.task.MatchSnapshotCleanupTask;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.participant.GamePlayer;
+import club.nodebuff.moon.nametag.NameTags;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.meta.ProfileKitData;
+import club.nodebuff.moon.profile.option.killeffect.SpecialEffects;
+import club.nodebuff.moon.profile.visibility.VisibilityLogic;
+import club.nodebuff.moon.queue.Queue;
+import club.nodebuff.moon.util.*;
 import net.md_5.bungee.api.chat.BaseComponent;
 import org.bukkit.*;
 import org.bukkit.block.Block;
@@ -103,17 +103,17 @@ public abstract class Match {
         this.placedBlocks = new ArrayList<>();
         this.changedBlocks = new ArrayList<>();
 
-        Praxi.get().getCache().getMatches().add(this);
+        Moon.get().getCache().getMatches().add(this);
     }
 
 
     public static void init() {
-        new MatchPearlCooldownTask().runTaskTimerAsynchronously(Praxi.get(), 2L, 2L);
-        new MatchSnapshotCleanupTask().runTaskTimerAsynchronously(Praxi.get(), 20L * 5, 20L * 5);
+        new MatchPearlCooldownTask().runTaskTimerAsynchronously(Moon.get(), 2L, 2L);
+        new MatchSnapshotCleanupTask().runTaskTimerAsynchronously(Moon.get(), 20L * 5, 20L * 5);
     }
 
     public static void cleanup() {
-        for (Match match : Praxi.get().getCache().getMatches()) {
+        for (Match match : Moon.get().getCache().getMatches()) {
             match.getPlacedBlocks().forEach(location -> location.getBlock().setType(Material.AIR));
             match.getChangedBlocks().forEach((blockState) -> blockState.getLocation().getBlock().setType(blockState.getType()));
             match.getDroppedItems().forEach(Entity::remove);
@@ -130,7 +130,7 @@ public abstract class Match {
     }
 
     public static void matchesCleanup() {
-        for (Match match : Praxi.get().getCache().getMatches()) {
+        for (Match match : Moon.get().getCache().getMatches()) {
             match.getPlacedBlocks().forEach(location -> location.getBlock().setType(Material.AIR));
             match.getChangedBlocks().forEach((blockState) -> blockState.getLocation().getBlock().setType(blockState.getType()));
             match.getDroppedItems().forEach(Entity::remove);
@@ -144,7 +144,7 @@ public abstract class Match {
     public static int getInFightsCount(Queue queue) {
         int i = 0;
 
-        for (Match match : Praxi.get().getCache().getMatches()) {
+        for (Match match : Moon.get().getCache().getMatches()) {
             if (match.getQueue() != null &&
                     (match.getState() == MatchState.STARTING_ROUND || match.getState() == MatchState.PLAYING_ROUND)) {
                 if (match.getQueue().equals(queue)) {
@@ -252,7 +252,7 @@ public abstract class Match {
         }
 
         // some replay stuffs
-        /*if (Praxi.get().isReplay() && !kit.getGameRules().isBuild()) {
+        /*if (Moon.get().isReplay() && !kit.getGameRules().isBuild()) {
                 if (ReplaySaver.exists(profile.getUuid().toString())) {
                     ReplaySaver.delete(profile.getUuid().toString());
             }
@@ -319,7 +319,7 @@ public abstract class Match {
 
         // Start logic task
         logicTask = new MatchLogicTask(this);
-        logicTask.runTaskTimer(Praxi.get(), 0L, 20L);
+        logicTask.runTaskTimer(Moon.get(), 0L, 20L);
 
         // Set arena as active
         arena.setActive(true);
@@ -331,7 +331,7 @@ public abstract class Match {
 
              if (player != null) {
                  Profile profile = Profile.getByUuid(player.getUniqueId());
-                 player.sendMessage(CC.translate(Praxi.get().getMainConfig().getString("MATCH.PLAYING-ARENA").replace("{theme}", "&" + profile.getOptions().theme().getColor().getChar()).replace("{arena}", arena.getName())));
+                 player.sendMessage(CC.translate(Moon.get().getMainConfig().getString("MATCH.PLAYING-ARENA").replace("{theme}", "&" + profile.getOptions().theme().getColor().getChar()).replace("{arena}", arena.getName())));
                  profile.setState(ProfileState.FIGHTING);
                  profile.getDuelRequests().clear();
                  profile.setMatch(this);
@@ -340,7 +340,7 @@ public abstract class Match {
 
                  setupPlayer(player);
             
-                 if (Praxi.get().isReplay()) {
+                 if (Moon.get().isReplay()) {
                  ReplayAPI.getInstance().recordReplay(
                        profile.getUuid().toString() + "-" + matchId, 
                        getParticipants().stream()
@@ -387,7 +387,7 @@ public abstract class Match {
 						PlayerUtil.allowMovement(player);
                         profile.setMatch(null);
                         profile.setEnderpearlCooldown(new Cooldown(0));
-                        if (Praxi.get().isReplay() && !kit.getGameRules().isBuild()) {
+                        if (Moon.get().isReplay() && !kit.getGameRules().isBuild()) {
                             ReplayAPI.getInstance().stopReplay(profile.getUuid().toString() + "-" + matchId, true, true);
                        }
 					}
@@ -416,7 +416,7 @@ public abstract class Match {
                     if (player != null) {
                         VisibilityLogic.handle(player);
                         Hotbar.giveHotbarItems(player);
-                        Praxi.get().getEssentials().teleportToSpawn(player);
+                        Moon.get().getEssentials().teleportToSpawn(player);
                     }
                 }
             }
@@ -426,7 +426,7 @@ public abstract class Match {
             removeSpectator(player);
         }
 
-        Praxi.get().getCache().getMatches().remove(this);
+        Moon.get().getCache().getMatches().remove(this);
     }
 
     public abstract boolean canEndMatch();
@@ -555,7 +555,7 @@ public abstract class Match {
             @Override
             public void run() {
                 if (countdown > 0) {
-                    player.sendMessage(CC.translate(Praxi.get().getMainConfig().getString("MATCH.RESPAWN_TIMER")
+                    player.sendMessage(CC.translate(Moon.get().getMainConfig().getString("MATCH.RESPAWN_TIMER")
                         .replace("{countdown}", String.valueOf(countdown))
                         .replace("{theme}", "&" + String.valueOf(profile.getOptions().theme().getColor().getChar()))));
                     PlayerUtil.sendTitle(player, CC.translate("&" + profile.getOptions().theme().getColor().getChar()) + ("&c&lYOU DIED"), "&fRespawning in " + countdown + "...", 20);
@@ -594,16 +594,16 @@ public abstract class Match {
                     player.setHealth(20);
                     showPlayer(player.getUniqueId());
                     gamePlayer.setRespawned(false);
-                    if (Praxi.get().getSettingsConfig().getBoolean("MATCH.RESPAWN-TITLE")) { // send respawn title if it's enabled from config
+                    if (Moon.get().getSettingsConfig().getBoolean("MATCH.RESPAWN-TITLE")) { // send respawn title if it's enabled from config
                         PlayerUtil.sendTitle(player, CC.translate("&aRespawned!"), "", 20);
                     }
-                    if (Praxi.get().getSettingsConfig().getBoolean("MATCH.BROADCAST-RESPAWN")) { // send broadcast respawn message if it's enabled from config
+                    if (Moon.get().getSettingsConfig().getBoolean("MATCH.BROADCAST-RESPAWN")) { // send broadcast respawn message if it's enabled from config
                         broadcast(playerColor + player.getName() + " &aRespawned");
                     }
                     this.cancel();
                 }
             }
-        }.runTaskTimer(Praxi.get(), 0L, 20L);
+        }.runTaskTimer(Moon.get(), 0L, 20L);
     }
 
     public void fastRespawn(Player player) {
@@ -653,10 +653,10 @@ public abstract class Match {
         player.setFoodLevel(20);
         player.setHealth(20);
         showPlayer(player.getUniqueId());
-        if (Praxi.get().getSettingsConfig().getBoolean("MATCH.RESPAWN-TITLE")) {
+        if (Moon.get().getSettingsConfig().getBoolean("MATCH.RESPAWN-TITLE")) {
             PlayerUtil.sendTitle(player, CC.translate("&aRespawned!"), "", 20);
         }
-        if (Praxi.get().getSettingsConfig().getBoolean("MATCH.BROADCAST-RESPAWN")) {
+        if (Moon.get().getSettingsConfig().getBoolean("MATCH.BROADCAST-RESPAWN")) {
             broadcast(playerColor + player.getName() + " &aRespawned");
         }
              //   }
@@ -668,7 +668,7 @@ public abstract class Match {
       MatchGamePlayer gamePlayer = profile.getMatch().getGamePlayer(player);
       boolean aTeam = getParticipantA().containsPlayer(player.getUniqueId());
       Location spawn = aTeam ? getArena().getSpawnA() : getArena().getSpawnB();
-      if (Praxi.get().getSettingsConfig().getBoolean("MATCH.CLEAR-BLOCKS")) { // restore snapshot if clear blocks is enabled
+      if (Moon.get().getSettingsConfig().getBoolean("MATCH.CLEAR-BLOCKS")) { // restore snapshot if clear blocks is enabled
           cleanupThis(this);
           arena.restoreSnapshot();
 	  }
@@ -688,7 +688,7 @@ public abstract class Match {
             @Override
             public void run() {
                 if (countdown > 0) {
-                    /*player.sendMessage(CC.translate(Praxi.get().getMainConfig().getString("MATCH.BRIDGE_STARTING")
+                    /*player.sendMessage(CC.translate(Moon.get().getMainConfig().getString("MATCH.BRIDGE_STARTING")
                         .replace("{countdown}", String.valueOf(countdown))
                         .replace("{theme}", "&" + String.valueOf(profile.getOptions().theme().getColor().getChar()))));*/
                     PlayerUtil.sendTitle(player, CC.translate("&" + profile.getOptions().theme().getColor().getChar()) + ("&lStarting"), "&fin " + countdown + "...", 20);
@@ -698,7 +698,7 @@ public abstract class Match {
                     this.cancel();
                 }
             }
-        }.runTaskTimer(Praxi.get(), 0L, 20L);
+        }.runTaskTimer(Moon.get(), 0L, 20L);
     }
 
     public void newRoundStickFight(UUID playerUUID) {
@@ -732,7 +732,7 @@ public abstract class Match {
                     this.cancel();
                 }
             }
-        }.runTaskTimer(Praxi.get(), 0L, 20L);
+        }.runTaskTimer(Moon.get(), 0L, 20L);
     }
 
 	public void broadcast(String message) {
@@ -813,7 +813,7 @@ public abstract class Match {
         Date currentDate = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("MMM d, yyyy h:mm:ss a");
         String formattedDate = formatter.format(currentDate);
-        if (!Praxi.get().getCache().getMatch(matchId).isDuel() || loserProfile.getParty() == null) {
+        if (!Moon.get().getCache().getMatch(matchId).isDuel() || loserProfile.getParty() == null) {
             loserProfile.getKitData().get(loserProfile.getMatch().getKit()).incrementLost();
             loserProfile.getKitData().get(loserProfile.getMatch().getKit()).resetWinStreak();
 			loserProfile.setCoins(loserProfile.getCoins() + loserCoins);
@@ -862,7 +862,7 @@ public abstract class Match {
                                 PlayerUtil.doVelocityChange(player);
                                 PlayerUtil.setLastAttacker(dead, null);
                             }
-                            if (!Praxi.get().getCache().getMatch(matchId).isDuel() || winnerProfile.getParty() == null) {
+                            if (!Moon.get().getCache().getMatch(matchId).isDuel() || winnerProfile.getParty() == null) {
                                 winnerProfile.getKitData().get(winnerProfile.getMatch().getKit()).incrementWon();
                                 winnerProfile.getKitData().get(winnerProfile.getMatch().getKit()).incrementWinStreak();
 								winnerProfile.setExperience(winnerProfile.getExperience() + winnerExp);
@@ -920,7 +920,7 @@ public abstract class Match {
                 logicTask.setNextAction(4);
             }
         } else {
-            Praxi.get().getHotbar().giveHotbarItems(dead);
+            Moon.get().getHotbar().giveHotbarItems(dead);
         }
     }
 
@@ -1010,7 +1010,7 @@ public abstract class Match {
 
         PlayerUtil.reset(spectator);
         Hotbar.giveHotbarItems(spectator);
-        Praxi.get().getEssentials().teleportToSpawn(spectator);
+        Moon.get().getEssentials().teleportToSpawn(spectator);
 
         VisibilityLogic.handle(spectator);
 
@@ -1036,7 +1036,7 @@ public abstract class Match {
 
     public String getDuration() {
         if (state.equals(MatchState.STARTING_ROUND)) {
-            return "Starting"; // Default Praxi "00:00"
+            return "Starting"; // Default Moon "00:00"
         } else if (state.equals(MatchState.ENDING_ROUND)) {
             return "Ending";
         } else if (state.equals(MatchState.PLAYING_ROUND)) {

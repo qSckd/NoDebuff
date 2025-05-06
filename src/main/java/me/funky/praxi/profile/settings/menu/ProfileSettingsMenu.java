@@ -1,25 +1,25 @@
-package me.funky.praxi.profile.settings.menu;
+package club.nodebuff.moon.profile.settings.menu;
 
 import lombok.AllArgsConstructor;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.divisions.menu.ProfileDivisionsMenu;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.event.Event;
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.event.game.map.EventGameMap;
-import me.funky.praxi.event.game.map.vote.EventGameMapVoteData;
-import me.funky.praxi.event.game.menu.EventHostMenu;
-import me.funky.praxi.leaderboard.menu.StatsMenu;
-import me.funky.praxi.profile.settings.menu.SettingsMenu;
-import me.funky.praxi.profile.coinshop.ProfileCosmeticsMenu;
-import me.funky.praxi.profile.replay.menu.ReplayMenu;
-import me.funky.praxi.profile.history.MatchHistoryMenu;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.Constants;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.TextSplitter;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.divisions.menu.ProfileDivisionsMenu;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.event.Event;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.event.game.map.EventGameMap;
+import club.nodebuff.moon.event.game.map.vote.EventGameMapVoteData;
+import club.nodebuff.moon.event.game.menu.EventHostMenu;
+import club.nodebuff.moon.leaderboard.menu.StatsMenu;
+import club.nodebuff.moon.profile.settings.menu.SettingsMenu;
+import club.nodebuff.moon.profile.coinshop.ProfileCosmeticsMenu;
+import club.nodebuff.moon.profile.replay.menu.ReplayMenu;
+import club.nodebuff.moon.profile.history.MatchHistoryMenu;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.Constants;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.TextSplitter;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -36,12 +36,12 @@ public class ProfileSettingsMenu extends Menu {
 
     @Override
     public String getTitle(Player player) {
-        return Praxi.get().getMenusConfig().getString("PROFILE-SETTINGS.TITLE");
+        return Moon.get().getMenusConfig().getString("PROFILE-SETTINGS.TITLE");
     }
 
     @Override
     public int getSize() {
-        return Praxi.get().getMenusConfig().getInteger("PROFILE-SETTINGS.SIZE");
+        return Moon.get().getMenusConfig().getInteger("PROFILE-SETTINGS.SIZE");
     }
 
     @Override

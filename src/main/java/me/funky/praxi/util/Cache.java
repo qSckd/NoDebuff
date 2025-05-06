@@ -1,13 +1,13 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.queue.Queue;
-import me.funky.praxi.queue.QueueProfile;
-import me.funky.praxi.util.LocationUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.queue.Queue;
+import club.nodebuff.moon.queue.QueueProfile;
+import club.nodebuff.moon.util.LocationUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.Location;
@@ -23,7 +23,7 @@ public class Cache {
     private final List<Queue> queues = new ArrayList<>();
     private final LinkedList<QueueProfile> players = new LinkedList<>();
     private final List<Match> matches = new ArrayList<>();
-    private Location spawn = LocationUtil.deserialize(Praxi.get().getSettingsConfig().getStringOrDefault("GENERAL.SPAWN-LOCATION", null));
+    private Location spawn = LocationUtil.deserialize(Moon.get().getSettingsConfig().getStringOrDefault("GENERAL.SPAWN-LOCATION", null));
 
     public Match getMatch(UUID matchUUID) {
         for (Match match : matches) {

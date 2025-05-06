@@ -1,10 +1,10 @@
-package me.funky.praxi.event;
+package club.nodebuff.moon.event;
 
-import me.funky.praxi.event.impl.sumo.SumoEvent;
-import me.funky.praxi.event.impl.spleef.SpleefEvent;
-import me.funky.praxi.event.impl.brackets.BracketsEvent;
-import me.funky.praxi.event.impl.gulag.GulagEvent;
-import me.funky.praxi.util.command.command.adapter.CommandTypeAdapter;
+import club.nodebuff.moon.event.impl.sumo.SumoEvent;
+import club.nodebuff.moon.event.impl.spleef.SpleefEvent;
+import club.nodebuff.moon.event.impl.brackets.BracketsEvent;
+import club.nodebuff.moon.event.impl.gulag.GulagEvent;
+import club.nodebuff.moon.util.command.command.adapter.CommandTypeAdapter;
 
 import java.util.Arrays;
 import java.util.HashMap;

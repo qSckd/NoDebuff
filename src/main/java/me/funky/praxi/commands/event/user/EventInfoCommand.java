@@ -1,12 +1,12 @@
-package me.funky.praxi.commands.event.user;
+package club.nodebuff.moon.commands.event.user;
 
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.event.impl.sumo.SumoEvent;
-import me.funky.praxi.event.impl.spleef.SpleefEvent;
-import me.funky.praxi.event.impl.brackets.BracketsEvent;
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.event.impl.sumo.SumoEvent;
+import club.nodebuff.moon.event.impl.spleef.SpleefEvent;
+import club.nodebuff.moon.event.impl.brackets.BracketsEvent;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 
 @CommandMeta(label = "event info")

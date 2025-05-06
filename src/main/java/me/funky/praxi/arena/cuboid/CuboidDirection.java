@@ -1,4 +1,4 @@
-package me.funky.praxi.arena.cuboid;
+package club.nodebuff.moon.arena.cuboid;
 
 /**
  * Represents directions that can be applied to certain faces and actions of a Cuboid

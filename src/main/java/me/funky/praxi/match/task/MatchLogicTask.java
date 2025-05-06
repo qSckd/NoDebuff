@@ -1,17 +1,17 @@
-package me.funky.praxi.match.task;
+package club.nodebuff.moon.match.task;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.Locale;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.match.MatchState;
-import me.funky.praxi.match.impl.BasicTeamMatch;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.participant.GamePlayer;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.PlayerUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.match.MatchState;
+import club.nodebuff.moon.match.impl.BasicTeamMatch;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.participant.GamePlayer;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.PlayerUtil;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -21,7 +21,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class MatchLogicTask extends BukkitRunnable {
 
     private final Match match;
-	private final Praxi plugin = Praxi.get();
+	private final Moon plugin = Moon.get();
     @Setter
     private int nextAction = 6;
 
@@ -32,7 +32,7 @@ public class MatchLogicTask extends BukkitRunnable {
 
     @Override
     public void run() {
-        if (!Praxi.get().getCache().getMatches().contains(match)) {
+        if (!Moon.get().getCache().getMatches().contains(match)) {
             cancel();
             return;
         }

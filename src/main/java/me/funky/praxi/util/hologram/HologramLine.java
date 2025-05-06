@@ -1,11 +1,11 @@
-package me.funky.praxi.util.hologram;
+package club.nodebuff.moon.util.hologram;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.hologram.placeholder.Placeholder;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.fake.impl.hologram.FakeEntityArmorStand;
-import me.funky.praxi.util.fake.impl.hologram.FakeEntityHorse;
-import me.funky.praxi.util.fake.impl.hologram.FakeEntitySkull;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.hologram.placeholder.Placeholder;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.fake.impl.hologram.FakeEntityArmorStand;
+import club.nodebuff.moon.util.fake.impl.hologram.FakeEntityHorse;
+import club.nodebuff.moon.util.fake.impl.hologram.FakeEntitySkull;
 import net.minecraft.server.v1_8_R3.PacketPlayOutAttachEntity;
 import net.minecraft.server.v1_8_R3.PacketPlayOutEntityMetadata;
 import org.bukkit.Bukkit;
@@ -62,7 +62,7 @@ public class HologramLine {
     public void update(Player player) {
         PacketPlayOutEntityMetadata metadata;
         String formattedLine = this.line;
-        for (Placeholder placeholder : Praxi.get().getHologramHandler().getPlaceholders()) {
+        for (Placeholder placeholder : Moon.get().getHologramHandler().getPlaceholders()) {
             formattedLine = placeholder.formatLine(player, formattedLine);
         }
         if (this.fakeEntityArmorStand.getCurrentlyViewing().contains(player.getUniqueId())) {

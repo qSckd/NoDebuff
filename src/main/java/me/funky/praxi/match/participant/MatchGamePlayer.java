@@ -1,9 +1,9 @@
-package me.funky.praxi.match.participant;
+package club.nodebuff.moon.match.participant;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.kit.KitLoadout;
-import me.funky.praxi.participant.GamePlayer;
+import club.nodebuff.moon.kit.KitLoadout;
+import club.nodebuff.moon.participant.GamePlayer;
 
 import java.util.UUID;
 

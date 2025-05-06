@@ -1,8 +1,8 @@
-package me.funky.praxi.queue;
+package club.nodebuff.moon.queue;
 
 import java.util.UUID;
 
-import me.funky.praxi.Locale;
+import club.nodebuff.moon.Locale;
 import lombok.Data;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

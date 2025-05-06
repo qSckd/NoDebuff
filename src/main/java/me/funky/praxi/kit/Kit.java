@@ -1,18 +1,18 @@
-package me.funky.praxi.kit;
+package club.nodebuff.moon.kit;
 
 import lombok.Getter;
 import lombok.Setter;
 import com.mongodb.client.model.Sorts;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.kit.meta.KitEditRules;
-import me.funky.praxi.kit.meta.KitGameRules;
-import me.funky.praxi.queue.Queue;
-import me.funky.praxi.util.InventoryUtil;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.ItemUtil;
-import me.funky.praxi.util.CountUtil;
-import me.funky.praxi.util.config.BasicConfigurationFile;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.kit.meta.KitEditRules;
+import club.nodebuff.moon.kit.meta.KitGameRules;
+import club.nodebuff.moon.queue.Queue;
+import club.nodebuff.moon.util.InventoryUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.ItemUtil;
+import club.nodebuff.moon.util.CountUtil;
+import club.nodebuff.moon.util.config.BasicConfigurationFile;
 import org.bson.Document;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -54,7 +54,7 @@ public class Kit {
 	public void save() {
 		String path = "kits." + name;
 
-		BasicConfigurationFile configFile = Praxi.get().getKitsConfig();
+		BasicConfigurationFile configFile = Moon.get().getKitsConfig();
 		configFile.getConfiguration().set(path + ".enabled", enabled);
         configFile.getConfiguration().set(path + ".slot", slot);
         configFile.getConfiguration().set(path + ".editable", gameRules.isEditable());
@@ -113,7 +113,7 @@ public class Kit {
 	}
 
 	public static void init() {
-		FileConfiguration config = Praxi.get().getKitsConfig().getConfiguration();
+		FileConfiguration config = Moon.get().getKitsConfig().getConfiguration();
 
 		for (String key : config.getConfigurationSection("kits").getKeys(false)) {
 			String path = "kits." + key;
@@ -194,7 +194,7 @@ public class Kit {
 	public void delete(Kit kit) {
 		String path = "kits." + name;
 
-		BasicConfigurationFile configFile = Praxi.get().getKitsConfig();
+		BasicConfigurationFile configFile = Moon.get().getKitsConfig();
 		configFile.getConfiguration().set(path, null);
 
 		try {

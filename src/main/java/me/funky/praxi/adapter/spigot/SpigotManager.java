@@ -1,12 +1,12 @@
-package me.funky.praxi.adapter.spigot;
+package club.nodebuff.moon.adapter.spigot;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.UtilityClass;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.adapter.spigot.impl.Default;
-import me.funky.praxi.adapter.spigot.impl.CarbonSpigot;
-//import me.funky.praxi.adapter.spigot.impl.PolarSpigot;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.adapter.spigot.impl.Default;
+import club.nodebuff.moon.adapter.spigot.impl.CarbonSpigot;
+//import club.nodebuff.moon.adapter.spigot.impl.PolarSpigot;
 
 @UtilityClass
 public class SpigotManager {
@@ -15,7 +15,7 @@ public class SpigotManager {
     @Getter @Setter public String serverSpigot;
 
     public void init() {
-         switch (Praxi.get().getServer().getName()) {
+         switch (Moon.get().getServer().getName()) {
              case "Carbon": case "CarbonSpigot":
                 spigot = new CarbonSpigot();
                 setServerSpigot("CarbonSpigot");

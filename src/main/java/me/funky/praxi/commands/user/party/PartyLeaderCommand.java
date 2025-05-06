@@ -1,10 +1,10 @@
-package me.funky.praxi.commands.user.party;
+package club.nodebuff.moon.commands.user.party;
 
-import me.funky.praxi.Locale;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 
 @CommandMeta(label = { "p leader", "party leader" })

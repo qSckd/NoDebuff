@@ -1,6 +1,6 @@
-package me.funky.praxi.match.task;
+package club.nodebuff.moon.match.task;
 
-import me.funky.praxi.match.MatchSnapshot;
+import club.nodebuff.moon.match.MatchSnapshot;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class MatchSnapshotCleanupTask extends BukkitRunnable {

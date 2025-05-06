@@ -1,6 +1,6 @@
-package me.funky.praxi.util.fake.impl.hologram;
+package club.nodebuff.moon.util.fake.impl.hologram;
 
-import me.funky.praxi.util.fake.FakeEntity;
+import club.nodebuff.moon.util.fake.FakeEntity;
 import net.minecraft.server.v1_8_R3.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

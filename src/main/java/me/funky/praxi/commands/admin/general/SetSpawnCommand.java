@@ -1,9 +1,9 @@
-package me.funky.praxi.commands.admin.general;
+package club.nodebuff.moon.commands.admin.general;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 
 @CommandAlias("setspawn")
@@ -13,7 +13,7 @@ public class SetSpawnCommand extends BaseCommand {
 
     @Default
     public void execute(Player player) {
-        Praxi.get().getEssentials().setSpawn(player.getLocation());
+        Moon.get().getEssentials().setSpawn(player.getLocation());
         player.sendMessage(CC.translate("&bSpawn set successfully!"));
     }
 }

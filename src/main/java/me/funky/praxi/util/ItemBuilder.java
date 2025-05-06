@@ -1,6 +1,6 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
-import me.funky.praxi.util.ReplaceUtil;
+import club.nodebuff.moon.util.ReplaceUtil;
 import org.bukkit.Color;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

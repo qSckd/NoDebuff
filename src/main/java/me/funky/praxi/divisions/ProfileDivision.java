@@ -1,4 +1,4 @@
-package me.funky.praxi.divisions;
+package club.nodebuff.moon.divisions;
 
 import org.bukkit.Material;
 import lombok.Getter;

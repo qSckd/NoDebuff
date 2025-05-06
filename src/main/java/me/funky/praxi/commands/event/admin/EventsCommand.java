@@ -1,7 +1,7 @@
-package me.funky.praxi.commands.event.admin;
+package club.nodebuff.moon.commands.event.admin;
 
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
 import org.bukkit.entity.Player;
 
 @CommandMeta(label = "events", permission = "shadow.event.host")

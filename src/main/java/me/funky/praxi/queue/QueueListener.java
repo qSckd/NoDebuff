@@ -1,14 +1,14 @@
-package me.funky.praxi.queue;
+package club.nodebuff.moon.queue;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.Locale;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.hotbar.HotbarItem;
-import me.funky.praxi.queue.menu.QueueSelectKitMenu;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ReplaceUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.hotbar.HotbarItem;
+import club.nodebuff.moon.queue.menu.QueueSelectKitMenu;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ReplaceUtil;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -29,9 +29,9 @@ public class QueueListener implements Listener {
 				boolean cancelled = true;
 
 				if (hotbarItem == HotbarItem.QUEUE_JOIN_RANKED) {
-                    if (profile.getWins() < Praxi.get().getSettingsConfig().getInteger("RANKED.REQUIRED-WINS") && Praxi.get().getSettingsConfig().getInteger("RANKED.REQUIRED-WINS") != 0) {
-                        event.getPlayer().sendMessage(CC.translate(Praxi.get().getMainConfig().getString("RANKED.ERROR-MESSAGE"))
-                            .replace("{wins}", String.valueOf(Praxi.get().getMainConfig().getInteger("RANKED.REQUIRED-WINS"))));
+                    if (profile.getWins() < Moon.get().getSettingsConfig().getInteger("RANKED.REQUIRED-WINS") && Moon.get().getSettingsConfig().getInteger("RANKED.REQUIRED-WINS") != 0) {
+                        event.getPlayer().sendMessage(CC.translate(Moon.get().getMainConfig().getString("RANKED.ERROR-MESSAGE"))
+                            .replace("{wins}", String.valueOf(Moon.get().getMainConfig().getInteger("RANKED.REQUIRED-WINS"))));
                         return;
                     }
 					if (!profile.isBusy()) {

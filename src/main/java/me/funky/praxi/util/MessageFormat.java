@@ -1,8 +1,8 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.util.CC;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

@@ -1,8 +1,8 @@
-package me.funky.praxi.match.task;
+package club.nodebuff.moon.match.task;
 
 import com.boydti.fawe.util.EditSessionBuilder;
 import com.boydti.fawe.util.TaskManager;
-import me.funky.praxi.match.Match;
+import club.nodebuff.moon.match.Match;
 import com.sk89q.worldedit.EditSession;
 import com.sk89q.worldedit.Vector;
 import com.sk89q.worldedit.blocks.BaseBlock;

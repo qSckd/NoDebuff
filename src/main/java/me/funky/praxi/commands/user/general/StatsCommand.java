@@ -1,10 +1,10 @@
-package me.funky.praxi.commands.user.general;
+package club.nodebuff.moon.commands.user.general;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.leaderboard.menu.StatsMenu;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.leaderboard.menu.StatsMenu;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;

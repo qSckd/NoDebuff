@@ -1,8 +1,8 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.match.impl.BasicTeamMatch;
-import me.funky.praxi.profile.Profile;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.match.impl.BasicTeamMatch;
+import club.nodebuff.moon.profile.Profile;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

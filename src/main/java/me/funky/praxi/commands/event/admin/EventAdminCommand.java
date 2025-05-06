@@ -1,8 +1,8 @@
-package me.funky.praxi.commands.event.admin;
+package club.nodebuff.moon.commands.event.admin;
 
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 
 @CommandMeta(label = { "event admin" }, permission = "shadow.admin.event")

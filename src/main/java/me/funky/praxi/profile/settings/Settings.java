@@ -1,4 +1,4 @@
-package me.funky.praxi.profile.settings;
+package club.nodebuff.moon.profile.settings;
 
 import lombok.Getter;
 import org.bukkit.Material;

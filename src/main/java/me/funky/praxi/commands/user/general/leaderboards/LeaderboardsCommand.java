@@ -1,12 +1,12 @@
-package me.funky.praxi.commands.user.general.leaderboards;
+package club.nodebuff.moon.commands.user.general.leaderboards;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.leaderboard.menu.LeaderboardsMenu;
-import me.funky.praxi.leaderboard.menu.LeaderboardsMode;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.leaderboard.menu.LeaderboardsMenu;
+import club.nodebuff.moon.leaderboard.menu.LeaderboardsMode;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 
 @CommandAlias("leaderboards|leaderboard")

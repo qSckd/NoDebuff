@@ -1,9 +1,9 @@
-package me.funky.praxi.util.menu.button;
+package club.nodebuff.moon.util.menu.button;
 
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
 import java.util.Arrays;
 import lombok.AllArgsConstructor;
 import org.bukkit.Material;

@@ -1,13 +1,13 @@
-package me.funky.praxi.tournament.command;
+package club.nodebuff.moon.tournament.command;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.tournament.Tournament;
-import me.funky.praxi.party.Party;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.tournament.Tournament;
+import club.nodebuff.moon.party.Party;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.CC;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
@@ -27,12 +27,12 @@ public class TournamentCommand extends BaseCommand {
 	@Default
     @Subcommand("help")
     public void help(Player player) {
-			for (String line : Praxi.get().getMainConfig().getStringList("TOURNAMENT.HELP.USER")) {
+			for (String line : Moon.get().getMainConfig().getStringList("TOURNAMENT.HELP.USER")) {
 		  	    player.sendMessage(CC.translate(line));
 			}
 
 			if (player.hasPermission("moon.admin.tournament")) {
-				for (String line : Praxi.get().getMainConfig().getStringList("TOURNAMENT.HELP.ADMIN")) {
+				for (String line : Moon.get().getMainConfig().getStringList("TOURNAMENT.HELP.ADMIN")) {
 		  	        player.sendMessage(CC.translate(line));
 
 				}
@@ -164,7 +164,7 @@ public class TournamentCommand extends BaseCommand {
                         }
                     }
                 }
-            }).runTaskTimer(Praxi.get(), 20L, 20L);
+            }).runTaskTimer(Moon.get(), 20L, 20L);
             return;
         }
         player.sendMessage(ChatColor.RED + "Please choose a valid kit");

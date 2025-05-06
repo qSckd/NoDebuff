@@ -1,9 +1,9 @@
-package me.funky.praxi.util.menu.menus;
+package club.nodebuff.moon.util.menu.menus;
 
-import me.funky.praxi.util.callback.TypeCallback;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
-import me.funky.praxi.util.menu.button.ConfirmationButton;
+import club.nodebuff.moon.util.callback.TypeCallback;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
+import club.nodebuff.moon.util.menu.button.ConfirmationButton;
 import java.util.HashMap;
 import java.util.Map;
 import org.bukkit.entity.Player;

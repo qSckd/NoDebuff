@@ -1,4 +1,4 @@
-package me.funky.praxi.profile.hotbar;
+package club.nodebuff.moon.profile.hotbar;
 
 import java.util.regex.Pattern;
 import lombok.Getter;

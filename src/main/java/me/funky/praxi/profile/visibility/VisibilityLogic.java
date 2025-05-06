@@ -1,11 +1,11 @@
-package me.funky.praxi.profile.visibility;
+package club.nodebuff.moon.profile.visibility;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.nametag.NameTags;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.util.PlayerUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.nametag.NameTags;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.util.PlayerUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -72,7 +72,7 @@ public class VisibilityLogic {
 				viewer.hidePlayer(target);
 				NameTags.reset(viewer, target);
 			}
-        } else if (Praxi.get().isReplay() && PlayerUtil.inReplay(viewer)) { // retarded test
+        } else if (Moon.get().isReplay() && PlayerUtil.inReplay(viewer)) { // retarded test
 				viewer.showPlayer(viewer);
                 target.showPlayer(target);
 				NameTags.color(viewer, target, ChatColor.AQUA, false);

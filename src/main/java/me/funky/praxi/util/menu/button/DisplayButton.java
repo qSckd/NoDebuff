@@ -1,9 +1,9 @@
-package me.funky.praxi.util.menu.button;
+package club.nodebuff.moon.util.menu.button;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.util.menu.Button;
+import club.nodebuff.moon.util.menu.Button;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;

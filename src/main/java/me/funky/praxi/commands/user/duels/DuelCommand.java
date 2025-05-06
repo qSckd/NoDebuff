@@ -1,19 +1,19 @@
-package me.funky.praxi.commands.user.duels;
+package club.nodebuff.moon.commands.user.duels;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.duel.DuelProcedure;
-import me.funky.praxi.duel.menu.DuelSelectKitMenu;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.duel.DuelRequest;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.match.impl.BasicTeamMatch;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.participant.TeamGameParticipant;
-import me.funky.praxi.party.Party;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.duel.DuelProcedure;
+import club.nodebuff.moon.duel.menu.DuelSelectKitMenu;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.duel.DuelRequest;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.match.impl.BasicTeamMatch;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.participant.TeamGameParticipant;
+import club.nodebuff.moon.party.Party;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 

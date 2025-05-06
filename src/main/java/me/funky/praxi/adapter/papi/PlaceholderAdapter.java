@@ -1,12 +1,12 @@
-package me.funky.praxi.adapter.papi;
+package club.nodebuff.moon.adapter.papi;
 
 import lombok.RequiredArgsConstructor;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.meta.option.ProfileOptions;
-import me.funky.praxi.util.TimeUtil;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.meta.option.ProfileOptions;
+import club.nodebuff.moon.util.TimeUtil;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
@@ -32,12 +32,12 @@ public class PlaceholderAdapter extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getVersion() {
-        return Praxi.get().getDescription().getVersion();
+        return Moon.get().getDescription().getVersion();
     }
 
     @Override
     public boolean canRegister() {
-        return Bukkit.getPluginManager().isPluginEnabled(Praxi.get());
+        return Bukkit.getPluginManager().isPluginEnabled(Moon.get());
     }
 
     @Override

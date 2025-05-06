@@ -1,7 +1,7 @@
-package me.funky.praxi.event.game.map;
+package club.nodebuff.moon.event.game.map;
 
 
-import me.funky.praxi.util.command.command.adapter.CommandTypeAdapter;
+import club.nodebuff.moon.util.command.command.adapter.CommandTypeAdapter;
 
 public class EventGameMapTypeAdapter implements CommandTypeAdapter {
 

@@ -1,6 +1,6 @@
-package me.funky.praxi.util.command.map;
+package club.nodebuff.moon.util.command.map;
 
-import me.funky.praxi.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CPL;
 
 public class ParameterData
 {

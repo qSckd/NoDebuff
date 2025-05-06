@@ -1,4 +1,4 @@
-package me.funky.praxi.event.game;
+package club.nodebuff.moon.event.game;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

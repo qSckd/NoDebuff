@@ -1,4 +1,4 @@
-package me.funky.praxi.util.command.map;
+package club.nodebuff.moon.util.command.map;
 
 import java.lang.reflect.Method;
 

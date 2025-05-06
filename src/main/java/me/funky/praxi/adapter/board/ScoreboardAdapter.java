@@ -1,20 +1,20 @@
-package me.funky.praxi.adapter.board;
+package club.nodebuff.moon.adapter.board;
 
 import com.bizarrealex.aether.scoreboard.Board;
 import com.bizarrealex.aether.scoreboard.BoardAdapter;
 import com.bizarrealex.aether.scoreboard.cooldown.BoardCooldown;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.match.MatchState;
-import me.funky.praxi.match.impl.BasicFreeForAllMatch;
-import me.funky.praxi.match.impl.BasicTeamMatch;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.event.game.EventGameState;
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.queue.QueueProfile;
-import me.funky.praxi.util.ReplaceUtil;
-import me.funky.praxi.util.PlayerUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.match.MatchState;
+import club.nodebuff.moon.match.impl.BasicFreeForAllMatch;
+import club.nodebuff.moon.match.impl.BasicTeamMatch;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.event.game.EventGameState;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.queue.QueueProfile;
+import club.nodebuff.moon.util.ReplaceUtil;
+import club.nodebuff.moon.util.PlayerUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
 
@@ -28,7 +28,7 @@ public class ScoreboardAdapter implements BoardAdapter {
     @Override
     public String getTitle(Player player) {
 
-        if (Praxi.get().isReplay()) {
+        if (Moon.get().isReplay()) {
             if (PlayerUtil.inReplay(player)) {
                 return getFormattedReplayTitle(player);
             }
@@ -73,15 +73,15 @@ public class ScoreboardAdapter implements BoardAdapter {
     }
 
     private String getAnimatedText() {
-        int index = (int) ((System.currentTimeMillis() / Praxi.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL")) 
-                % Praxi.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").size());
-        return Praxi.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").get(index);
+        int index = (int) ((System.currentTimeMillis() / Moon.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL")) 
+                % Moon.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").size());
+        return Moon.get().getScoreboardConfig().getStringList("TITLE.DEFAULT").get(index);
     }
 
     private String getAnimatedReplayText() {
-        int index = (int) ((System.currentTimeMillis() / Praxi.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL")) 
-                % Praxi.get().getScoreboardConfig().getStringList("TITLE.REPLAY").size());
-        return Praxi.get().getScoreboardConfig().getStringList("TITLE.REPLAY").get(index);
+        int index = (int) ((System.currentTimeMillis() / Moon.get().getScoreboardConfig().getInteger("TITLE.UPDATE-INTERVAL")) 
+                % Moon.get().getScoreboardConfig().getStringList("TITLE.REPLAY").size());
+        return Moon.get().getScoreboardConfig().getStringList("TITLE.REPLAY").get(index);
     }
 
     private List<String> getLobbyLines(Player player, Profile profile) {
@@ -89,7 +89,7 @@ public class ScoreboardAdapter implements BoardAdapter {
             return getFormattedLines(player, "IN-PARTY.LOBBY");
         }
 
-        if (Praxi.get().isReplay() && PlayerUtil.inReplay(player)) {
+        if (Moon.get().isReplay() && PlayerUtil.inReplay(player)) {
             return getFormattedLines(player, "MATCH.REPLAY");
         }
 
@@ -192,7 +192,7 @@ public class ScoreboardAdapter implements BoardAdapter {
     }
 
     private List<String> getFormattedLines(Player player, String path) {
-        List<String> lines = new ArrayList<>(Praxi.get().getScoreboardConfig().getStringList(path));
+        List<String> lines = new ArrayList<>(Moon.get().getScoreboardConfig().getStringList(path));
         return ReplaceUtil.format(lines, player);
     }
 

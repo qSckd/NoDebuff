@@ -1,11 +1,11 @@
-package me.funky.praxi.profile.option.trail.listener;
+package club.nodebuff.moon.profile.option.trail.listener;
 
 import lombok.NonNull;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.match.MatchState;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.option.trail.Trail;
-import me.funky.praxi.util.PlayerUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.match.MatchState;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.option.trail.Trail;
+import club.nodebuff.moon.util.PlayerUtil;
 import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -52,7 +52,7 @@ public class TrailListener implements Listener {
                     PlayerUtil.playSimpleParticleEffect(location, trail);
                 }
             }
-        }.runTaskTimer(Praxi.get(), 0L, 1L);
+        }.runTaskTimer(Moon.get(), 0L, 1L);
 
         trailTasks.put(projectile, task);
     }

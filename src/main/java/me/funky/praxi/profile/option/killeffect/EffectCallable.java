@@ -1,4 +1,4 @@
-package me.funky.praxi.profile.option.killeffect;
+package club.nodebuff.moon.profile.option.killeffect;
 
 import org.bukkit.entity.Player;
 

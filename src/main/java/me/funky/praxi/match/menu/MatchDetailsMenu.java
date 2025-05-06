@@ -1,17 +1,17 @@
-package me.funky.praxi.match.menu;
+package club.nodebuff.moon.match.menu;
 
 import lombok.AllArgsConstructor;
-import me.funky.praxi.Locale;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.match.MatchSnapshot;
-import me.funky.praxi.util.InventoryUtil;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.PlayerUtil;
-import me.funky.praxi.util.PotionUtil;
-import me.funky.praxi.util.TimeUtil;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
-import me.funky.praxi.util.menu.button.DisplayButton;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.match.MatchSnapshot;
+import club.nodebuff.moon.util.InventoryUtil;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.PlayerUtil;
+import club.nodebuff.moon.util.PotionUtil;
+import club.nodebuff.moon.util.TimeUtil;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
+import club.nodebuff.moon.util.menu.button.DisplayButton;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -36,7 +36,7 @@ public class MatchDetailsMenu extends Menu {
 
     @Override
     public String getTitle(Player player) {
-        return Praxi.get().getMenusConfig().getString("MATCH.DETAILS-MENU.TITLE");
+        return Moon.get().getMenusConfig().getString("MATCH.DETAILS-MENU.TITLE");
     }
 
     public boolean getFixedPositions() {
@@ -89,7 +89,7 @@ public class MatchDetailsMenu extends Menu {
         @Override
         public ItemStack getButtonItem(Player player) {
             return new ItemBuilder(PlayerUtil.getPlayerHead(snapshot.getUuid()))
-                    .name(Praxi.get().getMenusConfig().getString("MATCH.DETAILS-MENU.HEALTH-BUTTON.NAME").replace("{health}", String.valueOf(health)))
+                    .name(Moon.get().getMenusConfig().getString("MATCH.DETAILS-MENU.HEALTH-BUTTON.NAME").replace("{health}", String.valueOf(health)))
                     .amount((int) (health == 0 ? 1 : health))
                     .clearFlags()
                     .build();
@@ -104,7 +104,7 @@ public class MatchDetailsMenu extends Menu {
 
         @Override
         public ItemStack getButtonItem(Player player) {
-            ItemBuilder builder = new ItemBuilder(Material.BREWING_STAND_ITEM).name(Praxi.get().getMenusConfig().getString("MATCH.DETAILS-MENU.EFFECTS-BUTTON.NAME"));
+            ItemBuilder builder = new ItemBuilder(Material.BREWING_STAND_ITEM).name(Moon.get().getMenusConfig().getString("MATCH.DETAILS-MENU.EFFECTS-BUTTON.NAME"));
 
             if (effects.isEmpty()) {
                 builder.lore("&fNo potion effects");
@@ -114,7 +114,7 @@ public class MatchDetailsMenu extends Menu {
                 effects.forEach(effect -> {
                     String name = PotionUtil.getName(effect.getType()) + " " + (effect.getAmplifier() + 1);
                     String duration = " (" + TimeUtil.millisToTimer((effect.getDuration() / 20) * 1000L) + ")";
-					lore.add(Praxi.get().getMenusConfig().getString("MATCH.DETAILS-MENU.EFFECTS-BUTTON.LORE").replace("{duration}", String.valueOf(duration)).replace("{potion_name}", name));
+					lore.add(Moon.get().getMenusConfig().getString("MATCH.DETAILS-MENU.EFFECTS-BUTTON.LORE").replace("{duration}", String.valueOf(duration)).replace("{potion_name}", name));
                 });
 
                 builder.lore(lore, player);
@@ -136,7 +136,7 @@ public class MatchDetailsMenu extends Menu {
             return new ItemBuilder(Material.POTION)
                     .durability(16421)
 					.amount(potions == 0 ? 1 : potions)
-                    .name(Praxi.get().getMenusConfig().getString("MATCH.DETAILS-MENU.POTIONS-BUTTON.NAME"))
+                    .name(Moon.get().getMenusConfig().getString("MATCH.DETAILS-MENU.POTIONS-BUTTON.NAME"))
                     .lore("&b" + name + " &fhad &b" + potions + " &fpotion" + (potions == 1 ? "" : "s") + " left.")
                     .clearFlags()
                     .build();
@@ -153,7 +153,7 @@ public class MatchDetailsMenu extends Menu {
         public ItemStack getButtonItem(Player player) {
             int totalHits = snapshot.getTotalHits();
             return new ItemBuilder(Material.PAPER)
-                    .name(Praxi.get().getMenusConfig().getString("MATCH.DETAILS-MENU.STATS-BUTTON.NAME"))
+                    .name(Moon.get().getMenusConfig().getString("MATCH.DETAILS-MENU.STATS-BUTTON.NAME"))
                     .lore(Arrays.asList(
                             "&7• &fHits: &b" + snapshot.getTotalHits(),
                             "&7• &fLongest Combo: &b" + snapshot.getLongestCombo(),
@@ -180,8 +180,8 @@ public class MatchDetailsMenu extends Menu {
 
             if (snapshot != null) {
                 return new ItemBuilder(Material.LEVER)
-                        .name(Praxi.get().getMenusConfig().getString("MATCH.DETAILS-MENU.SWITCH-INVENTORY-BUTTON.NAME"))
-                        .lore(Praxi.get().getMenusConfig().getString("MATCH.DETAILS-MENU.SWITCH-INVENTORY-BUTTON.LORE").replace("{player}", opponent.getName()))
+                        .name(Moon.get().getMenusConfig().getString("MATCH.DETAILS-MENU.SWITCH-INVENTORY-BUTTON.NAME"))
+                        .lore(Moon.get().getMenusConfig().getString("MATCH.DETAILS-MENU.SWITCH-INVENTORY-BUTTON.LORE").replace("{player}", opponent.getName()))
                         .clearFlags()
                         .build();
             } else {
@@ -203,7 +203,7 @@ public class MatchDetailsMenu extends Menu {
         @Override
         public ItemStack getButtonItem(Player player) {
             return new ItemBuilder(Material.COOKED_BEEF)
-					.name(Praxi.get().getMenusConfig().getString("MATCH.DETAILS-MENU.HUNGER-BUTTON.NAME").replace("{hunger}", String.valueOf(hunger)))
+					.name(Moon.get().getMenusConfig().getString("MATCH.DETAILS-MENU.HUNGER-BUTTON.NAME").replace("{hunger}", String.valueOf(hunger)))
                     .amount(hunger == 0 ? 1 : hunger)
                     .clearFlags()
                     .build();

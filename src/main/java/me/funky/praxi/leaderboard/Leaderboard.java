@@ -1,11 +1,11 @@
-package me.funky.praxi.leaderboard;
+package club.nodebuff.moon.leaderboard;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.kit.KitLeaderboards;
-import me.funky.praxi.util.TaskUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.kit.KitLeaderboards;
+import club.nodebuff.moon.util.TaskUtil;
 import lombok.Getter;
 import org.bson.Document;
 import org.bukkit.Bukkit;
@@ -43,7 +43,7 @@ public class Leaderboard {
         try {
             Document sort = new Document();
             sort.put("kitStatistics." + ladder.getName() + ".elo", -1);
-            return Praxi.get().getMongoDatabase().getCollection("profiles").find().sort(sort).limit(10).into(new ArrayList<>());
+            return Moon.get().getMongoDatabase().getCollection("profiles").find().sort(sort).limit(10).into(new ArrayList<>());
         } catch (Exception ex) {
             return null;
         }
@@ -53,7 +53,7 @@ public class Leaderboard {
         try {
             Document sort = new Document();
             sort.put("kitStatistics." + ladder.getName() + ".won", -1);
-            return Praxi.get().getMongoDatabase().getCollection("profiles").find().sort(sort).limit(10).into(new ArrayList<>());
+            return Moon.get().getMongoDatabase().getCollection("profiles").find().sort(sort).limit(10).into(new ArrayList<>());
         } catch (Exception ex) {
             return null;
         }
@@ -66,7 +66,7 @@ public class Leaderboard {
             public void run() {
                 leaderboards.clear();
 
-                for (Document value : Praxi.get().getMongoDatabase().getCollection("profiles").find()) {
+                for (Document value : Moon.get().getMongoDatabase().getCollection("profiles").find()) {
                     UUID uuid = UUID.fromString(value.getString("uuid"));
                     Document kitStatistics = (Document) value.get("kitStatistics");
 
@@ -117,7 +117,7 @@ public class Leaderboard {
                 LeaderboardCache.reload();
                 long endTime = System.currentTimeMillis();
                 long finalTime = endTime - startTime;
-                Praxi.get().broadcastMessage(Praxi.get().getMainConfig().getString("LEADERBOARDS.UPDATE-MESSAGE"));
+                Moon.get().broadcastMessage(Moon.get().getMainConfig().getString("LEADERBOARDS.UPDATE-MESSAGE"));
             }
         });
     }

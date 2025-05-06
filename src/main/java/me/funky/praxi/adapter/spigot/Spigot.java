@@ -1,4 +1,4 @@
-package me.funky.praxi.adapter.spigot;
+package club.nodebuff.moon.adapter.spigot;
 
 import org.bukkit.entity.Player;
 

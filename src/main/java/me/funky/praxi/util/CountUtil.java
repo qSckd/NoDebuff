@@ -1,9 +1,9 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import lombok.experimental.UtilityClass;
 //import net.citizensnpcs.nms.v1_8_R3.util.NMSImpl;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.NumberUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.NumberUtil;
 import net.minecraft.server.v1_8_R3.EntityPlayer;
 import org.apache.commons.io.IOUtils;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;

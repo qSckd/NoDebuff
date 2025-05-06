@@ -1,4 +1,4 @@
-package me.funky.praxi.profile;
+package club.nodebuff.moon.profile;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,31 +10,31 @@ import com.google.common.collect.Lists;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.ReplaceOptions;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.divisions.ProfileDivision;
-import me.funky.praxi.duel.DuelProcedure;
-import me.funky.praxi.duel.DuelRequest;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.match.MatchInfo;
-import me.funky.praxi.party.Party;
-import me.funky.praxi.queue.QueueProfile;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.kit.KitLoadout;
-import me.funky.praxi.kit.KitLeaderboards;
-import me.funky.praxi.profile.meta.ProfileKitEditorData;
-import me.funky.praxi.profile.meta.ProfileKitData;
-import me.funky.praxi.profile.meta.ProfileRematchData;
-import me.funky.praxi.profile.meta.option.ProfileOptions;
-import me.funky.praxi.profile.option.killeffect.SpecialEffects;
-import me.funky.praxi.profile.option.killmessages.KillMessages;
-import me.funky.praxi.profile.option.trail.Trail;
-import me.funky.praxi.profile.times.Times;
-import me.funky.praxi.profile.themes.Themes;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.Cooldown;
-import me.funky.praxi.util.InventoryUtil;
-import me.funky.praxi.util.config.BasicConfigurationFile;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.divisions.ProfileDivision;
+import club.nodebuff.moon.duel.DuelProcedure;
+import club.nodebuff.moon.duel.DuelRequest;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.match.MatchInfo;
+import club.nodebuff.moon.party.Party;
+import club.nodebuff.moon.queue.QueueProfile;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.kit.KitLoadout;
+import club.nodebuff.moon.kit.KitLeaderboards;
+import club.nodebuff.moon.profile.meta.ProfileKitEditorData;
+import club.nodebuff.moon.profile.meta.ProfileKitData;
+import club.nodebuff.moon.profile.meta.ProfileRematchData;
+import club.nodebuff.moon.profile.meta.option.ProfileOptions;
+import club.nodebuff.moon.profile.option.killeffect.SpecialEffects;
+import club.nodebuff.moon.profile.option.killmessages.KillMessages;
+import club.nodebuff.moon.profile.option.trail.Trail;
+import club.nodebuff.moon.profile.times.Times;
+import club.nodebuff.moon.profile.themes.Themes;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.Cooldown;
+import club.nodebuff.moon.util.InventoryUtil;
+import club.nodebuff.moon.util.config.BasicConfigurationFile;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.PermissionAttachment;
@@ -449,7 +449,7 @@ public class Profile {
 	}
 
 	public static void init() {
-		collection = Praxi.get().getMongoDatabase().getCollection("profiles");
+		collection = Moon.get().getMongoDatabase().getCollection("profiles");
 
 		// Players might have joined before the plugin finished loading
 		for (Player player : Bukkit.getOnlinePlayers()) {
@@ -482,7 +482,7 @@ public class Profile {
 					}
 				}
 			}
-		}.runTaskTimerAsynchronously(Praxi.get(), 60L, 60L);
+		}.runTaskTimerAsynchronously(Moon.get(), 60L, 60L);
 
 		// Save every 5 minutes to prevent data loss
 		new BukkitRunnable() {
@@ -492,7 +492,7 @@ public class Profile {
 					profile.save();
 				}
 			}
-		}.runTaskTimerAsynchronously(Praxi.get(), 6000L, 6000L);
+		}.runTaskTimerAsynchronously(Moon.get(), 6000L, 6000L);
 	}
 
 	public static Profile getByUuid(UUID uuid) {
@@ -506,10 +506,10 @@ public class Profile {
 	}
 
     public ProfileDivision getDivision() {
-        if (Praxi.get().getDivisionsManager().isXPBased()) {
-            return Praxi.get().getDivisionsManager().getDivisionByXP(this.getExperience());
+        if (Moon.get().getDivisionsManager().isXPBased()) {
+            return Moon.get().getDivisionsManager().getDivisionByXP(this.getExperience());
         } else {
-            return Praxi.get().getDivisionsManager().getDivisionByELO(this.getGlobalElo());
+            return Moon.get().getDivisionsManager().getDivisionByELO(this.getGlobalElo());
         }
     }
 

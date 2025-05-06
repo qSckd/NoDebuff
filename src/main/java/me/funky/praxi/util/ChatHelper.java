@@ -1,4 +1,4 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;

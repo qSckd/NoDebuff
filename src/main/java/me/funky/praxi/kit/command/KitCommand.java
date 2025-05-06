@@ -1,12 +1,12 @@
-package me.funky.praxi.kit.command;
+package club.nodebuff.moon.kit.command;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.CommandHelp;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.kit.manage.KitManagerMenu;
-import me.funky.praxi.kit.manage.KitManagerSelectKitMenu;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.kit.manage.KitManagerMenu;
+import club.nodebuff.moon.kit.manage.KitManagerSelectKitMenu;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;

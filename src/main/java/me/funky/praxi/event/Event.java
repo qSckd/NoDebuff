@@ -1,12 +1,12 @@
-package me.funky.praxi.event;
+package club.nodebuff.moon.event;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.event.game.EventGameLogic;
-import me.funky.praxi.event.impl.sumo.SumoEvent;
-import me.funky.praxi.event.impl.spleef.SpleefEvent;
-import me.funky.praxi.event.impl.brackets.BracketsEvent;
-import me.funky.praxi.event.impl.gulag.GulagEvent;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.event.game.EventGameLogic;
+import club.nodebuff.moon.event.impl.sumo.SumoEvent;
+import club.nodebuff.moon.event.impl.spleef.SpleefEvent;
+import club.nodebuff.moon.event.impl.brackets.BracketsEvent;
+import club.nodebuff.moon.event.impl.gulag.GulagEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,11 +27,11 @@ public interface Event {
 
 		for (Event event : events) {
 			for (Listener listener : event.getListeners()) {
-				Praxi.get().getServer().getPluginManager().registerEvents(listener, Praxi.get());
+				Moon.get().getServer().getPluginManager().registerEvents(listener, Moon.get());
 			}
 
 			for (Object command : event.getCommands()) {
-				Praxi.get().getHoncho().registerCommand(command);
+				Moon.get().getHoncho().registerCommand(command);
 			}
 		}
 	}

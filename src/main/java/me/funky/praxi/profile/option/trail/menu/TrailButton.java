@@ -1,12 +1,12 @@
-package me.funky.praxi.profile.option.trail.menu;
+package club.nodebuff.moon.profile.option.trail.menu;
 
 import lombok.AllArgsConstructor;
 import com.google.common.collect.Lists;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.option.trail.Trail;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.option.trail.Trail;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;

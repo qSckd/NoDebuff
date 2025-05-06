@@ -1,10 +1,10 @@
-package me.funky.praxi.commands.event.admin;
+package club.nodebuff.moon.commands.event.admin;
 
-import me.funky.praxi.event.Event;
-import me.funky.praxi.event.game.map.EventGameMap;
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.event.Event;
+import club.nodebuff.moon.event.game.map.EventGameMap;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 
 @CommandMeta(label = "event add map", permission = "shadow.admin.event")

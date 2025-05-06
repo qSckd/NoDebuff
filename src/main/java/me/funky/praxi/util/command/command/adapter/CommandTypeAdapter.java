@@ -1,4 +1,4 @@
-package me.funky.praxi.util.command.command.adapter;
+package club.nodebuff.moon.util.command.command.adapter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
-package me.funky.praxi.util.hologram;
+package club.nodebuff.moon.util.hologram;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.TaskUtil;
-import me.funky.praxi.util.hologram.placeholder.Placeholder;
-import me.funky.praxi.util.hologram.placeholder.PlayerNamePlaceholder;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.TaskUtil;
+import club.nodebuff.moon.util.hologram.placeholder.Placeholder;
+import club.nodebuff.moon.util.hologram.placeholder.PlayerNamePlaceholder;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 
@@ -19,7 +19,7 @@ public class HologramHandler {
     private final Int2ObjectMap<Hologram> hologramMap = new Int2ObjectOpenHashMap<>();
     private final Set<Placeholder> placeholders = new HashSet<Placeholder>();
 
-    public HologramHandler(Praxi instance) {
+    public HologramHandler(Moon instance) {
         this.registerPlaceholder(new PlayerNamePlaceholder());
         instance.getServer().getPluginManager().registerEvents(new HologramListener(this), instance);
         TaskUtil.scheduleAtFixedRateOnPool(new HologramTask(this), 50L, 50L, TimeUnit.MILLISECONDS);

@@ -1,4 +1,4 @@
-package me.funky.praxi.util.command.command;
+package club.nodebuff.moon.util.command.command;
 
 public class CommandOption
 {

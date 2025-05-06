@@ -1,12 +1,12 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.option.killeffect.SpecialEffects;
-import me.funky.praxi.profile.option.killmessages.KillMessages;
-import me.funky.praxi.profile.option.trail.Trail;
-import me.funky.praxi.util.PlayerUtil;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.menu.Button;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.option.killeffect.SpecialEffects;
+import club.nodebuff.moon.profile.option.killmessages.KillMessages;
+import club.nodebuff.moon.profile.option.trail.Trail;
+import club.nodebuff.moon.util.PlayerUtil;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.menu.Button;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 

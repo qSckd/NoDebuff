@@ -1,13 +1,13 @@
-package me.funky.praxi.event.game;
+package club.nodebuff.moon.event.game;
 
-import me.funky.praxi.event.impl.sumo.SumoEvent;
-import me.funky.praxi.event.impl.spleef.SpleefEvent;
-import me.funky.praxi.event.impl.brackets.BracketsEvent;
-import me.funky.praxi.event.impl.gulag.GulagEvent;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.hotbar.HotbarItem;
+import club.nodebuff.moon.event.impl.sumo.SumoEvent;
+import club.nodebuff.moon.event.impl.spleef.SpleefEvent;
+import club.nodebuff.moon.event.impl.brackets.BracketsEvent;
+import club.nodebuff.moon.event.impl.gulag.GulagEvent;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.hotbar.HotbarItem;
 import java.util.regex.Matcher;
 
 import org.bukkit.entity.Player;

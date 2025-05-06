@@ -1,6 +1,6 @@
-package me.funky.praxi.kit;
+package club.nodebuff.moon.kit;
 
-import me.funky.praxi.util.command.command.adapter.CommandTypeAdapter;
+import club.nodebuff.moon.util.command.command.adapter.CommandTypeAdapter;
 
 public class KitTypeAdapter implements CommandTypeAdapter {
 

@@ -1,4 +1,4 @@
-package me.funky.praxi.event.game.map.vote;
+package club.nodebuff.moon.event.game.map.vote;
 
 import java.util.ArrayList;
 import java.util.List;

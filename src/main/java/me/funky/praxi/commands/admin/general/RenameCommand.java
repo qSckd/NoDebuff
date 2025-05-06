@@ -1,9 +1,9 @@
-package me.funky.praxi.commands.admin.general;
+package club.nodebuff.moon.commands.admin.general;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -17,7 +17,7 @@ public class RenameCommand extends BaseCommand {
     public void execute(Player player, String name) {
 
 		if (name == null) {
-            player.sendMessage(CC.translate(Praxi.get().getMainConfig().getString("COMMANDS.RENAME.NOT-VALID")));
+            player.sendMessage(CC.translate(Moon.get().getMainConfig().getString("COMMANDS.RENAME.NOT-VALID")));
 			return;
 		}
 
@@ -30,9 +30,9 @@ public class RenameCommand extends BaseCommand {
 			itemStack.setItemMeta(itemMeta);
 
 			player.updateInventory();
-            player.sendMessage(CC.translate(Praxi.get().getMainConfig().getString("COMMANDS.RENAME.RENAMED")));
+            player.sendMessage(CC.translate(Moon.get().getMainConfig().getString("COMMANDS.RENAME.RENAMED")));
 		} else {
-            player.sendMessage(CC.translate(Praxi.get().getMainConfig().getString("COMMANDS.RENAME.ERROR")));
+            player.sendMessage(CC.translate(Moon.get().getMainConfig().getString("COMMANDS.RENAME.ERROR")));
 		}
 	}
 }

@@ -1,4 +1,4 @@
-package me.funky.praxi.match;
+package club.nodebuff.moon.match;
 
 import java.util.Collection;
 import java.util.HashMap;

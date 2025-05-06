@@ -1,14 +1,14 @@
-package me.funky.praxi.queue;
+package club.nodebuff.moon.queue;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.Locale;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ReplaceUtil;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ReplaceUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 

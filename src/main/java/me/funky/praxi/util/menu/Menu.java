@@ -1,11 +1,11 @@
-package me.funky.praxi.util.menu;
+package club.nodebuff.moon.util.menu;
 
 import java.util.HashMap;
 import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -19,7 +19,7 @@ public abstract class Menu {
 
 	public static Map<String, Menu> currentlyOpenedMenus = new HashMap<>();
 
-	@Getter protected Praxi praxi = Praxi.get();
+	@Getter protected Moon Moon = Moon.get();
 	private Map<Integer, Button> buttons = new HashMap<>();
 	private boolean autoUpdate = false;
 	private boolean updateAfterClick = true;

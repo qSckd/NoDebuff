@@ -229,15 +229,15 @@
                     <finalName>Moon</finalName>
 					<relocations>
                         <relocation>
-                            <pattern>me.funky.praxi.Praxi</pattern>
+                            <pattern>club.nodebuff.moon.Moon</pattern>
                             <shadedPattern>me.zatrex.practice.Moon</shadedPattern>
                         </relocation>
 						<relocation>
-                            <pattern>me.funky.praxi.PraxiAPI</pattern>
+                            <pattern>club.nodebuff.moon.MoonAPI</pattern>
                             <shadedPattern>me.zatrex.practice.MoonAPI</shadedPattern>
                         </relocation>
                         <relocation>
-                            <pattern>me.funky.praxi</pattern>
+                            <pattern>club.nodebuff.moon</pattern>
                             <shadedPattern>me.zatrex.practice</shadedPattern>
                         </relocation>
 						<relocation>

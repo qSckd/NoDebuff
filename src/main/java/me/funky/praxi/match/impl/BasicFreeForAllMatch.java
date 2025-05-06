@@ -1,17 +1,17 @@
-package me.funky.praxi.match.impl;
+package club.nodebuff.moon.match.impl;
 
-import me.funky.praxi.Locale;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.match.MatchSnapshot;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.meta.ProfileKitData;
-import me.funky.praxi.queue.Queue;
-import me.funky.praxi.adapter.spigot.SpigotManager;
-import me.funky.praxi.util.*;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.match.MatchSnapshot;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.meta.ProfileKitData;
+import club.nodebuff.moon.queue.Queue;
+import club.nodebuff.moon.adapter.spigot.SpigotManager;
+import club.nodebuff.moon.util.*;
 import java.util.ArrayList;
 import java.util.List;
 

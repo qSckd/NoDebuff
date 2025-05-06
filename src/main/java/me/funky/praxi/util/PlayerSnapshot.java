@@ -1,4 +1,4 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import java.util.UUID;
 import lombok.Getter;

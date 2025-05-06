@@ -1,4 +1,4 @@
-package me.funky.praxi.util.elo;
+package club.nodebuff.moon.util.elo;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

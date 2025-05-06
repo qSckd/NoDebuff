@@ -1,10 +1,10 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
-import me.funky.praxi.Praxi;
+import club.nodebuff.moon.Moon;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +18,9 @@ public abstract class TaskTicker extends BukkitRunnable {
 
     public TaskTicker(int delay, int period, boolean async) {
         if (async) {
-            this.runTaskTimerAsynchronously(Praxi.get(), delay, period);
+            this.runTaskTimerAsynchronously(Moon.get(), delay, period);
         } else {
-            this.runTaskTimer(Praxi.get(), delay, period);
+            this.runTaskTimer(Moon.get(), delay, period);
         }
         tickers.add(this);
     }

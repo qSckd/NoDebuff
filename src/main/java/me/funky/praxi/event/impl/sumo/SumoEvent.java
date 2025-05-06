@@ -1,14 +1,14 @@
-package me.funky.praxi.event.impl.sumo;
+package club.nodebuff.moon.event.impl.sumo;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.event.Event;
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.event.game.EventGameLogic;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.LocationUtil;
-import me.funky.praxi.util.config.BasicConfigurationFile;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.event.Event;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.event.game.EventGameLogic;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.LocationUtil;
+import club.nodebuff.moon.util.config.BasicConfigurationFile;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -30,7 +30,7 @@ public class SumoEvent implements Event {
     private Location lobbyLocation;
 
     public SumoEvent() {
-        BasicConfigurationFile config = Praxi.get().getEventsConfig();
+        BasicConfigurationFile config = Moon.get().getEventsConfig();
 
         lobbyLocation = LocationUtil.deserialize(config.getString("EVENTS.SUMO.LOBBY_LOCATION"));
 
@@ -88,12 +88,12 @@ public class SumoEvent implements Event {
 
     @Override
     public void save() {
-        FileConfiguration config = Praxi.get().getEventsConfig().getConfiguration();
+        FileConfiguration config = Moon.get().getEventsConfig().getConfiguration();
         config.set("EVENTS.SUMO.LOBBY_LOCATION", LocationUtil.serialize(lobbyLocation));
         config.set("EVENTS.SUMO.ALLOWED_MAPS", allowedMaps);
 
         try {
-            config.save(Praxi.get().getEventsConfig().getFile());
+            config.save(Moon.get().getEventsConfig().getFile());
         } catch (IOException e) {
             e.printStackTrace();
         }

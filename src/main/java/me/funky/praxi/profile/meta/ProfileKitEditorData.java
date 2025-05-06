@@ -1,7 +1,7 @@
-package me.funky.praxi.profile.meta;
+package club.nodebuff.moon.profile.meta;
 
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.kit.KitLoadout;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.kit.KitLoadout;
 import lombok.Getter;
 import lombok.Setter;
 

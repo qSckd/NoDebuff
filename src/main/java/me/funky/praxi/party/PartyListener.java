@@ -1,10 +1,10 @@
-package me.funky.praxi.party;
+package club.nodebuff.moon.party;
 
-import me.funky.praxi.party.menu.OtherPartiesMenu;
-import me.funky.praxi.party.menu.PartyEventSelectEventMenu;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.hotbar.HotbarItem;
+import club.nodebuff.moon.party.menu.OtherPartiesMenu;
+import club.nodebuff.moon.party.menu.PartyEventSelectEventMenu;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.hotbar.HotbarItem;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

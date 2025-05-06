@@ -1,6 +1,6 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
-import me.funky.praxi.Praxi;
+import club.nodebuff.moon.Moon;
 import org.bukkit.*;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -23,10 +23,10 @@ public class PlayerUtil {
 
 	public static Player setLastAttacker(Player victim, Player attacker) {
         if (attacker == null) {
-            victim.setMetadata("lastAttacker", new FixedMetadataValue(Praxi.get(), null));
+            victim.setMetadata("lastAttacker", new FixedMetadataValue(Moon.get(), null));
 			return null;
         } else {
-            victim.setMetadata("lastAttacker", new FixedMetadataValue(Praxi.get(), attacker.getUniqueId()));
+            victim.setMetadata("lastAttacker", new FixedMetadataValue(Moon.get(), attacker.getUniqueId()));
 			return attacker;
         }
     }

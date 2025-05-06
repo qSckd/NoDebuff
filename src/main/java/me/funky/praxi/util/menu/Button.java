@@ -1,4 +1,4 @@
-package me.funky.praxi.util.menu;
+package club.nodebuff.moon.util.menu;
 
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Material;

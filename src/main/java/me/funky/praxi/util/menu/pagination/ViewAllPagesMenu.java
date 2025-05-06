@@ -1,13 +1,13 @@
-package me.funky.praxi.util.menu.pagination;
+package club.nodebuff.moon.util.menu.pagination;
 
-import me.funky.praxi.util.menu.Button;
+import club.nodebuff.moon.util.menu.Button;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import me.funky.praxi.util.menu.Menu;
-import me.funky.praxi.util.menu.button.BackButton;
+import club.nodebuff.moon.util.menu.Menu;
+import club.nodebuff.moon.util.menu.button.BackButton;
 import org.bukkit.entity.Player;
 
 @RequiredArgsConstructor

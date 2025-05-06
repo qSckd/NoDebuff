@@ -1,19 +1,19 @@
-package me.funky.praxi.event.game.menu;
+package club.nodebuff.moon.event.game.menu;
 
 import lombok.AllArgsConstructor;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.adapter.lunar.EventNotification;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.event.Event;
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.event.game.map.EventGameMap;
-import me.funky.praxi.event.game.map.vote.EventGameMapVoteData;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.TextSplitter;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.button.DisplayButton;
-import me.funky.praxi.util.menu.Menu;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.adapter.lunar.EventNotification;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.event.Event;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.event.game.map.EventGameMap;
+import club.nodebuff.moon.event.game.map.vote.EventGameMapVoteData;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.TextSplitter;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.button.DisplayButton;
+import club.nodebuff.moon.util.menu.Menu;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -34,12 +34,12 @@ public class EventHostMenu extends Menu {
 
     @Override
     public String getTitle(Player player) {
-        return Praxi.get().getMenusConfig().getString("EVENTS.TITLE");
+        return Moon.get().getMenusConfig().getString("EVENTS.TITLE");
     }
 
     @Override
     public int getSize() {
-        return Praxi.get().getMenusConfig().getInteger("EVENTS.SIZE");
+        return Moon.get().getMenusConfig().getInteger("EVENTS.SIZE");
     }
 
 
@@ -65,7 +65,7 @@ public class EventHostMenu extends Menu {
 
     private int getHostSlots(Player host) {
         int slots = 32;
-        FileConfiguration config = Praxi.get().getEventsConfig().getConfiguration();
+        FileConfiguration config = Moon.get().getEventsConfig().getConfiguration();
 
         for (String key : config.getConfigurationSection("HOST_SLOTS").getKeys(false)) {
             if (host.hasPermission(config.getString("HOST_SLOTS." + key + ".PERMISSION"))) {
@@ -81,7 +81,7 @@ public class EventHostMenu extends Menu {
     @AllArgsConstructor
     private class SelectEventButton extends Button {
 
-        private final EventNotification eventNotification = Praxi.get().getEventNotification();
+        private final EventNotification eventNotification = Moon.get().getEventNotification();
         private Event event;
 
         @Override
@@ -97,9 +97,9 @@ public class EventHostMenu extends Menu {
             lore.add("");
 
             if (event.canHost(player) || profile.getEventTokens() > 0) {
-                lore.add(CC.translate(Praxi.get().getMenusConfig().getString("EVENTS.CAN-HOST")));
+                lore.add(CC.translate(Moon.get().getMenusConfig().getString("EVENTS.CAN-HOST")));
             } else {
-                for (String cantHost : Praxi.get().getMenusConfig().getStringList("EVENTS.CANT-HOST")) {
+                for (String cantHost : Moon.get().getMenusConfig().getStringList("EVENTS.CANT-HOST")) {
 			        lore.add(CC.translate(cantHost));
 		        }
             }
@@ -107,7 +107,7 @@ public class EventHostMenu extends Menu {
             lore.add(CC.MENU_BAR);
 
             return new ItemBuilder(event.getIcon().clone())
-		            .name(Praxi.get().getMenusConfig().getString("EVENTS.EVENT-NAME").replace("{event}", event.getDisplayName()))
+		            .name(Moon.get().getMenusConfig().getString("EVENTS.EVENT-NAME").replace("{event}", event.getDisplayName()))
                     .lore(lore)
                     .clearFlags()
                     .build();
@@ -167,7 +167,7 @@ public class EventHostMenu extends Menu {
                     game.broadcastJoinMessage();
                     game.start();
                     game.getGameLogic().onJoin(player);
-			    	if (Praxi.get().isLunar()) { // check if Apollo-Bukkit enabled
+			    	if (Moon.get().isLunar()) { // check if Apollo-Bukkit enabled
                         this.eventNotification.displayNotification(player); // send notification if Apollo-Bukkit enabled and the player is using lunar client
                     }
                 } catch (Exception ignored) {
@@ -222,7 +222,7 @@ public class EventHostMenu extends Menu {
                     game.broadcastJoinMessage();
                     game.start();
                     game.getGameLogic().onJoin(player);
-			    	if (Praxi.get().isLunar()) { // check if Apollo-Bukkit enabled
+			    	if (Moon.get().isLunar()) { // check if Apollo-Bukkit enabled
                         this.eventNotification.displayNotification(player); // send notification if Apollo-Bukkit enabled and the player is using lunar client
                     }
                 } catch (Exception ignored) {

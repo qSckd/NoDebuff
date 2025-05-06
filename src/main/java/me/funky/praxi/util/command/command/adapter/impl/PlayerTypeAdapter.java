@@ -1,6 +1,6 @@
-package me.funky.praxi.util.command.command.adapter.impl;
+package club.nodebuff.moon.util.command.command.adapter.impl;
 
-import me.funky.praxi.util.command.command.adapter.CommandTypeAdapter;
+import club.nodebuff.moon.util.command.command.adapter.CommandTypeAdapter;
 import org.bukkit.entity.Player;
 import java.util.ArrayList;
 import java.util.List;

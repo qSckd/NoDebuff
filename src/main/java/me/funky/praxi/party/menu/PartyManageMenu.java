@@ -1,12 +1,12 @@
-package me.funky.praxi.party.menu;
+package club.nodebuff.moon.party.menu;
 
-import me.funky.praxi.party.PartyPrivacy;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.Constants;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
+import club.nodebuff.moon.party.PartyPrivacy;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.Constants;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

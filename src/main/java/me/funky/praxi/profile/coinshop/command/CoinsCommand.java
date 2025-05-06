@@ -1,9 +1,9 @@
-package me.funky.praxi.profile.coinshop.command;
+package club.nodebuff.moon.profile.coinshop.command;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 

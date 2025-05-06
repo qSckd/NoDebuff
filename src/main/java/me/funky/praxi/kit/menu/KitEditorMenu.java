@@ -1,22 +1,22 @@
-package me.funky.praxi.kit.menu;
+package club.nodebuff.moon.kit.menu;
 
 import lombok.AllArgsConstructor;
-import me.funky.praxi.Locale;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.kit.KitLoadout;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.meta.ProfileKitData;
-import me.funky.praxi.util.BukkitReflection;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.PlayerUtil;
-import me.funky.praxi.util.InventoryUtil;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
-import me.funky.praxi.util.menu.button.DisplayButton;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.kit.KitLoadout;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.meta.ProfileKitData;
+import club.nodebuff.moon.util.BukkitReflection;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.PlayerUtil;
+import club.nodebuff.moon.util.InventoryUtil;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
+import club.nodebuff.moon.util.menu.button.DisplayButton;
 import org.bukkit.Material;
 import org.bukkit.Color;
 import org.bukkit.entity.Player;
@@ -50,7 +50,7 @@ public class KitEditorMenu extends Menu {
     @Override
     public String getTitle(Player player) {
         Profile profile = Profile.getByUuid(player.getUniqueId());
-        return Praxi.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.TITLE").replace("{kit}", profile.getKitEditorData().getSelectedKit().getName());
+        return Moon.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.TITLE").replace("{kit}", profile.getKitEditorData().getSelectedKit().getName());
     }
 
     @Override
@@ -118,7 +118,7 @@ public class KitEditorMenu extends Menu {
                     profile.setState(ProfileState.LOBBY);
                     Hotbar.giveHotbarItems(player);
                 }
-            }.runTask(Praxi.get());
+            }.runTask(Moon.get());
         }
     }
 
@@ -150,7 +150,7 @@ public class KitEditorMenu extends Menu {
         @Override
         public ItemStack getButtonItem(Player player) {
             return new ItemBuilder(Material.WOOL)
-                .name(Praxi.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.DELETE-BUTTON"))
+                .name(Moon.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.DELETE-BUTTON"))
                 .durability(14)
                 .lore(Arrays.asList(
                     "&fClick to delete this kit.",
@@ -179,7 +179,7 @@ public class KitEditorMenu extends Menu {
         @Override
         public ItemStack getButtonItem(Player player) {
             return new ItemBuilder(Material.NAME_TAG)
-                .name(Praxi.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.RENAME-BUTTON"))
+                .name(Moon.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.RENAME-BUTTON"))
                 .lore("&fRename this kit loadout.")
                 .build();
         }
@@ -207,7 +207,7 @@ public class KitEditorMenu extends Menu {
         public ItemStack getButtonItem(Player player) {
             return new ItemBuilder(Material.INK_SACK)
                 .durability(1)
-                .name(Praxi.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.CLEAR-BUTTON"))
+                .name(Moon.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.CLEAR-BUTTON"))
                 .lore(Arrays.asList(
                     "&fThis will clear your inventory",
                     "&fso you can start over."
@@ -236,7 +236,7 @@ public class KitEditorMenu extends Menu {
         public ItemStack getButtonItem(Player player) {
             return new ItemBuilder(Material.INK_SACK)
                 .durability(6)
-                .name(Praxi.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.LOAD-DEFAULT-BUTTON"))
+                .name(Moon.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.LOAD-DEFAULT-BUTTON"))
                 .lore(Arrays.asList(
                     "&fClick this to load the default kit",
                     "&finto the kit editing menu."
@@ -267,7 +267,7 @@ public class KitEditorMenu extends Menu {
         public ItemStack getButtonItem(Player player) {
             return new ItemBuilder(Material.WOOL)
                 .durability(5)
-                .name(Praxi.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.SAVE-BUTTON"))
+                .name(Moon.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.SAVE-BUTTON"))
                 .lore("&fSave this kit loadout.")
                 .build();
         }
@@ -299,7 +299,7 @@ public class KitEditorMenu extends Menu {
         public ItemStack getButtonItem(Player player) {
             return new ItemBuilder(Material.WOOL)
                 .durability(4)
-                .name(Praxi.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.CANCEL-BUTTON"))
+                .name(Moon.get().getMenusConfig().getString("KIT-EDITOR.EDITOR.BUTTONS.CANCEL-BUTTON"))
                 .lore(Arrays.asList(
                     "&fClick this to abort editing your kit,",
                     "&fand return to the kit menu."

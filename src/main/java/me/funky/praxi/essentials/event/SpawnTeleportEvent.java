@@ -1,8 +1,8 @@
-package me.funky.praxi.essentials.event;
+package club.nodebuff.moon.essentials.event;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.util.BaseEvent;
+import club.nodebuff.moon.util.BaseEvent;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;

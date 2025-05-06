@@ -1,4 +1,4 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import org.bukkit.plugin.Plugin;
 import org.json.simple.JSONObject;

@@ -1,8 +1,8 @@
-package me.funky.praxi.commands.event.user;
+package club.nodebuff.moon.commands.event.user;
 
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 

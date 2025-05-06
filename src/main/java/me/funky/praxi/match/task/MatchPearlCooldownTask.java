@@ -1,9 +1,9 @@
-package me.funky.praxi.match.task;
+package club.nodebuff.moon.match.task;
 
-import me.funky.praxi.Locale;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.Praxi;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.Moon;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -11,7 +11,7 @@ public class MatchPearlCooldownTask extends BukkitRunnable {
 
 	@Override
 	public void run() {
-		for (Player player : Praxi.get().getServer().getOnlinePlayers()) {
+		for (Player player : Moon.get().getServer().getOnlinePlayers()) {
 			Profile profile = Profile.getByUuid(player.getUniqueId());
 
 			if (profile.getState() == ProfileState.FIGHTING || profile.getState() == ProfileState.EVENT) {

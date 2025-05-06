@@ -1,13 +1,13 @@
-package me.funky.praxi.arena.selection;
+package club.nodebuff.moon.arena.selection;
 
 
 import java.util.Arrays;
 
 import lombok.Data;
 import lombok.NonNull;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.cuboid.Cuboid;
-import me.funky.praxi.util.ItemBuilder;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.cuboid.Cuboid;
+import club.nodebuff.moon.util.ItemBuilder;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -56,7 +56,7 @@ public class Selection {
 
 		Selection selection = new Selection();
 
-		player.setMetadata(SELECTION_METADATA_KEY, new FixedMetadataValue(Praxi.get(), selection));
+		player.setMetadata(SELECTION_METADATA_KEY, new FixedMetadataValue(Moon.get(), selection));
 
 		return selection;
 	}

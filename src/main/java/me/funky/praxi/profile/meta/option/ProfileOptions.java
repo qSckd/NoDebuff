@@ -1,14 +1,14 @@
-package me.funky.praxi.profile.meta.option;
+package club.nodebuff.moon.profile.meta.option;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.profile.times.Times;
-import me.funky.praxi.profile.themes.Themes;
-import me.funky.praxi.profile.option.killeffect.SpecialEffects;
-import me.funky.praxi.profile.option.killmessages.KillMessages;
-import me.funky.praxi.profile.option.trail.Trail;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.profile.times.Times;
+import club.nodebuff.moon.profile.themes.Themes;
+import club.nodebuff.moon.profile.option.killeffect.SpecialEffects;
+import club.nodebuff.moon.profile.option.killmessages.KillMessages;
+import club.nodebuff.moon.profile.option.trail.Trail;
 
 @Accessors(fluent = true)
 public class ProfileOptions {
@@ -22,5 +22,5 @@ public class ProfileOptions {
 	@Getter @Setter private SpecialEffects killEffect = SpecialEffects.NONE;
 	@Getter @Setter private KillMessages killMessage = KillMessages.NONE;
     @Getter @Setter private Trail trail = Trail.NONE;
-	@Getter @Setter private Themes theme = Themes.valueOf(Praxi.get().getSettingsConfig().getString("GENERAL.DEFAULT-THEME"));
+	@Getter @Setter private Themes theme = Themes.valueOf(Moon.get().getSettingsConfig().getString("GENERAL.DEFAULT-THEME"));
 }

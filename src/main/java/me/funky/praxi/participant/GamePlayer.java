@@ -1,4 +1,4 @@
-package me.funky.praxi.participant;
+package club.nodebuff.moon.participant;
 
 import lombok.Data;
 import org.bukkit.Bukkit;

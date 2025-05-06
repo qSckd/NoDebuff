@@ -1,12 +1,12 @@
-package me.funky.praxi.arena.runnables;
+package club.nodebuff.moon.arena.runnables;
 
 import lombok.Getter;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.scheduler.BukkitRunnable;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.Arena;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.Arena;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -74,7 +74,7 @@ public abstract class DuplicateArenaRunnable extends BukkitRunnable {
             public void finish() {
                 onComplete();
             }
-        }.runTaskTimer(Praxi.get(), 0L, 5L);
+        }.runTaskTimer(Moon.get(), 0L, 5L);
     }
 
     public Map<Location, Block> blocksFromTwoPoints(Location loc1, Location loc2) {

@@ -1,23 +1,23 @@
-package me.funky.praxi.party.menu;
+package club.nodebuff.moon.party.menu;
 
 import lombok.AllArgsConstructor;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.match.impl.BasicFreeForAllMatch;
-import me.funky.praxi.match.impl.BasicTeamMatch;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.participant.TeamGameParticipant;
-import me.funky.praxi.party.Party;
-import me.funky.praxi.party.PartyEvent;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.Constants;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.match.impl.BasicFreeForAllMatch;
+import club.nodebuff.moon.match.impl.BasicTeamMatch;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.participant.TeamGameParticipant;
+import club.nodebuff.moon.party.Party;
+import club.nodebuff.moon.party.PartyEvent;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.Constants;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
@@ -36,12 +36,12 @@ public class PartyEventSelectKitMenu extends Menu {
 
 	@Override
 	public String getTitle(Player player) {
-		return Praxi.get().getMenusConfig().getString("PARTY.SELECT-KIT.TITLE");
+		return Moon.get().getMenusConfig().getString("PARTY.SELECT-KIT.TITLE");
 	}
 
     @Override
     public int getSize() {
-		return Praxi.get().getMenusConfig().getInteger("PARTY.SELECT-KIT.SIZE");
+		return Moon.get().getMenusConfig().getInteger("PARTY.SELECT-KIT.SIZE");
     }
 
 	@Override

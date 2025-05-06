@@ -1,16 +1,16 @@
-package me.funky.praxi.kit.menu;
+package club.nodebuff.moon.kit.menu;
 
-import me.funky.praxi.Locale;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.kit.KitLoadout;
-import me.funky.praxi.profile.Profile;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.kit.KitLoadout;
+import club.nodebuff.moon.profile.Profile;
 
 import lombok.AllArgsConstructor;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
-import me.funky.praxi.util.menu.button.BackButton;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
+import club.nodebuff.moon.util.menu.button.BackButton;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -84,7 +84,7 @@ public class KitManagementMenu extends Menu {
         @Override
         public ItemStack getButtonItem(Player player) {
             return new ItemBuilder(Material.BOOK)
-                    .name(Praxi.get().getMenusConfig().getString("KIT-EDITOR.MANAGEMENT.BUTTONS.CREATE-BUTTON"))
+                    .name(Moon.get().getMenusConfig().getString("KIT-EDITOR.MANAGEMENT.BUTTONS.CREATE-BUTTON"))
                     .clearFlags()
                     .build();
         }
@@ -135,7 +135,7 @@ public class KitManagementMenu extends Menu {
             lore.add("");
             lore.add("&aClick to edit.");
             return new ItemBuilder(Material.ENCHANTED_BOOK)
-                    .name(Praxi.get().getMenusConfig().getString("KIT-EDITOR.MANAGEMENT.BUTTONS.LOAD-BUTTON.NAME"))
+                    .name(Moon.get().getMenusConfig().getString("KIT-EDITOR.MANAGEMENT.BUTTONS.LOAD-BUTTON.NAME"))
                     .lore(lore)
                     .build();
         }

@@ -1,8 +1,8 @@
-package me.funky.praxi.commands.user.general;
+package club.nodebuff.moon.commands.user.general;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.profile.coinshop.CoinShopMenu;
+import club.nodebuff.moon.profile.coinshop.CoinShopMenu;
 import org.bukkit.entity.Player;
 
 @CommandAlias("coinshop|shop|buy|cosmeticsstore")

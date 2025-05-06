@@ -1,14 +1,14 @@
-package me.funky.praxi.profile.coinshop;
+package club.nodebuff.moon.profile.coinshop;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.profile.coinshop.submenu.killeffects.SpecialEffectsPurchaseMenu;
-import me.funky.praxi.profile.coinshop.submenu.killmessages.KillMessagesPurchaseMenu;
-import me.funky.praxi.profile.coinshop.submenu.trails.ProjectileTrailsPurchaseMenu;
-import me.funky.praxi.util.Constants;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.profile.coinshop.submenu.killeffects.SpecialEffectsPurchaseMenu;
+import club.nodebuff.moon.profile.coinshop.submenu.killmessages.KillMessagesPurchaseMenu;
+import club.nodebuff.moon.profile.coinshop.submenu.trails.ProjectileTrailsPurchaseMenu;
+import club.nodebuff.moon.util.Constants;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;

@@ -1,14 +1,14 @@
-package me.funky.praxi.duel;
+package club.nodebuff.moon.duel;
 
-import me.funky.praxi.Locale;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.profile.Profile;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.profile.Profile;
 import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.util.ChatComponentBuilder;
-import me.funky.praxi.util.ChatHelper;
+import club.nodebuff.moon.util.ChatComponentBuilder;
+import club.nodebuff.moon.util.ChatHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 

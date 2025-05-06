@@ -1,10 +1,10 @@
-package me.funky.praxi.kit;
+package club.nodebuff.moon.kit;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import me.funky.praxi.profile.Profile;
+import club.nodebuff.moon.profile.Profile;
 
 @Getter
 @Setter

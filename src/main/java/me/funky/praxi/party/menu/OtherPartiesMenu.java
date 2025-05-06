@@ -1,13 +1,13 @@
-package me.funky.praxi.party.menu;
+package club.nodebuff.moon.party.menu;
 
 import lombok.AllArgsConstructor;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.party.Party;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.pagination.PaginatedMenu;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.party.Party;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.pagination.PaginatedMenu;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -23,7 +23,7 @@ public class OtherPartiesMenu extends PaginatedMenu {
 
 	@Override
 	public String getPrePaginatedTitle(Player player) {
-		return Praxi.get().getMenusConfig().getString("PARTY.OTHERS.TITLE");
+		return Moon.get().getMenusConfig().getString("PARTY.OTHERS.TITLE");
 	}
 
 	@Override

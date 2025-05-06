@@ -1,14 +1,14 @@
-package me.funky.praxi.profile.replay.menu;
+package club.nodebuff.moon.profile.replay.menu;
 
 import lombok.AllArgsConstructor;
 import me.jumper251.replay.api.ReplayAPI;
 import me.jumper251.replay.replaysystem.Replay;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.TextSplitter;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.TextSplitter;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -26,12 +26,12 @@ public class ReplayMenu extends Menu {
 
     @Override
     public String getTitle(Player player) {
-        return Praxi.get().getMenusConfig().getString("REPLAY-MENU.TITLE");
+        return Moon.get().getMenusConfig().getString("REPLAY-MENU.TITLE");
     }
 
     @Override
     public int getSize() {
-        return Praxi.get().getMenusConfig().getInteger("REPLAY-MENU.SIZE");
+        return Moon.get().getMenusConfig().getInteger("REPLAY-MENU.SIZE");
     }
 
     @Override

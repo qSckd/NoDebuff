@@ -1,14 +1,14 @@
-package me.funky.praxi.queue;
+package club.nodebuff.moon.queue;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.match.impl.BasicTeamMatch;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.participant.TeamGameParticipant;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.match.impl.BasicTeamMatch;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.participant.TeamGameParticipant;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -117,7 +117,7 @@ public class QueueThread extends Thread {
 												public void run() {
 													match.start();
 												}
-											}.runTask(Praxi.get());
+											}.runTask(Moon.get());
 
 										}
 								}
@@ -205,7 +205,7 @@ public class QueueThread extends Thread {
 									public void run() {
 										match.start();
 									}
-								}.runTask(Praxi.get());
+								}.runTask(Moon.get());
 							}
 						}
 					}

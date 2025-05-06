@@ -1,10 +1,10 @@
-package me.funky.praxi.profile.meta;
+package club.nodebuff.moon.profile.meta;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.kit.KitLoadout;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.hotbar.HotbarItem;
+import club.nodebuff.moon.kit.KitLoadout;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.hotbar.HotbarItem;
 import org.bukkit.entity.Player;
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;

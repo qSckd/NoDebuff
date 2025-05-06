@@ -1,6 +1,6 @@
-package me.funky.praxi.arena;
+package club.nodebuff.moon.arena;
 
-import me.funky.praxi.util.command.command.adapter.CommandTypeAdapter;
+import club.nodebuff.moon.util.command.command.adapter.CommandTypeAdapter;
 
 public class ArenaTypeTypeAdapter implements CommandTypeAdapter {
 

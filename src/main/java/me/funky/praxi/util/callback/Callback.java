@@ -1,4 +1,4 @@
-package me.funky.praxi.util.callback;
+package club.nodebuff.moon.util.callback;
 
 import java.io.Serializable;
 

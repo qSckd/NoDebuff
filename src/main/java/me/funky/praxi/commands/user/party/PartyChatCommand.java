@@ -1,8 +1,8 @@
-package me.funky.praxi.commands.user.party;
+package club.nodebuff.moon.commands.user.party;
 
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
 import org.bukkit.entity.Player;
 
 @CommandMeta(label = { "party chat", "p chat" })

@@ -1,8 +1,8 @@
-package me.funky.praxi.event.command;
+package club.nodebuff.moon.event.command;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.*;
-import me.funky.praxi.event.game.menu.EventHostMenu;
+import club.nodebuff.moon.event.game.menu.EventHostMenu;
 import org.bukkit.entity.Player;
 
 @CommandAlias("host|eventhost|hostevent|openevent|startevent|newevent|eventshost|hostevents")

@@ -1,4 +1,4 @@
-package me.funky.praxi.util.config;
+package club.nodebuff.moon.util.config;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;

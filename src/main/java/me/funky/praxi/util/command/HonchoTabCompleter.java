@@ -1,12 +1,12 @@
-package me.funky.praxi.util.command;
+package club.nodebuff.moon.util.command;
 
 import java.util.List;
 
-import me.funky.praxi.util.command.command.CommandOption;
-import me.funky.praxi.util.command.command.adapter.CommandTypeAdapter;
-import me.funky.praxi.util.command.map.CommandData;
-import me.funky.praxi.util.command.map.MethodData;
-import me.funky.praxi.util.command.map.ParameterData;
+import club.nodebuff.moon.util.command.command.CommandOption;
+import club.nodebuff.moon.util.command.command.adapter.CommandTypeAdapter;
+import club.nodebuff.moon.util.command.map.CommandData;
+import club.nodebuff.moon.util.command.map.MethodData;
+import club.nodebuff.moon.util.command.map.ParameterData;
 import org.bukkit.command.CommandSender;
 
 public class HonchoTabCompleter

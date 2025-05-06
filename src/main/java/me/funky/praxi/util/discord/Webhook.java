@@ -1,4 +1,4 @@
-package me.funky.praxi.util.discord;
+package club.nodebuff.moon.util.discord;
 
 import java.awt.Color;
 import java.io.IOException;

@@ -1,11 +1,11 @@
-package me.funky.praxi.commands.event.user;
+package club.nodebuff.moon.commands.event.user;
 
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.event.game.EventGameState;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.command.command.CPL;
-import me.funky.praxi.util.command.command.CommandMeta;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.event.game.EventGameState;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.command.command.CPL;
+import club.nodebuff.moon.util.command.command.CommandMeta;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.entity.Player;
 
 @CommandMeta(label = "event join")

@@ -1,4 +1,4 @@
-package me.funky.praxi.util.command.command;
+package club.nodebuff.moon.util.command.command;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

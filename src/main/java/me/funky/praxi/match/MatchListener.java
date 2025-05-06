@@ -1,18 +1,18 @@
-package me.funky.praxi.match;
+package club.nodebuff.moon.match;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.Locale;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.kit.KitLoadout;
-import me.funky.praxi.match.menu.ViewInventoryMenu;
-import me.funky.praxi.match.participant.MatchGamePlayer;
-import me.funky.praxi.participant.GameParticipant;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.ProfileState;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.hotbar.HotbarItem;
-import me.funky.praxi.util.*;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.Locale;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.kit.KitLoadout;
+import club.nodebuff.moon.match.menu.ViewInventoryMenu;
+import club.nodebuff.moon.match.participant.MatchGamePlayer;
+import club.nodebuff.moon.participant.GameParticipant;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.ProfileState;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.hotbar.HotbarItem;
+import club.nodebuff.moon.util.*;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
@@ -641,7 +641,7 @@ public class MatchListener implements Listener {
                     }
                     if (match.getKit().getGameRules().isBridge())
                     // Give the arrow back after 3 seconds
-                    Bukkit.getScheduler().runTaskLater(Praxi.get(), () -> {
+                    Bukkit.getScheduler().runTaskLater(Moon.get(), () -> {
                         if (match.getKit().getGameRules().isBridge()) {
                             if (!shooter.getInventory().contains(Material.ARROW)) {
                                 PlayerUtil.giveArrowBack(shooter);
@@ -767,9 +767,9 @@ public class MatchListener implements Listener {
         if (event != null && !event.isCancelled() && event instanceof EntityDamageByEntityEvent && (damager = ((EntityDamageByEntityEvent) event).getDamager()) instanceof Arrow && (arrow = (Arrow) damager).getShooter().equals(player)) {
             double speed = Math.sqrt(velocity.getX() * velocity.getX() + velocity.getZ() * velocity.getZ());
             Vector dir = arrow.getLocation().getDirection().normalize();
-            double xVelocity = Praxi.get().getSettingsConfig().getDouble("MATCH.BOW-BOOST.KNOCKBACK-VELOCITY.X");
-            double yVelocity = Praxi.get().getSettingsConfig().getDouble("MATCH.BOW-BOOST.KNOCKBACK-VELOCITY.Y");
-            double zVelocity = Praxi.get().getSettingsConfig().getDouble("MATCH.BOW-BOOST.KNOCKBACK-VELOCITY.Z");
+            double xVelocity = Moon.get().getSettingsConfig().getDouble("MATCH.BOW-BOOST.KNOCKBACK-VELOCITY.X");
+            double yVelocity = Moon.get().getSettingsConfig().getDouble("MATCH.BOW-BOOST.KNOCKBACK-VELOCITY.Y");
+            double zVelocity = Moon.get().getSettingsConfig().getDouble("MATCH.BOW-BOOST.KNOCKBACK-VELOCITY.Z");
             Vector newVelocity = new Vector((dir.getX() * speed * -1.0) * xVelocity, velocity.getY() * yVelocity, dir.getZ() * speed * zVelocity);
 
             event1.setVelocity(newVelocity);
@@ -778,7 +778,7 @@ public class MatchListener implements Listener {
 
     @EventHandler
     public void onEntityDamageByEntity(EntityDamageByEntityEvent event) {
-        if (Praxi.get().getSettingsConfig().getBoolean("MATCH.BOW-BOOST.MINIMIZE-DAMAGE")) {
+        if (Moon.get().getSettingsConfig().getBoolean("MATCH.BOW-BOOST.MINIMIZE-DAMAGE")) {
             if (event.getEntity() instanceof Player && event.getDamager() instanceof Arrow) {
                 Player entity = (Player) event.getEntity();
                 Player damager = (Player) ((Arrow)event.getDamager()).getShooter();
@@ -939,7 +939,7 @@ public class MatchListener implements Listener {
     public void onPlayerItemConsumeEvent1(PlayerItemConsumeEvent event) {
         if (!event.getItem().getType().equals(Material.POTION)) return;
         if (!event.getItem().getType().equals(Material.GLASS_BOTTLE)) return;
-        if (!Praxi.get().getSettingsConfig().getBoolean("MATCH.REMOVE_POTION_BOTTLE")) return;
+        if (!Moon.get().getSettingsConfig().getBoolean("MATCH.REMOVE_POTION_BOTTLE")) return;
 
         TaskUtil.runLater(() -> event.getPlayer().setItemInHand(new ItemStack(Material.AIR)), 1L);
     }

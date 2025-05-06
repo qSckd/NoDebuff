@@ -1,11 +1,11 @@
-package me.funky.praxi.profile.hotbar;
+package club.nodebuff.moon.profile.hotbar;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.event.game.EventGame;
-import me.funky.praxi.event.game.EventGameState;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.PlayerUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.event.game.EventGame;
+import club.nodebuff.moon.event.game.EventGameState;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.PlayerUtil;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +22,7 @@ public class Hotbar {
 	private static final Map<HotbarItem, ItemStack> items = new HashMap<>();
 
 	public static void init() {
-		FileConfiguration config = Praxi.get().getHotbarConfig().getConfiguration();
+		FileConfiguration config = Moon.get().getHotbarConfig().getConfiguration();
 
 		for (HotbarItem hotbarItem : HotbarItem.values()) {
 			try {

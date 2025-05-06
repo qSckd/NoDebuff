@@ -1,13 +1,13 @@
 
-package me.funky.praxi.profile.option.killmessages.menu;
+package club.nodebuff.moon.profile.option.killmessages.menu;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import me.funky.praxi.profile.option.killmessages.KillMessages;
-import me.funky.praxi.util.Constants;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
+import club.nodebuff.moon.profile.option.killmessages.KillMessages;
+import club.nodebuff.moon.util.Constants;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;

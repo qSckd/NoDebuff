@@ -1,16 +1,16 @@
-package me.funky.praxi.arena;
+package club.nodebuff.moon.arena;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.funky.praxi.Praxi;
-import me.funky.praxi.arena.impl.SharedArena;
-import me.funky.praxi.arena.impl.StandaloneArena;
-import me.funky.praxi.arena.cuboid.Cuboid;
-import me.funky.praxi.arena.cache.ArenaCache;
-import me.funky.praxi.arena.cache.ArenaChunk;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.util.ChunkUtil;
-import me.funky.praxi.util.LocationUtil;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.arena.impl.SharedArena;
+import club.nodebuff.moon.arena.impl.StandaloneArena;
+import club.nodebuff.moon.arena.cuboid.Cuboid;
+import club.nodebuff.moon.arena.cache.ArenaCache;
+import club.nodebuff.moon.arena.cache.ArenaChunk;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.util.ChunkUtil;
+import club.nodebuff.moon.util.LocationUtil;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.Location;
@@ -66,7 +66,7 @@ public class Arena extends Cuboid {
      * file. If the arena is a {@link StandaloneArena}, it also loads all of its duplicates.
      */
     public static void init() {
-        FileConfiguration configuration = Praxi.get().getArenasConfig().getConfiguration();
+        FileConfiguration configuration = Moon.get().getArenasConfig().getConfiguration();
 
         if (configuration.contains("arenas")) {
             for (String arenaName : configuration.getConfigurationSection("arenas").getKeys(false)) {

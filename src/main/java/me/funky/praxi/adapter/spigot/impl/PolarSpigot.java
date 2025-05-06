@@ -1,7 +1,7 @@
-/*package me.funky.praxi.adapter.spigot.impl;
+/*package club.nodebuff.moon.adapter.spigot.impl;
 
-import me.funky.praxi.adapter.spigot.Spigot;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.adapter.spigot.Spigot;
+import club.nodebuff.moon.util.CC;
 import net.minecraft.server.v1_8_R3.EntityLiving;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;

@@ -1,4 +1,4 @@
-package me.funky.praxi.util.hologram.placeholder;
+package club.nodebuff.moon.util.hologram.placeholder;
 
 import org.bukkit.entity.Player;
 

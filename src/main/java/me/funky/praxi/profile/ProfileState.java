@@ -1,4 +1,4 @@
-package me.funky.praxi.profile;
+package club.nodebuff.moon.profile;
 
 public enum ProfileState {
 	

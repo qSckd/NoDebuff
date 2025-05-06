@@ -1,4 +1,4 @@
-package me.funky.praxi.util.fake;
+package club.nodebuff.moon.util.fake;
 
 import org.bukkit.Location;
 import org.bukkit.World;

@@ -1,9 +1,9 @@
-package me.funky.praxi.util.command.command.adapter.impl;
+package club.nodebuff.moon.util.command.command.adapter.impl;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import me.funky.praxi.util.command.command.adapter.CommandTypeAdapter;
+import club.nodebuff.moon.util.command.command.adapter.CommandTypeAdapter;
 
 public class BooleanTypeAdapter implements CommandTypeAdapter
 {

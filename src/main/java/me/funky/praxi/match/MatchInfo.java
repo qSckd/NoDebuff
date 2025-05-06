@@ -1,10 +1,10 @@
-package me.funky.praxi.match;
+package club.nodebuff.moon.match;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.bson.Document;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.arena.Arena;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.arena.Arena;
 
 import java.util.UUID;
 

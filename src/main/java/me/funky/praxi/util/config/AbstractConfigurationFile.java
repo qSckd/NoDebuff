@@ -1,4 +1,4 @@
-package me.funky.praxi.util.config;
+package club.nodebuff.moon.util.config;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

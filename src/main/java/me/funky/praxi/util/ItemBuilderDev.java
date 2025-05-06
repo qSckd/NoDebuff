@@ -1,4 +1,4 @@
-package me.funky.praxi.util;
+package club.nodebuff.moon.util;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Color;

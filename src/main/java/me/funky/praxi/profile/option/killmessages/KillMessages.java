@@ -1,7 +1,7 @@
-package me.funky.praxi.profile.option.killmessages;
+package club.nodebuff.moon.profile.option.killmessages;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.profile.Profile;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.profile.Profile;
 import lombok.Getter;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

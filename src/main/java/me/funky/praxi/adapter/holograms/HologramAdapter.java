@@ -1,13 +1,13 @@
-package me.funky.praxi.adapter.holograms;
+package club.nodebuff.moon.adapter.holograms;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.kit.KitLeaderboards;
-import me.funky.praxi.leaderboard.Leaderboard;
-import me.funky.praxi.util.hologram.Hologram;
-import me.funky.praxi.util.LocationUtil;
-import me.funky.praxi.util.TaskUtil;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.kit.KitLeaderboards;
+import club.nodebuff.moon.leaderboard.Leaderboard;
+import club.nodebuff.moon.util.hologram.Hologram;
+import club.nodebuff.moon.util.LocationUtil;
+import club.nodebuff.moon.util.TaskUtil;
+import club.nodebuff.moon.util.CC;
 import lombok.Getter;
 import org.bukkit.ChatColor;
 
@@ -112,21 +112,21 @@ public class HologramAdapter {
     };*/
 
     public void registerWelcomeHologram() {
-        if (LocationUtil.deserialize(Praxi.get().getHologramConfig().getString("MAIN.LOCATION")) == null || LocationUtil.deserialize(Praxi.get().getHologramConfig().getString("MAIN.LOCATION")).getWorld() == null) {
+        if (LocationUtil.deserialize(Moon.get().getHologramConfig().getString("MAIN.LOCATION")) == null || LocationUtil.deserialize(Moon.get().getHologramConfig().getString("MAIN.LOCATION")).getWorld() == null) {
             return;
         }
-        welcomeHologram = new Hologram(LocationUtil.deserialize(Praxi.get().getHologramConfig().getString("MAIN.LOCATION")));
-        for (String line : Praxi.get().getHologramConfig().getStringList("MAIN.LINES")) {
+        welcomeHologram = new Hologram(LocationUtil.deserialize(Moon.get().getHologramConfig().getString("MAIN.LOCATION")));
+        for (String line : Moon.get().getHologramConfig().getStringList("MAIN.LINES")) {
             welcomeHologram.addLine(CC.translate(line));
         }
-        Praxi.get().getHologramHandler().registerHologram(welcomeHologram);
+        Moon.get().getHologramHandler().registerHologram(welcomeHologram);
     }
 
     public void registerEloLeaderboardHologram() {
-        if (LocationUtil.deserialize(Praxi.get().getHologramConfig().getString("LEADERBOARDS.ELO.LOCATION")) == null || LocationUtil.deserialize(Praxi.get().getHologramConfig().getString("LEADERBOARDS.ELO.LOCATION")).getWorld() == null) {
+        if (LocationUtil.deserialize(Moon.get().getHologramConfig().getString("LEADERBOARDS.ELO.LOCATION")) == null || LocationUtil.deserialize(Moon.get().getHologramConfig().getString("LEADERBOARDS.ELO.LOCATION")).getWorld() == null) {
             return;
         }
-        leaderBoardHologram = new Hologram(LocationUtil.deserialize(Praxi.get().getHologramConfig().getString("LEADERBOARDS.ELO.LOCATION")));
+        leaderBoardHologram = new Hologram(LocationUtil.deserialize(Moon.get().getHologramConfig().getString("LEADERBOARDS.ELO.LOCATION")));
         leaderBoardHologram.addLine(CC.translate("&b&lGlobal Elo"));
         leaderBoardHologram.addLine(CC.translate("&fLeaderboards"));
         leaderBoardHologram.addLine("&f");
@@ -142,15 +142,15 @@ public class HologramAdapter {
         leaderBoardHologram.addLine("&7");
         leaderBoardHologram.addLine("&7");
         leaderBoardHologram.addLine("&7");
-        Praxi.get().getHologramHandler().registerHologram(leaderBoardHologram);
+        Moon.get().getHologramHandler().registerHologram(leaderBoardHologram);
         TaskUtil.scheduleAtFixedRateOnPool(() -> updateConsumerElo.accept(leaderBoardHologram), 5, 5, TimeUnit.SECONDS);
     }
 
     /*public void registerWinsLeaderboardHologram() {
-        if (LocationUtil.deserialize(Praxi.get().getHologramConfig().getString("LEADERBOARDS.WINS.LOCATION")) == null || LocationUtil.deserialize(Praxi.get().getHologramConfig().getString("LEADERBOARDS.WINS.LOCATION")).getWorld() == null) {
+        if (LocationUtil.deserialize(Moon.get().getHologramConfig().getString("LEADERBOARDS.WINS.LOCATION")) == null || LocationUtil.deserialize(Moon.get().getHologramConfig().getString("LEADERBOARDS.WINS.LOCATION")).getWorld() == null) {
             return;
         }
-        leaderBoardHologram = new Hologram(LocationUtil.deserialize(Praxi.get().getHologramConfig().getString("LEADERBOARDS.WINS.LOCATION")));
+        leaderBoardHologram = new Hologram(LocationUtil.deserialize(Moon.get().getHologramConfig().getString("LEADERBOARDS.WINS.LOCATION")));
         leaderBoardHologram.addLine(CC.translate("&b&lGlobal Wins"));
         leaderBoardHologram.addLine(CC.translate("&fLeaderboards"));
         leaderBoardHologram.addLine("&f");
@@ -166,7 +166,7 @@ public class HologramAdapter {
         leaderBoardHologram.addLine("&7");
         leaderBoardHologram.addLine("&7");
         leaderBoardHologram.addLine("&7");
-        Praxi.get().getHologramHandler().registerHologram(leaderBoardHologram);
+        Moon.get().getHologramHandler().registerHologram(leaderBoardHologram);
         TaskUtil.scheduleAtFixedRateOnPool(() -> updateConsumerWins.accept(leaderBoardHologram), 5, 5, TimeUnit.SECONDS);
     }*/
 

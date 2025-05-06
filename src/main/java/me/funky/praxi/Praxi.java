@@ -1,115 +1,115 @@
-package me.funky.praxi;
+package club.nodebuff.moon;
 
 import com.bizarrealex.aether.Aether;
 import com.bizarrealex.aether.AetherOptions;
 import co.aikar.commands.BukkitCommandCompletionContext;
 import co.aikar.commands.CommandCompletions;
 import co.aikar.commands.PaperCommandManager;
-import me.funky.praxi.adapter.spigot.SpigotManager;
-import me.funky.praxi.adapter.lunar.*;
-import me.funky.praxi.adapter.holograms.HologramAdapter;
-import me.funky.praxi.divisions.command.DivisionsCommand;
-import me.funky.praxi.adapter.papi.PlaceholderAdapter;
-import me.funky.praxi.adapter.board.ScoreboardAdapter;
-import me.funky.praxi.arena.Arena;
-import me.funky.praxi.arena.ArenaListener;
-import me.funky.praxi.arena.ArenaType;
-import me.funky.praxi.arena.ArenaTypeAdapter;
-import me.funky.praxi.arena.ArenaTypeTypeAdapter;
-import me.funky.praxi.arena.command.ArenaCommand;
-import me.funky.praxi.queue.command.RankedCommand;
-import me.funky.praxi.queue.command.QueueCommand;
-import me.funky.praxi.commands.admin.general.SetSpawnCommand;
-import me.funky.praxi.commands.admin.general.SetHoloCommand;
-import me.funky.praxi.commands.admin.general.RenameCommand;
-import me.funky.praxi.commands.admin.general.SudoCommand;
-import me.funky.praxi.commands.admin.general.FollowCommand;
-import me.funky.praxi.tournament.command.TournamentCommand;
-import me.funky.praxi.commands.user.gamer.SuicideCommand;
-import me.funky.praxi.commands.user.gamer.TrollCommand;
-import me.funky.praxi.profile.coinshop.command.CoinsCommand;
-import me.funky.praxi.essentials.Essentials;
-import me.funky.praxi.event.Event;
-import me.funky.praxi.event.EventTypeAdapter;
-import me.funky.praxi.commands.event.admin.EventAdminCommand;
-import me.funky.praxi.commands.event.admin.EventHelpCommand;
-import me.funky.praxi.commands.event.admin.EventSetLobbyCommand;
-import me.funky.praxi.event.game.EventGameListener;
-import me.funky.praxi.commands.event.user.EventCancelCommand;
-import me.funky.praxi.commands.event.user.EventClearCooldownCommand;
-import me.funky.praxi.commands.event.user.EventForceStartCommand;
-import me.funky.praxi.event.command.HostCommand;
-import me.funky.praxi.event.command.EventTokensCommand;
-import me.funky.praxi.commands.event.user.EventInfoCommand;
-import me.funky.praxi.commands.event.user.EventJoinCommand;
-import me.funky.praxi.commands.event.user.EventLeaveCommand;
-import me.funky.praxi.commands.event.admin.EventsCommand;
-import me.funky.praxi.event.game.map.EventGameMap;
-import me.funky.praxi.event.game.map.EventGameMapTypeAdapter;
-import me.funky.praxi.commands.event.map.EventMapCreateCommand;
-import me.funky.praxi.commands.event.map.EventMapDeleteCommand;
-import me.funky.praxi.commands.event.map.EventMapSetSpawnCommand;
-import me.funky.praxi.commands.event.map.EventMapStatusCommand;
-import me.funky.praxi.commands.event.map.EventMapsCommand;
-import me.funky.praxi.commands.event.admin.EventAddMapCommand;
-import me.funky.praxi.commands.event.admin.EventRemoveMapCommand;
-import me.funky.praxi.commands.event.vote.EventMapVoteCommand;
-import me.funky.praxi.commands.admin.match.MatchTestCommand;
-import me.funky.praxi.commands.user.match.ViewInventoryCommand;
-import me.funky.praxi.commands.user.match.LeaveCommand;
-import me.funky.praxi.commands.user.duels.DuelCommand;
-import me.funky.praxi.commands.user.duels.RematchCommand;
-import me.funky.praxi.kit.Kit;
-import me.funky.praxi.kit.KitTypeAdapter;
-import me.funky.praxi.kit.command.KitCommand;
-import me.funky.praxi.kit.KitEditorListener;
-import me.funky.praxi.match.Match;
-import me.funky.praxi.commands.user.match.SpectateCommand;
-import me.funky.praxi.commands.user.match.StopSpectatingCommand;
-import me.funky.praxi.match.MatchListener;
-import me.funky.praxi.party.Party;
-import me.funky.praxi.commands.user.party.PartyChatCommand;
-import me.funky.praxi.commands.user.party.PartyCloseCommand;
-import me.funky.praxi.commands.user.party.PartyCreateCommand;
-import me.funky.praxi.commands.user.party.PartyDisbandCommand;
-import me.funky.praxi.commands.user.party.PartyHelpCommand;
-import me.funky.praxi.commands.user.party.PartyInfoCommand;
-import me.funky.praxi.commands.user.party.PartyInviteCommand;
-import me.funky.praxi.commands.user.party.PartyJoinCommand;
-import me.funky.praxi.commands.user.party.PartyKickCommand;
-import me.funky.praxi.commands.user.party.PartyLeaderCommand;
-import me.funky.praxi.commands.user.party.PartyLeaveCommand;
-import me.funky.praxi.commands.user.party.PartyOpenCommand;
-import me.funky.praxi.commands.user.party.PartySettingsCommand;
-import me.funky.praxi.party.PartyListener;
-import me.funky.praxi.profile.Profile;
-import me.funky.praxi.profile.managers.DivisionsManager;
-import me.funky.praxi.commands.donater.FlyCommand;
-import me.funky.praxi.profile.ProfileListener;
-import me.funky.praxi.profile.hotbar.Hotbar;
-import me.funky.praxi.profile.option.trail.listener.TrailListener;
-import me.funky.praxi.commands.user.settings.ToggleDuelRequestsCommand;
-import me.funky.praxi.commands.user.settings.ToggleScoreboardCommand;
-import me.funky.praxi.commands.user.settings.ToggleSpectatorsCommand;
-import me.funky.praxi.commands.user.settings.ProfileSettingsCommand;
-import me.funky.praxi.commands.user.settings.SettingsCommand;
-import me.funky.praxi.commands.user.general.leaderboards.LeaderboardsCommand;
-import me.funky.praxi.commands.user.general.PracticeCommand;
-import me.funky.praxi.commands.user.general.MsgCommand;
-import me.funky.praxi.commands.user.general.CoinShopCommand;
-import me.funky.praxi.commands.user.general.CosmeticsCommand;
-import me.funky.praxi.commands.user.general.StatsCommand;
-import me.funky.praxi.queue.QueueListener;
-import me.funky.praxi.queue.QueueThread;
-import me.funky.praxi.leaderboard.Leaderboard;
-//import me.funky.praxi.util.ConfigManager;
-import me.funky.praxi.util.InventoryUtil;
-import me.funky.praxi.util.command.Honcho;
-import me.funky.praxi.util.config.BasicConfigurationFile;
-import me.funky.praxi.util.hologram.HologramHandler;
-import me.funky.praxi.util.menu.MenuListener;
-import me.funky.praxi.util.CC;
-import me.funky.praxi.util.Cache;
+import club.nodebuff.moon.adapter.spigot.SpigotManager;
+import club.nodebuff.moon.adapter.lunar.*;
+import club.nodebuff.moon.adapter.holograms.HologramAdapter;
+import club.nodebuff.moon.divisions.command.DivisionsCommand;
+import club.nodebuff.moon.adapter.papi.PlaceholderAdapter;
+import club.nodebuff.moon.adapter.board.ScoreboardAdapter;
+import club.nodebuff.moon.arena.Arena;
+import club.nodebuff.moon.arena.ArenaListener;
+import club.nodebuff.moon.arena.ArenaType;
+import club.nodebuff.moon.arena.ArenaTypeAdapter;
+import club.nodebuff.moon.arena.ArenaTypeTypeAdapter;
+import club.nodebuff.moon.arena.command.ArenaCommand;
+import club.nodebuff.moon.queue.command.RankedCommand;
+import club.nodebuff.moon.queue.command.QueueCommand;
+import club.nodebuff.moon.commands.admin.general.SetSpawnCommand;
+import club.nodebuff.moon.commands.admin.general.SetHoloCommand;
+import club.nodebuff.moon.commands.admin.general.RenameCommand;
+import club.nodebuff.moon.commands.admin.general.SudoCommand;
+import club.nodebuff.moon.commands.admin.general.FollowCommand;
+import club.nodebuff.moon.tournament.command.TournamentCommand;
+import club.nodebuff.moon.commands.user.gamer.SuicideCommand;
+import club.nodebuff.moon.commands.user.gamer.TrollCommand;
+import club.nodebuff.moon.profile.coinshop.command.CoinsCommand;
+import club.nodebuff.moon.essentials.Essentials;
+import club.nodebuff.moon.event.Event;
+import club.nodebuff.moon.event.EventTypeAdapter;
+import club.nodebuff.moon.commands.event.admin.EventAdminCommand;
+import club.nodebuff.moon.commands.event.admin.EventHelpCommand;
+import club.nodebuff.moon.commands.event.admin.EventSetLobbyCommand;
+import club.nodebuff.moon.event.game.EventGameListener;
+import club.nodebuff.moon.commands.event.user.EventCancelCommand;
+import club.nodebuff.moon.commands.event.user.EventClearCooldownCommand;
+import club.nodebuff.moon.commands.event.user.EventForceStartCommand;
+import club.nodebuff.moon.event.command.HostCommand;
+import club.nodebuff.moon.event.command.EventTokensCommand;
+import club.nodebuff.moon.commands.event.user.EventInfoCommand;
+import club.nodebuff.moon.commands.event.user.EventJoinCommand;
+import club.nodebuff.moon.commands.event.user.EventLeaveCommand;
+import club.nodebuff.moon.commands.event.admin.EventsCommand;
+import club.nodebuff.moon.event.game.map.EventGameMap;
+import club.nodebuff.moon.event.game.map.EventGameMapTypeAdapter;
+import club.nodebuff.moon.commands.event.map.EventMapCreateCommand;
+import club.nodebuff.moon.commands.event.map.EventMapDeleteCommand;
+import club.nodebuff.moon.commands.event.map.EventMapSetSpawnCommand;
+import club.nodebuff.moon.commands.event.map.EventMapStatusCommand;
+import club.nodebuff.moon.commands.event.map.EventMapsCommand;
+import club.nodebuff.moon.commands.event.admin.EventAddMapCommand;
+import club.nodebuff.moon.commands.event.admin.EventRemoveMapCommand;
+import club.nodebuff.moon.commands.event.vote.EventMapVoteCommand;
+import club.nodebuff.moon.commands.admin.match.MatchTestCommand;
+import club.nodebuff.moon.commands.user.match.ViewInventoryCommand;
+import club.nodebuff.moon.commands.user.match.LeaveCommand;
+import club.nodebuff.moon.commands.user.duels.DuelCommand;
+import club.nodebuff.moon.commands.user.duels.RematchCommand;
+import club.nodebuff.moon.kit.Kit;
+import club.nodebuff.moon.kit.KitTypeAdapter;
+import club.nodebuff.moon.kit.command.KitCommand;
+import club.nodebuff.moon.kit.KitEditorListener;
+import club.nodebuff.moon.match.Match;
+import club.nodebuff.moon.commands.user.match.SpectateCommand;
+import club.nodebuff.moon.commands.user.match.StopSpectatingCommand;
+import club.nodebuff.moon.match.MatchListener;
+import club.nodebuff.moon.party.Party;
+import club.nodebuff.moon.commands.user.party.PartyChatCommand;
+import club.nodebuff.moon.commands.user.party.PartyCloseCommand;
+import club.nodebuff.moon.commands.user.party.PartyCreateCommand;
+import club.nodebuff.moon.commands.user.party.PartyDisbandCommand;
+import club.nodebuff.moon.commands.user.party.PartyHelpCommand;
+import club.nodebuff.moon.commands.user.party.PartyInfoCommand;
+import club.nodebuff.moon.commands.user.party.PartyInviteCommand;
+import club.nodebuff.moon.commands.user.party.PartyJoinCommand;
+import club.nodebuff.moon.commands.user.party.PartyKickCommand;
+import club.nodebuff.moon.commands.user.party.PartyLeaderCommand;
+import club.nodebuff.moon.commands.user.party.PartyLeaveCommand;
+import club.nodebuff.moon.commands.user.party.PartyOpenCommand;
+import club.nodebuff.moon.commands.user.party.PartySettingsCommand;
+import club.nodebuff.moon.party.PartyListener;
+import club.nodebuff.moon.profile.Profile;
+import club.nodebuff.moon.profile.managers.DivisionsManager;
+import club.nodebuff.moon.commands.donater.FlyCommand;
+import club.nodebuff.moon.profile.ProfileListener;
+import club.nodebuff.moon.profile.hotbar.Hotbar;
+import club.nodebuff.moon.profile.option.trail.listener.TrailListener;
+import club.nodebuff.moon.commands.user.settings.ToggleDuelRequestsCommand;
+import club.nodebuff.moon.commands.user.settings.ToggleScoreboardCommand;
+import club.nodebuff.moon.commands.user.settings.ToggleSpectatorsCommand;
+import club.nodebuff.moon.commands.user.settings.ProfileSettingsCommand;
+import club.nodebuff.moon.commands.user.settings.SettingsCommand;
+import club.nodebuff.moon.commands.user.general.leaderboards.LeaderboardsCommand;
+import club.nodebuff.moon.commands.user.general.PracticeCommand;
+import club.nodebuff.moon.commands.user.general.MsgCommand;
+import club.nodebuff.moon.commands.user.general.CoinShopCommand;
+import club.nodebuff.moon.commands.user.general.CosmeticsCommand;
+import club.nodebuff.moon.commands.user.general.StatsCommand;
+import club.nodebuff.moon.queue.QueueListener;
+import club.nodebuff.moon.queue.QueueThread;
+import club.nodebuff.moon.leaderboard.Leaderboard;
+//import club.nodebuff.moon.util.ConfigManager;
+import club.nodebuff.moon.util.InventoryUtil;
+import club.nodebuff.moon.util.command.Honcho;
+import club.nodebuff.moon.util.config.BasicConfigurationFile;
+import club.nodebuff.moon.util.hologram.HologramHandler;
+import club.nodebuff.moon.util.menu.MenuListener;
+import club.nodebuff.moon.util.CC;
+import club.nodebuff.moon.util.Cache;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.MongoClientOptions;
@@ -131,9 +131,9 @@ import lombok.Getter;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class Praxi extends JavaPlugin {
+public class Moon extends JavaPlugin {
 
-	private static Praxi praxi;
+	private static Moon Moon;
 
 	@Getter private BasicConfigurationFile mainConfig, settingsConfig, arenasConfig, kitsConfig, eventsConfig, hotbarConfig, scoreboardConfig, menusConfig, divisionsConfig, hologramConfig, databaseConfig;
 	@Getter private Cache cache;
@@ -174,7 +174,7 @@ public class Praxi extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		long oldTime = System.currentTimeMillis();
-		praxi = this;
+		Moon = this;
 		configsLoad();
 		loadMongo();
 		getServer().getPluginManager().registerEvents(new MenuListener(), this);
@@ -183,7 +183,7 @@ public class Praxi extends JavaPlugin {
 
         cache = new Cache();
 		hotbar = new Hotbar();
-		Praxi.get().getHotbar().init();
+		Moon.get().getHotbar().init();
 
 		Kit.init();
 		Arena.init();
@@ -382,7 +382,7 @@ public class Praxi extends JavaPlugin {
     }
 
     public void clearStuffs() {
-        for (World world : praxi.getServer().getWorlds()) {
+        for (World world : Moon.getServer().getWorlds()) {
             for (Entity entity : world.getEntities()) {
                 if (!(entity.getType() == EntityType.PLAYER)) {
                     continue;
@@ -436,8 +436,8 @@ public class Praxi extends JavaPlugin {
         }
     }
 
-	public static Praxi get() {
-		return praxi;
+	public static Moon get() {
+		return Moon;
 	}
 
 }

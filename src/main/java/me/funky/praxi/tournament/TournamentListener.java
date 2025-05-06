@@ -1,6 +1,6 @@
-package me.funky.praxi.tournament;
+package club.nodebuff.moon.tournament;
 
-import me.funky.praxi.profile.Profile;
+import club.nodebuff.moon.profile.Profile;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;

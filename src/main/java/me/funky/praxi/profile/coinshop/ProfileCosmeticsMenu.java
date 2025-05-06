@@ -1,12 +1,12 @@
-package me.funky.praxi.profile.coinshop;
+package club.nodebuff.moon.profile.coinshop;
 
-import me.funky.praxi.Praxi;
-import me.funky.praxi.profile.settings.menu.CosmeticsMenu;
-import me.funky.praxi.util.Constants;
-import me.funky.praxi.util.ItemBuilder;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
-import me.funky.praxi.util.CC;
+import club.nodebuff.moon.Moon;
+import club.nodebuff.moon.profile.settings.menu.CosmeticsMenu;
+import club.nodebuff.moon.util.Constants;
+import club.nodebuff.moon.util.ItemBuilder;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
+import club.nodebuff.moon.util.CC;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;

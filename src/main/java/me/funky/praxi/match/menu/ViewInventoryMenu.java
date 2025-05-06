@@ -1,10 +1,10 @@
-package me.funky.praxi.match.menu;
+package club.nodebuff.moon.match.menu;
 
 import lombok.AllArgsConstructor;
-import me.funky.praxi.util.menu.Button;
-import me.funky.praxi.util.menu.Menu;
-import me.funky.praxi.util.menu.button.DisplayButton;
-import me.funky.praxi.util.*;
+import club.nodebuff.moon.util.menu.Button;
+import club.nodebuff.moon.util.menu.Menu;
+import club.nodebuff.moon.util.menu.button.DisplayButton;
+import club.nodebuff.moon.util.*;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

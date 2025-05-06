@@ -1,4 +1,4 @@
-package me.funky.praxi.leaderboard.menu;
+package club.nodebuff.moon.leaderboard.menu;
 
 /* Author: Zatrex
    Project: Shadow
