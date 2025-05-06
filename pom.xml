@@ -9,7 +9,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
-    <groupId>me.zatrex.practice</groupId>
+    <groupId>club.nodebuff.moon</groupId>
     <artifactId>Moon</artifactId>
     <version>1.0.0</version>
 
@@ -230,19 +230,19 @@
 					<relocations>
                         <relocation>
                             <pattern>club.nodebuff.moon.Moon</pattern>
-                            <shadedPattern>me.zatrex.practice.Moon</shadedPattern>
+                            <shadedPattern>club.nodebuff.moon.Moon</shadedPattern>
                         </relocation>
 						<relocation>
                             <pattern>club.nodebuff.moon.MoonAPI</pattern>
-                            <shadedPattern>me.zatrex.practice.MoonAPI</shadedPattern>
+                            <shadedPattern>club.nodebuff.moon.MoonAPI</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>club.nodebuff.moon</pattern>
-                            <shadedPattern>me.zatrex.practice</shadedPattern>
+                            <shadedPattern>club.nodebuff.moon</shadedPattern>
                         </relocation>
 						<relocation>
                             <pattern>dev.hely.tab.api</pattern>
-                            <shadedPattern>me.zatrex.practice.util.tablist</shadedPattern>
+                            <shadedPattern>club.nodebuff.moon.util.tablist</shadedPattern>
                         </relocation>
                     </relocations>
 					<filters>
