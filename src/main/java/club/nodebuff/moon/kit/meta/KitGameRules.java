@@ -16,6 +16,7 @@ public class KitGameRules {
 	@Getter @Setter private boolean boxing;
 	@Getter @Setter private boolean onehit;
 	@Getter @Setter private boolean bedfight;
+	@Getter @Setter private boolean tntSumo;
     @Getter @Setter private boolean bot;
     @Getter @Setter private boolean stickFight;
 	@Getter @Setter private boolean eggwars;

@@ -29,19 +29,12 @@ import org.bukkit.event.block.BlockExplodeEvent;
 import org.bukkit.event.block.BlockIgniteEvent;
 import org.bukkit.event.entity.*;
 import org.bukkit.event.player.*;
-import org.bukkit.metadata.FixedMetadataValue;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.projectiles.ProjectileSource;
 import org.bukkit.util.Vector;
-
-import java.util.HashMap;
-import java.util.UUID;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.regex.Matcher;
@@ -95,7 +88,8 @@ public class MatchListener implements Listener {
                 if (!(player.getLocation().getY() >= match.getArena().getDeathZone()) && !match.getGamePlayer(player).isRespawned()) {
                     match.respawn(player);
                 }
-            } else if (profile.getMatch().kit.getGameRules().isSumo()) {
+            } else if (profile.getMatch().getKit().getGameRules().isSumo()
+                    || profile.getMatch().getKit().getGameRules().isTntSumo()) {
                 
                 if (!(player.getLocation().getY() >= match.getArena().getDeathZone()) && !match.getGamePlayer(player).isRespawned()) {
                     profile.getMatch().onDeath(player);
@@ -259,15 +253,21 @@ public class MatchListener implements Listener {
                 event.setCancelled(true);
                 return;
             }
-            /*if (event.getBlock().getType() == Material.TNT) {
-                Block block = event.getBlock();
+            if (block.getType() == Material.TNT) {
+                ItemStack itemStack = player.getItemInHand();
+                itemStack.setAmount(itemStack.getAmount() - 1);
+                player.setItemInHand(itemStack);
 
-                TNTPrimed tnt = block.getWorld().spawn(block.getLocation(), TNTPrimed.class);
-                tnt.setFuseTicks(60); // TODO: add config for this.
-
-                block.setType(Material.AIR);
+                final TNTPrimed tntPrimed = event.getBlock().getLocation().getWorld().spawn(event.getBlock().getLocation().clone().add(0.5, 0.0, 0.5), TNTPrimed.class);
+                tntPrimed.setYield((float) 4.0);
+                boolean isTntSumo = match.getKit().getGameRules().isTntSumo();
+                int NORMAL_FUSE_TICKS = Moon.get().getSettingsConfig().getInteger("MATCH.TNT-FUSE-TICKS");
+                int TNT_SUMO_TICKS = Moon.get().getSettingsConfig().getInteger("MATCH.TNTSUMO-FUSE-TICKS");
+                tntPrimed.setFuseTicks(isTntSumo ? TNT_SUMO_TICKS : NORMAL_FUSE_TICKS);
+                Util.setSource(tntPrimed, player);
+                event.setCancelled(true);
                 return;
-            }*/
+            }
             if (match.getKit().getGameRules().isBuild() && match.getState() == MatchState.PLAYING_ROUND) {
                 if (match.getKit().getGameRules().isSpleef()) {
                     event.setCancelled(true);
@@ -786,6 +786,16 @@ public class MatchListener implements Listener {
                 if (entity == damager) {
                     event.setDamage(0);
                 }
+            }
+        }
+        if (event.getEntity() instanceof Player && event.getDamager() instanceof TNTPrimed) {
+            Player player = (Player) event.getEntity();
+            if(Moon.get().getSettingsConfig().getBoolean("MATCH.TNT-ENABLE")) {
+                double VERTICAL = Moon.get().getSettingsConfig().getDouble("MATCH.TNT-VERTICAL-KB");
+                double HORIZONTAL = Moon.get().getSettingsConfig().getDouble("MATCH.TNT-HORIZONTAL-KB");
+                event.setCancelled(true);
+                player.damage(event.getDamage() / 5.0D);
+                Util.pushAway(player, event.getDamager().getLocation(), VERTICAL, HORIZONTAL);
             }
         }
     }

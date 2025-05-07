@@ -29,10 +29,10 @@ public class ArenaManageMenu extends Menu {
 	public String getTitle(Player player) {
 		return Moon.get().getMenusConfig().getString("MANAGE.ARENA.TITLE");
 	}
-
+   // Moon.get().getMenusConfig().getInteger("MANAGE.ARENA.SIZE");
     @Override
     public int getSize() {
-		return Moon.get().getMenusConfig().getInteger("MANAGE.ARENA.SIZE");
+		return 54;
     }
 
 	@Override

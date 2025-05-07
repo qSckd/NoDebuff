@@ -9,6 +9,17 @@ MATCH:
   RESPAWN-TITLE: true
   # Should we broadcast player respawn message?
   BROADCAST-RESPAWN: true
+  # TNT SUMO FUSE TICKS
+  TNTSUMO-FUSE-TICKS: 10
+  # TNT ENABLED IN MATCH
+  TNT-ENABLE: true
+  TNT-HORIZONTAL-KB: 1.2
+  TNT-VERTICAL-KB: 1.1
+  TNT-FUSE-TICKS: 50
+  ALLOWED-BREAKING-BLOCKS:
+    - WOOD
+    - END_STONE
+    - ENDER_STONE
   # All Titles can be edited!
   TITLE:
     STARTED:
