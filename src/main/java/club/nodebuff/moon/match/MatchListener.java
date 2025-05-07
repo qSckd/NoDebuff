@@ -187,49 +187,9 @@ public class MatchListener implements Listener {
 
     @EventHandler
     public void onExplosion(EntityExplodeEvent event) {
-        Location loc = event.getEntity().getLocation();
-        if (event.getEntity() instanceof Fireball) {
-            for (int x = loc.getBlockX() - 1; x <= loc.getBlockX() + 1; x++) {
-                for (int y = loc.getBlockY() - 1; y <= loc.getBlockY() + 1; y++) {
-                    for (int z = loc.getBlockZ() - 1; z <= loc.getBlockZ() + 1; z++) {
-                        Block block = Objects.requireNonNull(loc.getWorld()).getBlockAt(x, y, z);
-                            if (block.getType() == Material.WOOL) {
-                                block.setType(Material.AIR);
-                            } else {
-                                event.setCancelled(true);
-                            }
-                    }
-                }
-            }
-            Location location = event.getLocation();
-            List<Entity> nearbyEntities = (List<Entity>) Objects.requireNonNull(location.getWorld())
-                .getNearbyEntities(location, 5, 5, 5);
-            for (Entity entity : nearbyEntities) {
-                if (entity instanceof Player) {
-                    if (entity.getLocation().distance(event.getEntity().getLocation()) <= 5) {
-                        entity.setVelocity(
-                        entity.getLocation().subtract(event.getEntity().getLocation()).toVector().setY(0.5)
-                            .normalize().multiply(1.25));
-                    }
-                }
-            }
-        } else if (event.getEntityType() == EntityType.PRIMED_TNT) {
-            Iterator<Block> iterator = event.blockList().iterator();
-            while (iterator.hasNext()) {
-                Block block = iterator.next();
-                Material type = block.getType();
-
-                if (type != Material.WOOL && type != Material.WOOD && type != Material.ENDER_STONE) {
-                    iterator.remove();
-                }
-            }
-            for (Entity entity : event.getEntity().getNearbyEntities(5, 5, 5)) {
-                if (entity instanceof Player) {
-                    Player player = (Player) entity;
-                    Vector direction = player.getLocation().toVector().subtract(event.getLocation().toVector()).normalize();
-                    player.setVelocity(direction.multiply(1.5));
-                }
-            }
+        EntityType type = event.getEntityType();
+        if(type == EntityType.PRIMED_TNT) {
+            event.blockList().removeIf(block -> !Moon.get().getSettingsConfig().getStringList("MATCH.ALLOWED-BREAKING-BLOCKS").contains(block.getType().name()));
         }
     }
 

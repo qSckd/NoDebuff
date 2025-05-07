@@ -62,6 +62,7 @@ public class KitManagerMenu extends Menu {
         buttons.put(i++, new RankedButton(kit, "Ranked Kit"));
         buttons.put(i++, new EditableButton(kit, "Editable Kit"));
         buttons.put(i, new HitDelayButton(kit, "Hit Delay"));
+        buttons.put(4,new TntSumoButton(kit, "TntSumo"));
         return buttons;
     }
 
@@ -518,6 +519,32 @@ public class KitManagerMenu extends Menu {
         @Override
         public void clicked(Player player, ClickType clickType) {
             kit.getGameRules().setNoDamage(!kit.getGameRules().isNoDamage());
+            kit.save();
+        }
+    }
+    @AllArgsConstructor
+    private static class TntSumoButton extends Button {
+        private Kit kit;
+        private String optName;
+
+        @Override
+        public boolean shouldUpdate(Player player, ClickType clickType) {
+            return true;
+        }
+
+        @Override
+        public ItemStack getButtonItem(Player player) {
+            List<String> lore = new ArrayList<>();
+            lore.add("");
+            lore.add(CC.translate("&fCurrent Value: " + "&b" + kit.getGameRules().isTntSumo()));
+            lore.add("");
+            lore.add(CC.translate("&aClick to toggle."));
+            return new ItemBuilder(Material.WOOL).durability(kit.getGameRules().isTntSumo() ? 13 : 14).lore(lore).name(CC.translate((kit.getGameRules().isTntSumo() ? "&a" : "&c") + optName)).build();
+        }
+
+        @Override
+        public void clicked(Player player, ClickType clickType) {
+            kit.getGameRules().setTntSumo(!kit.getGameRules().isTntSumo());
             kit.save();
         }
     }
